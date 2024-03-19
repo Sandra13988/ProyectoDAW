@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body{
+    display: flex;
+    flex: 1;
+    /*font-family: 'Protest Riot', sans-serif;*/
+    font-family: 'Dancing Script', cursive;
+    margin: 0px;
+}
+
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 130px auto 70px;
+}
+
+/*Aqui empieza el encabezado*/
+header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    grid-auto-rows: 1fr;
+    background-color:#2e2e2c;
+    color:white;
+    grid-column: span 1;
+    
+}
+
+.iconos, .iconos2{
+    display: none;
+}
+
+img{
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+}
+
+/*Aqio empieza el menú responsivo como movil*/
+.menu {
+    width:133px;
+    display: flex;
+    position:absolute;
+    top:114px;
+    flex-direction:column;
+    background-color: #2e2e2c;
+    color: white;
+
+    transform: translatey(-165%);
+    transition:transform 0.4s;
+  }
+  #hamburguesa{
+    display:none;
+  }
+  
+  #icono{
+
+    font-size: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .menu li {
+    padding:1rem;
+    margin:1px;
+    text-align:left;
+    list-style: none;
+    color:black;
+    
+  }
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+  #hamburguesa:checked ~ .menu {
+    /*display:block;*/
+    transform: translatey(0);
+  }
+  
+  .menu li:hover{
+    
+    background: rgba(0,0,0,0.3);
+  }
+.iconos2{
+    display: none;
+}
+/*Aqui termina el encabezado*/
+/*Aqui empieza el cuerpo*/
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+.noticia{
+    margin: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+
+.noticias .noticia:nth-child(even){
+    background-color: rgb(238, 236, 236);
+
+}
+
+
+/*Aqui termina el cuerpo*/
+/*Aqui empieza el pie de pagina*/
+footer{
+    margin-top: 20px;
+    background-color: #2e2e2c;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 70%;
+   
+}
+
+footer > .redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.redes>ion-icon{
+    height: 50%;
+    width: 50%;
+    color: #a5a6a5;
+}
+
+.iconito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    
+}
+@media (min-width: 768px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30% 70%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+    .menuCompleto{
+        display: none;
+    }
+
+    .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+    }
+    .iconito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        
+    }
+    
+    .iconos > .iconito{
+        border: 1px solid #a6a6a5;
+        border-radius: 10px;
+    }
+    
+    .iconos > .iconito:hover{
+        border: 3px solid white;
+        border-radius: 10px;
+    }
+    
+    
+    ion-icon{
+        height: 60%;
+        width: 60%;
+        color: #a5a6a5;
+    }
+    
+    .iconos2{
+        display: none;
+    }
+    
+}
+
+@media (min-width: 1024px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 20% 80%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+    .iconos{
+        display: none;
+    }
+
+    .iconos2{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .iconos2 .iconito:hover{
+        font-size: 40px;
+     }
+     
+    .iconito{
+        
+        color: #e6e6e2;
+    }
+    
+}

@@ -1,0 +1,273 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body{
+    
+    /*font-family: 'Protest Riot', sans-serif;*/
+    font-family: 'Dancing Script', cursive;
+    margin: 0px;
+}
+
+#contenedor{
+    display: grid;
+    grid-template-rows: 130px auto 70px;
+    height: 100vh;
+}
+
+/*Aqui empieza el encabezado*/
+header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    background-color:#2e2e2c;
+    color:white;
+    grid-column: span 1;
+    font-size: 1;
+}
+
+
+img{
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+}
+
+.iconos, .iconos2{
+    display: none;
+}
+
+.menu {
+    width:133px;
+    display: flex;
+    position:absolute;
+    top:114px;
+    flex-direction:column;
+    background-color: #2e2e2c;
+    color: white;
+
+    transform: translatey(-165%);
+    transition:transform 0.4s;
+  }
+  #hamburguesa{
+    display:none;
+  }
+  
+  #icono{
+
+    font-size: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .menu li {
+    padding:1rem;
+    margin:1px;
+    text-align:left;
+    list-style: none;
+    color:black;
+    
+  }
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+  #hamburguesa:checked ~ .menu {
+    /*display:block;*/
+    transform: translatey(0);
+  }
+  
+  .menu li:hover{
+    
+    background: rgba(0,0,0,0.3);
+  }
+/*Aqui termina el encabezado*/
+/*Aqui empieza el cuerpo*/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 15px;
+}
+
+h2{
+    font-size: 30px;
+}
+.libros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+
+.libros > h2{
+    grid-column: span 2;
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+    
+}
+
+.unidad > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.unidad{
+    display: grid;
+    grid-template-rows: auto, auto;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #e6e6e2;
+}
+
+.unidad > h2{
+    margin-top: 0px;
+    height: 100%;
+    background-color: #2e2e2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+   
+}
+    
+/*Aqui termina el cuerpo*/
+/*Aqui empieza el pie de pagina*/
+footer{
+    margin-top: 20px;
+    background-color: #2e2e2c;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 70%;
+   
+}
+
+footer > .redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.redes>ion-icon{
+    height: 50%;
+    width: 50%;
+    color: #a5a6a5;
+}
+
+@media (min-width: 768px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30% 70%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+    .menuCompleto{
+        display: none;
+    }
+
+    .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+    }
+    .iconito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        
+    }
+    
+    .iconos > .iconito{
+        border: 1px solid #a6a6a5;
+        border-radius: 10px;
+    }
+    
+    .iconos > .iconito:hover{
+        border: 3px solid white;
+        border-radius: 10px;
+    }
+    
+    
+    ion-icon{
+        height: 60%;
+        width: 60%;
+        color: #a5a6a5;
+    }
+    
+    .iconos2{
+        display: none;
+    }
+
+    .libros{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        gap: 15px;
+    }
+
+    .libros > h2{
+        grid-column: span 4;
+        align-self: center;
+        justify-self: center;
+        text-decoration: underline;
+        
+    }
+
+    
+}
+
+
+@media (min-width: 1024px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 20% 80%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+    .iconos{
+        display: none;
+    }
+
+    .iconos2{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        font-size: 30px;
+    }
+    .iconito{
+        
+        color: #e6e6e2;
+    }
+
+    .iconos2 .iconito:hover{
+        font-size: 40px;
+     }
+    
+    .unidad{
+        width: 400px;
+        height: auto;
+    }
+
+}

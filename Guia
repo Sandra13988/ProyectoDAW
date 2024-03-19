@@ -1,0 +1,32 @@
+BASE DE DATOS
+La base de datos tendrá:
+Tabla de usuarios -> Columna id  / Columna usuario / Columna pass / Columna suscripcion
+Tabla de libros -> Columna IBAN / Columna nombre / Columna autor / Columna genero / Columna sinopsis
+Tabla de suscripciones -> Columna id (Que será la que va asociada a columna suscripcion del usuario) / Columna tipo de suscripcion
+Tabla alquiler -> Columna id del usuario / Columna IBAN del libros
+
+PAGINAS
+
+De uso compartido : 
+- Cabecero ✘ Tocar diseño
+- Pie de pagina ✘ Tocar diseño
+- Indice ✘Tocar diseño ✘Quizas agregar boton de descarga y lista de deseos 
+- Libros ✘Agregar boton de descarga y lista de deseos
+- Noticias ✘ Tocar diseño
+- Contacto ✘ Tocar diseño
+- Login 
+- Pagina de registro
+
+De uso admin:
+- Agregar libro 
+- Modificar libro
+- Borrar libro
+
+De uso cliente:
+- Lista de deseos
+- Administracion de descargas
+
+
+
+
+

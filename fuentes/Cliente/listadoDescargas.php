@@ -1,80 +1,76 @@
-<?php
-/*
- * 
- * Copyleft 2022 Pepe Sánchez 
- *
- * 
- * 
- */
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="assets/css/estiloLibros.css"/>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
+        <title>Lista de descargas</title>
+    </head>
 	<title>Listado de los artículos</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 1.38" />
 </head>
 
 <body>
-	<?php 
-		include("funciones.php");
-		include("encabezado.php");
+	<?php
+	include("funciones.php");
+	include("../plantillas/cabecero.php");
 
-	 echo "aquí hacemos un listado de los artículos de la pastelería PAGINADOS";
-
-	if(isset($_SERVER["REQUEST_METHOD"])== "GET" && isset($_GET["pagina"])){
+	if (isset($_SERVER["REQUEST_METHOD"]) == "GET" && isset($_GET["pagina"])) {
 		$indice = (int)$_GET["pagina"];
-	}else{
+	} else {
 		$indice = 1;
 	}
 
 
 	$conexion = conectar();
-	$consultaRegistros = "SELECT * FROM articulos";
+	$consultaRegistros = "SELECT * FROM descargas";
 	$resultadoRegistros = mysqli_query($conexion, $consultaRegistros);
 
 	$numeroDeRegistros = mysqli_num_rows($resultadoRegistros);
-	$numeroDeRegistrosPorPagina = 2;
-	$totalPaginas = ceil($numeroDeRegistros/$numeroDeRegistrosPorPagina);
-	$limite = " limit ".(($indice-1)*$numeroDeRegistrosPorPagina)." , ".$numeroDeRegistrosPorPagina;
+	$numeroDeRegistrosPorPagina = 5;
+	$totalPaginas = ceil($numeroDeRegistros / $numeroDeRegistrosPorPagina);
+	$limite = " limit " . (($indice - 1) * $numeroDeRegistrosPorPagina) . " , " . $numeroDeRegistrosPorPagina;
 
-	$consultaListado = "SELECT * FROM articulos $limite";
-	$resultadoListado = mysqli_query($conexion, $consultaListado);
-	$filaListado = mysqli_fetch_assoc($resultadoListado);
-	if($filaListado){
+	$consultaDescargas = "SELECT * FROM descargas $limite";
+	$resultadoDescargas = mysqli_query($conexion, $consultaDescargas);
+	$filaDescargas = mysqli_fetch_assoc($resultadoDescargas);
+	if ($filaDescargas) {
 		echo "<table>";
 		echo "<tr>";
-		echo "<th>ID</th>";
+		if (comprobarRol() == "admin") {
+			echo "<th>ID</th>";
+		}
+		echo "<th>ISBN</th>";
 		echo "<th>NOMBRE</th>";
-		echo "<th>CATEGORIA</th>";
-		echo "<th>PRECIO</th>";
-		echo "<th>PROCEDENCIA</th>";
+		echo "<th>FECHA</th>";
+		echo "<th></th>";
 		echo "</tr>";
 
-		do{
+		do {
 			echo "<tr>";
-			echo "<td>".$filaListado['id']."</td>";
-			echo "<td>".$filaListado['nombre']."</td>";
-			echo "<td>".$filaListado['categoría']."</td>";
-			echo "<td>".$filaListado['precio']."</td>";
-			echo "<td>".$filaListado['procedencia']."</td>";
+			if (comprobarRol() == "admin") {
+				echo "<td>" . $filaDescargas['id'] . "</td>";
+			}
+			echo "<td>" . $filaDescargas['isbn'] . "</td>";
+			echo "<td>" . $filaDescargas['nombre'] . "</td>";
+			echo "<td>" . $filaDescargas['fecha'] . "</td>";
+			echo "<td>" . "BOTON DESCARGAS" . "</td>"; //Hay que agregar el boton de borrar
 			echo "</tr>";
-		}while($filaListado = mysqli_fetch_assoc($resultadoListado));
+		} while ($filaDescargas = mysqli_fetch_assoc($resultadoListado));
 		echo "</table>";
-		echo "<a href='listado.php?pagina=".(($indice-1< 1)? 1 : $indice-1)."'>ATRAS</a>";
-		echo "<a href='listado.php?pagina=".(($indice+1> $totalPaginas)? $totalPaginas : $indice+1)."'>SIGUIENTE</a>";
+		echo "<a href='listadoDescargas.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
+		echo "<a href='listadoDescargas.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
 	}
-
-
 	?>
-
-	
-	
-	
 </body>
+<?php include("../plantillas/fotter.php.php"); ?>
 
 </html>
-

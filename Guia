@@ -3,7 +3,7 @@ La base de datos tendrá:
 Tabla de usuarios -> Columna id  / Columna usuario / Columna pass / Columna suscripcion
 Tabla de libros -> Columna IBAN / Columna nombre / Columna autor / Columna genero / Columna sinopsis
 Tabla de suscripciones -> Columna id (Que será la que va asociada a columna suscripcion del usuario) / Columna tipo de suscripcion
-Tabla alquiler -> Columna id del usuario / Columna IBAN del libros
+Tabla descargas -> Columna id del usuario / Columna IBAN del libros
 
 PAGINAS
 
@@ -16,6 +16,7 @@ De uso compartido :
 - Contacto ✘ Tocar diseño
 - Login 
 - Pagina de registro
+
 
 De uso admin:
 - Agregar libro 

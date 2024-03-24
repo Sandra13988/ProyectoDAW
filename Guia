@@ -7,26 +7,33 @@ Tabla descargas -> Columna id del usuario / Columna IBAN del libros
 
 PAGINAS
 
+DISEÑOS: 
+Falta todo
+Recolocar rutas
+
+CODIGO:
 De uso compartido : 
-- Cabecero ✘ Tocar diseño
-- Pie de pagina ✘ Tocar diseño
-- Indice ✘Tocar diseño ✘Quizas agregar boton de descarga y lista de deseos 
-- Libros ✘Agregar boton de descarga y lista de deseos
-- Noticias ✘ Tocar diseño
-- Contacto ✘ Tocar diseño
-- Login 
-- Pagina de registro
+
+- Cabecero 
+- Pie de pagina ✔
+- Indice  -> Se hará un carrusel de novedades
+- Libros ✘ Agregar boton de descarga y lista de deseos a cada libro
+- Noticias 
+- Contacto 
+- Login ✔
+- Pagina de registro ✔
+- Lista de deseos  ✔ Pero falta agregar los botones de descargar
+- Administracion de descargas ✔ Pero falta el boton de borrar descarga
+
 
 
 De uso admin:
 - Agregar libro 
 - Modificar libro
-- Borrar libro
-- Lista de libros descargados con PDF
+- Borrar libro 
+- Lista de libros
+*Esto probablemente haga la lista de libros y tendrá por cada libro un boton de modificar y otro de descargar
 
-De uso cliente:
-- Lista de deseos
-- Administracion de descargas
 
 24/03/2024
 Retocar todas las rutas que se han descuadrado al ordenar las carpetas

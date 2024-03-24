@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="contenedor">
-        <?php include('cabecero.php'); ?>
+        <?php include('./plantillas/cabecero.php'); ?>
         <main>
                 <h1>NOTICIAS</h1>
             <div class="noticias">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </main>
-            <?php include('fotter.php'); ?>
+            <?php include('./plantillas/fotter.php'); ?>
         </div>
     </body>
 </html>

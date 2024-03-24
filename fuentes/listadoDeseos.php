@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-        <title>Lista de deseos</title>
+        <title>Lista de descargas</title>
     </head>
 	<title>Listado de los artículos</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -31,7 +31,7 @@
 
 
 	$conexion = conectar();
-	$consultaRegistros = "SELECT * FROM deseos";
+	$consultaRegistros = "SELECT * FROM descargas";
 	$resultadoRegistros = mysqli_query($conexion, $consultaRegistros);
 
 	$numeroDeRegistros = mysqli_num_rows($resultadoRegistros);
@@ -39,7 +39,7 @@
 	$totalPaginas = ceil($numeroDeRegistros / $numeroDeRegistrosPorPagina);
 	$limite = " limit " . (($indice - 1) * $numeroDeRegistrosPorPagina) . " , " . $numeroDeRegistrosPorPagina;
 
-	$consultaDescargas = "SELECT * FROM deseos $limite";
+	$consultaDescargas = "SELECT * FROM descargas $limite";
 	$resultadoDescargas = mysqli_query($conexion, $consultaDescargas);
 	$filaDescargas = mysqli_fetch_assoc($resultadoDescargas);
 	if ($filaDescargas) {
@@ -51,7 +51,9 @@
 		echo "<th>ISBN</th>";
 		echo "<th>NOMBRE</th>";
 		echo "<th>FECHA</th>";
-		echo "<th></th>";
+		if (comprobarRol() == "usuario") {
+			echo "<th></th>";
+		}
 		echo "</tr>";
 
 		do {
@@ -62,7 +64,11 @@
 			echo "<td>" . $filaDescargas['isbn'] . "</td>";
 			echo "<td>" . $filaDescargas['nombre'] . "</td>";
 			echo "<td>" . $filaDescargas['fecha'] . "</td>";
-			echo "<td>" . "BOTON DESCARGAS" . "</td>"; //Hay que agregar el boton de borrar
+
+			if (comprobarRol() == "usuario") {
+				echo "<td>" . "BOTON DESCARGAR" . "</td>"; //Hay que agregar el boton de descargar
+			}
+			
 			echo "</tr>";
 		} while ($filaDescargas = mysqli_fetch_assoc($resultadoListado));
 		echo "</table>";

@@ -51,7 +51,9 @@
 		echo "<th>ISBN</th>";
 		echo "<th>NOMBRE</th>";
 		echo "<th>FECHA</th>";
-		echo "<th></th>";
+		if (comprobarRol() == "usuario") {
+			echo "<th></th>";
+		}
 		echo "</tr>";
 
 		do {
@@ -62,7 +64,11 @@
 			echo "<td>" . $filaDescargas['isbn'] . "</td>";
 			echo "<td>" . $filaDescargas['nombre'] . "</td>";
 			echo "<td>" . $filaDescargas['fecha'] . "</td>";
-			echo "<td>" . "BOTON DESCARGAS" . "</td>"; //Hay que agregar el boton de borrar
+
+			if (comprobarRol() == "usuario") {
+				echo "<td>" . "BOTON BORRAR DESCARGA" . "</td>"; //Hay que agregar el boton de borrar descarga
+			}
+			
 			echo "</tr>";
 		} while ($filaDescargas = mysqli_fetch_assoc($resultadoListado));
 		echo "</table>";

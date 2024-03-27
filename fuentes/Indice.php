@@ -16,8 +16,9 @@
     <body>
         <div id="contenedor">
         <?php include('./plantillas/cabecero.php'); ?>
-        <h1>NOVEDADES</h1>
+        
         <main>
+        <h1>NOVEDADES</h1>
                 <!--He intentado hacer esta seccion con picture, añadiendo en cada tamaño de la pagina la misma foto pero en tamaños
                 diferentes, pero queda mal porque no cogen buena calidad-->
                 <div class="libros">

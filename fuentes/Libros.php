@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet" href="assets/css/estiloLibros.css"/>
+        <link rel="stylesheet" href="../assets/css/estiloLibros.css"/>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,12 +15,12 @@
     </head>
     <body>
         <div id="contenedor">
-        <?php include('cabecero.php'); ?>
+        <?php include('./plantillas/cabecero.php'); ?>
         <main class="todoLibros">
                 <h1>CATALOGO</h1>
                 <div class="libro" id="games">
                     <h2>TWISTED GAMES</h2>
-                    <img src="Grandes/games.jpg">
+                    <img src="../Grandes/games.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Erótica, Juvenil, Romántica
                         <strong>Autor: </strong> Ana Huang 
@@ -40,7 +40,7 @@
                 </div>
                 <div class="libro" id="almas">
                     <h2>ALMAS</h2>
-                    <img src="Grandes/almas.jpg">
+                    <img src="../Grandes/almas.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Narrativa
                         <strong>Autor: </strong> Noemí Casquet
@@ -58,7 +58,7 @@
                 </div>
                 <div class="libro" id="bodas">
                     <h2>BODAS DE HUESO</h2>
-                    <img src="Grandes/bodas.jpg">
+                    <img src="../Grandes/bodas.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong>Fantasía oscura 
                         <strong>Autor: </strong> H. N. Abbott 
@@ -74,7 +74,7 @@
                 </div>
                 <div class="libro" id="lagrimas">
                     <h2>LAGRIMAS DE SANGRE</h2>
-                    <img src="Grandes/lagrima.jpg">
+                    <img src="../Grandes/lagrima.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Romantico/Vampiro 
                         <strong>Autor: </strong> Antonia Romero 
@@ -91,7 +91,7 @@
                 </div>
                 <div class="libro" id="harryp">
                     <h2>HARRY POTTER Y LA CAMARA SECRETA</h2>
-                    <img src="Grandes/harry.jpg">
+                    <img src="../Grandes/harry.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong>  Fantasía 
                         <strong>Autor: </strong> J.K. Rowling
@@ -108,7 +108,7 @@
                 </div>
                 <div class="libro" id="orden">
                     <h2>EL ORDEN DE LAS COSAS</h2>
-                    <img src="Grandes/orden.jpg">
+                    <img src="../Grandes/orden.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Ficciçon Contemporanea
                         <strong>Autor: </strong> Lydia Garés
@@ -126,7 +126,7 @@
                 </div>
                 <div class="libro" id="japon">
                     <h2>MITOLOGIA JAPONESA</h2>
-                    <img src="Grandes/japon.jpg">
+                    <img src="../Grandes/japon.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Historia
                         <strong>Autor: </strong> Kimiko Hyuga
@@ -146,7 +146,7 @@
                 </div>
                 <div class="libro" id="dulce">
                     <h2>DULCE VENENO</h2>
-                    <img src="Grandes/dulce.jpg">
+                    <img src="../Grandes/dulce.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Comedia romantica
                         <strong>Autor: </strong> Parker S. Huntington 
@@ -163,7 +163,7 @@
                 </div>
                 <div class="libro" id="hija">
                     <h2>LA HIJA DEL REY PIRATA</h2>
-                    <img src="Grandes/hija.jpg">
+                    <img src="../Grandes/hija.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía
                         <strong>Autor: </strong> Tricia Levenseller
@@ -180,7 +180,7 @@
                 </div>
                 <div class="libro" id="mundos">
                     <h2>LA MAGIA DE DOS MUNDOS</h2>
-                    <img src="Grandes/mundos.jpg">
+                    <img src="../Grandes/mundos.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía 
                         <strong>Autor: </strong> Carmen Hergueta
@@ -196,7 +196,7 @@
                 </div>
                 <div class="libro" id="magia">
                     <h2>MAGIA RECLAMADA</h2>
-                    <img src="Grandes/magia.jpg">
+                    <img src="../Grandes/magia.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Romance de fantasia 
                         <strong>Autor: </strong> Charmaine Ross
@@ -219,7 +219,7 @@
                 </div>
                 <div class="libro" id="jaque">
                     <h2>JAQUE AL REY</h2>
-                    <img src="Grandes/jaque.jpg">
+                    <img src="../Grandes/jaque.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Terror 
                         <strong>Autor: </strong> Mario Escobar
@@ -236,7 +236,7 @@
                 </div>
                 <div class="libro" id="jaula">
                     <h2>LA JAULA DE LOS PERIQUITOS</h2>
-                    <img src="Grandes/jaula.jpg">
+                    <img src="../Grandes/jaula.jpg">
                         <div class="contenidoLibro">
                         <strong>Genero: </strong> Ciencia Ficcion
                         <strong>Autor: </strong> Vicente Mesado 
@@ -256,7 +256,7 @@
                 </div>
                 <div class="libro" id="luz">
                     <h2>ELYRION</h2>
-                    <img src="Grandes/luz.jpg">
+                    <img src="../Grandes/luz.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía 
                         <strong>Autor: </strong> Sheila G. Frutos 
@@ -270,7 +270,7 @@
                     <br>
                 </div>
             </main>
-            <?php include('fotter.php'); ?>
+            <?php include('./plantillas/fotter.php'); ?>
         </div>
     </body>
 </html>

@@ -10,8 +10,8 @@ body{
 
 #contenedor{
     display: grid;
-    grid-template-rows: 130px auto 70px;
     height: 100vh;
+    grid-template-rows: 130px auto 70px;
     width: 100%;
 }
 
@@ -110,7 +110,6 @@ form{
 
 h1{
     text-align: center;
-    text-decoration: underline;
     grid-column: span 2;
 }
 

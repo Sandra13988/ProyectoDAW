@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/fuentes/slider/slider.css" />
+    <script src="/fuentes/slider/script.js"></script>
     <title>Indice</title>
 </head>
 
@@ -19,60 +21,134 @@
     <div id="contenedor">
         <?php include('./plantillas/cabecero.php'); ?>
 
-        <main>
-            <div class="libros">
-            <h2>NOVEDADES</h2>
-                <div class="unidad">
-                    <h2>Almas</h2>
-                    <a href="Libros.html#almas">
-                        <img src="../Grandes/almas.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Bodas de hueso</h2>
-                    <a href="Libros.html#bodas">
-                        <img src="../Grandes/bodas.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Dulce Veneno</h2>
-                    <a href="Libros.html#dulce">
-                        <img src="../Grandes/dulce.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Twisted Games</h2>
-                    <a href="Libros.html#games">
-                        <img src="../Grandes/games.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Harry Potter</h2>
-                    <a href="Libros.html#harryp">
-                        <img src="../Grandes/harry.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>La hija del Rey pirata</h2>
-                    <a href="Libros.html#hija">
-                        <img src="../Grandes/hija.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Mitología Japonesa</h2>
-                    <a href="Libros.html#japon">
-                        <img src="../Grandes/japon.jpg">
-                    </a>
-                </div>
-                <div class="unidad">
-                    <h2>Jaque al Rey</h2>
-                    <a href="Libros.html#jaque">
-                        <img src="../Grandes/jaque.jpg">
-                    </a>
+        <section id="tranding">
+            <div class="container">
+                <h1 class="text-center section-heading">NOVEDADES</h1>
+            </div>
+            <div class="container">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/almas.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Special Pizza
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/bodas.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Meat Ball
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/dulce.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Burger
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/games.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Frish Curry
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/harry.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Pane Cake
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/hija.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Vanilla cake
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../../../Grandes/japon.jpg" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Straw Cake
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <div class="tranding-slider-control">
+                        <div class="swiper-button-prev slider-arrow">
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </div>
+                        <div class="swiper-button-next slider-arrow">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
                 </div>
             </div>
-        </main>
+        </section>
 
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+       
         <?php include('./plantillas/fotter.php'); ?>
     </div>
 </body>

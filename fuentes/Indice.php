@@ -12,8 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/fuentes/slider/slider.css" />
-    <script src="/fuentes/slider/script.js"></script>
+    <link rel="stylesheet" href="../fuentes/slider/slider.css" />
     <title>Indice</title>
 </head>
 
@@ -31,7 +30,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/almas.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -45,7 +44,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/bodas.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -59,7 +58,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/dulce.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -73,7 +72,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/games.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -87,7 +86,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/harry.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -101,7 +100,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/hija.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -115,7 +114,7 @@
                         <!-- Slide-start -->
                         <div class="swiper-slide tranding-slide">
                             <div class="tranding-slide-img">
-                                <img src="../../../Grandes/japon.jpg" alt="Tranding">
+                                <img src="../Grandes/almas.jpg" alt="Tranding">
                             </div>
                             <div class="tranding-slide-content">
                                 <div class="tranding-slide-content-bottom">
@@ -148,7 +147,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-       
+        <script src="../fuentes/slider/script.js"></script>
         <?php include('./plantillas/fotter.php'); ?>
     </div>
 </body>

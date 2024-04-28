@@ -30,7 +30,7 @@ header{
     display: none;
 }
 
-img{
+#logotipo{
     justify-self: center;
     height: 100%;
     width: 50%;

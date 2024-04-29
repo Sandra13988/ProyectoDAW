@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 body{
@@ -14,6 +13,7 @@ body{
     height: 100vh;
 }
 
+
 /*Aqui empieza el encabezado*/
 header{
     display: grid;
@@ -24,6 +24,7 @@ header{
     grid-column: span 1;
     font-size: 1;
 }
+
 
 
 img{
@@ -90,6 +91,11 @@ header a {
 
     
 /*Aqui termina el cuerpo*/
+.carousel {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
 /*Aqui empieza el pie de pagina*/
 footer{
     margin-top: 20px;
@@ -190,11 +196,15 @@ footer > .redes{
         display: grid;
         width: 100%;
         grid-template-columns: 20% 80%;
-        background-color:#2e2e2c;
+        background-color:#dfdf04;
         color:white;
         grid-column: span 1;
         
     }
+
+   
+
+
     .iconos{
         display: none;
     }

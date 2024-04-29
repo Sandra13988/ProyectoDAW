@@ -8,24 +8,24 @@ class Carousel {
       //CARRUSEL HECHO, FALTA AÑADIR LOS ENLACES Y LOS BOTONES DE DESCARGA Y WISHLIST
       {
         'id': '1',
-        'src': 'almas.jpg',
-        'url': 'contacto.html'
+        'src': '../../Grandes/almas.jpg',
+        'url': ''
       },
       {
         'id': '2',
-        'src': 'bodas.jpg',
+        'src': '../../Grandes/almas.jpg',
       },
       {
         'id': '3',
-        'src': 'dulce.jpg',
+        'src': '../../Grandes/almas.jpg',
       },
       {
         'id': '4',
-        'src': 'games.jpg',
+        'src': '../../Grandes/almas.jpg',
       },
       {
         'id': '5',
-        'src': 'harry.jpg',
+        'src': '../../Grandes/almas.jpg',
       }
     ];
     this.carouselInView = [1, 2, 3, 4, 5];

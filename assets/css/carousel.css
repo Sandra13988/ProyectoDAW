@@ -6,7 +6,7 @@
 
 /* carousel styles */
 .carousel {
-  --carousel-height: 400px;
+  --carousel-height: 1000px;
   --carousel-width: 1000px;
   --carousel-item-height: 200px;
   --carousel-item-width: 150px;
@@ -15,10 +15,11 @@
 }
 
 .carousel-container {
-  align-items: center;
+  align-items: center; /* Centra verticalmente */
   display: flex;
+  justify-content: center; /* Centra horizontalmente */
   min-height: var(--carousel-height);
-  margin: 0 auto;
+  margin: 20px auto; /* Espacio arriba y centrado horizontal */
   max-width: var(--carousel-width);
   position: relative;
 }

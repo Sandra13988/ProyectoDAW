@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet" href="../assets/css/estiloNoticias.css"/>
+        <link rel="stylesheet" href="../../assets/css/estiloNoticias.css"/>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="contenedor">
-        <?php include('./plantillas/cabecero.php'); ?>
+        <?php include('../plantillas/cabecero.php'); ?>
         <main>
                 <h1>NOTICIAS</h1>
             <div class="noticias">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </main>
-            <?php include('./plantillas/fotter.php'); ?>
+            <?php include('../plantillas/fotter.php'); ?>
         </div>
     </body>
 </html>

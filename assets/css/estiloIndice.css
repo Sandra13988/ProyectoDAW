@@ -10,7 +10,7 @@ body{
 
 #contenedor{
     display: grid;
-    grid-template-rows: 130px auto 70px;
+    grid-template-rows: 70px auto 50px;
     height: 100vh;
 }
 
@@ -25,6 +25,8 @@ header{
     grid-column: span 1;
     font-size: 1;
 }
+
+
 
 
 
@@ -94,11 +96,11 @@ header a {
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
 footer{
-    margin-top: 20px;
-    background-color: #838313;
+    
+    background-color:#2e2e2c;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 70%;
+ 
    
 }
 
@@ -107,8 +109,12 @@ footer > .redes{
     justify-content: center;
     align-items: center;
     height: 100%;
-}
 
+}
+h1{
+    margin-top: 60px;
+    text-align: center;
+}
 
 .redes>ion-icon{
     height: 50%;
@@ -186,7 +192,6 @@ footer > .redes{
     
 }
 
-
 @media (min-width: 1024px){
     header{
         display: grid;
@@ -225,4 +230,14 @@ footer > .redes{
         height: auto;
     }
 
+
+    
 }
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+ }
+

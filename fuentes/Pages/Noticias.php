@@ -16,7 +16,7 @@
     <body>
         <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
-        <main>
+        <main id="cuerpo">
                 <h1>NOTICIAS</h1>
             <div class="noticias">
                

@@ -13,19 +13,19 @@ class Carousel {
       },
       {
         'id': '2',
-        'src': '../../Grandes/almas.jpg',
+        'src': '../../Grandes/bodas.jpg',
       },
       {
         'id': '3',
-        'src': '../../Grandes/almas.jpg',
+        'src': '../../Grandes/dulce.jpg',
       },
       {
         'id': '4',
-        'src': '../../Grandes/almas.jpg',
+        'src': '../../Grandes/games.jpg',
       },
       {
         'id': '5',
-        'src': '../../Grandes/almas.jpg',
+        'src': '../../Grandes/harry.jpg',
       }
     ];
     this.carouselInView = [1, 2, 3, 4, 5];

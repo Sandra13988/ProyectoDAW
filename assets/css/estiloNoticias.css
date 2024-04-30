@@ -11,7 +11,7 @@ body{
 #contenedor{
     display: grid;
     height: 100vh;
-    grid-template-rows: 130px auto 70px;
+    grid-template-rows: 70px auto 50px;
 }
 
 /*Aqui empieza el encabezado*/
@@ -25,6 +25,14 @@ header{
     grid-column: span 1;
     
 }
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+}
+
 
 .iconos, .iconos2{
     display: none;
@@ -93,7 +101,7 @@ header a {
 
 h1{
     text-align: center;
-    text-decoration: underline;
+ 
 }
 .noticia{
     margin: 10px;
@@ -114,11 +122,11 @@ h1{
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
 footer{
-    margin-top: 20px;
+
     background-color: #2e2e2c;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 70%;
+
    
 }
 

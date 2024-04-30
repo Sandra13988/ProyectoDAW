@@ -19,7 +19,7 @@
     <div id="contenedor">
     <?php include('../plantillas/cabecero.php'); ?>
 
-        <main>
+        <main id="cuerpo">
             <h1>CONTACTO</h1>
             <form method="post" action="#">
                 <label for="nombre">Nombre</label><br>

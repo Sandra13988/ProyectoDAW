@@ -16,10 +16,13 @@
 <body>
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
-        <div class="carousel"></div>
-        <script>
-            <?php include('../Utiles/carousel.js'); ?>
-        </script>
+        <div id="cuerpo">
+            <h1>NOVEDADES</h1>
+            <div class="carousel"></div>
+            <script>
+                <?php include('../Utiles/carousel.js'); ?>
+            </script>
+        </div>
         <?php include('../plantillas/fotter.php'); ?>
     </div>
 </body>

@@ -209,13 +209,16 @@ footer > .redes{
         grid-column: span 1;
         
     }
+
+   
+
     .iconos{
         display: none;
     }
 
     .iconos2{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         align-items: center;
         font-size: 30px;
     }
@@ -227,6 +230,12 @@ footer > .redes{
     .iconos2 .iconito:hover{
         font-size: 40px;
      }
+    
+    .unidad{
+        width: 400px;
+        height: auto;
+    }
+
      
     .todoLibros{
         display: grid;

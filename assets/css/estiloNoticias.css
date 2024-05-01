@@ -186,24 +186,31 @@ footer > .redes{
         grid-column: span 1;
         
     }
+
+   
+
     .iconos{
         display: none;
     }
 
     .iconos2{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         align-items: center;
         font-size: 30px;
+    }
+    .iconito{
+        
+        color: #e6e6e2;
     }
 
     .iconos2 .iconito:hover{
         font-size: 40px;
      }
-     
-    .iconito{
-        
-        color: #e6e6e2;
-    }
     
+    .unidad{
+        width: 400px;
+        height: auto;
+    }
+
 }

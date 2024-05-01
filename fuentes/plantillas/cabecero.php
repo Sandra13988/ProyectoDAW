@@ -1,5 +1,5 @@
 <header>
-    <img id="logotipo" src="../assets/imagenes/logotipo/logo.png" alt="logotipo">
+    <img id="logotipo" src="../../assets/imagenes/logotipo/librex2.png" alt="logotipo">
     <!--Menu tablet-->
     <div class="iconos">
         <a href="../Pages/Indice.php" class="iconito">

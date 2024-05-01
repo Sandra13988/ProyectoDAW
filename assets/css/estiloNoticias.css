@@ -46,21 +46,7 @@ img{
 }
 
 /*Aqio empieza el menú responsivo como movil*/
-.menu {
-    width:133px;
-    display: flex;
-    position:absolute;
-    top:114px;
-    flex-direction:column;
-    background-color: #2e2e2c;
-    color: white;
 
-    transform: translatey(-165%);
-    transition:transform 0.4s;
-  }
-  #hamburguesa{
-    display:none;
-  }
   
   #icono{
 
@@ -71,28 +57,14 @@ img{
     
   }
   
-  .menu li {
-    padding:1rem;
-    margin:1px;
-    text-align:left;
-    list-style: none;
-    color:black;
-    
-  }
+ 
 
 header a {
     color: white;
     text-decoration: none;
 }
-  #hamburguesa:checked ~ .menu {
-    /*display:block;*/
-    transform: translatey(0);
-  }
-  
-  .menu li:hover{
-    
-    background: rgba(0,0,0,0.3);
-  }
+
+
 .iconos2{
     display: none;
 }
@@ -162,9 +134,7 @@ footer > .redes{
         grid-column: span 1;
         
     }
-    .menuCompleto{
-        display: none;
-    }
+
 
     .iconos{
         display: grid;
@@ -216,24 +186,31 @@ footer > .redes{
         grid-column: span 1;
         
     }
+
+   
+
     .iconos{
         display: none;
     }
 
     .iconos2{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         align-items: center;
         font-size: 30px;
+    }
+    .iconito{
+        
+        color: #e6e6e2;
     }
 
     .iconos2 .iconito:hover{
         font-size: 40px;
      }
-     
-    .iconito{
-        
-        color: #e6e6e2;
-    }
     
+    .unidad{
+        width: 400px;
+        height: auto;
+    }
+
 }

@@ -10,7 +10,7 @@ body{
 
 #contenedor{
     display: grid;
-    grid-template-rows: 70px auto 50px;
+    grid-template-rows: 90px auto 50px;
     height: 100vh;
 }
 
@@ -27,7 +27,10 @@ header{
 }
 
 
-
+#logotipo{
+    width: 70%;
+    margin-top: 0;
+}
 
 
 img{
@@ -41,21 +44,7 @@ img{
     display: none;
 }
 
-.menu {
-    width:133px;
-    display: flex;
-    position:absolute;
-    top:114px;
-    flex-direction:column;
-    background-color: #2e2e2c;
-    color: white;
 
-    transform: translatey(-165%);
-    transition:transform 0.4s;
-  }
-  #hamburguesa{
-    display:none;
-  }
   
   #icono{
 
@@ -66,28 +55,12 @@ img{
     
   }
   
-  .menu li {
-    padding:1rem;
-    margin:1px;
-    text-align:left;
-    list-style: none;
-    color:black;
-    
-  }
 
 header a {
     color: white;
     text-decoration: none;
 }
-  #hamburguesa:checked ~ .menu {
-    /*display:block;*/
-    transform: translatey(0);
-  }
-  
-  .menu li:hover{
-    
-    background: rgba(0,0,0,0.3);
-  }
+ 
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
@@ -132,9 +105,7 @@ h1{
         grid-column: span 1;
         
     }
-    .menuCompleto{
-        display: none;
-    }
+  
 
     .iconos{
         display: grid;
@@ -205,14 +176,13 @@ h1{
 
    
 
-
     .iconos{
         display: none;
     }
 
     .iconos2{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         align-items: center;
         font-size: 30px;
     }

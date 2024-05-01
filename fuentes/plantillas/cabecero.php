@@ -15,7 +15,7 @@
             <ion-icon name="call-outline"></ion-icon>
         </a>
     </div>
-    
+
     <!--Menu en escritorio-->
     <div class="iconos2">
         <a href="../Pages/Indice.php" class="iconito">
@@ -30,16 +30,30 @@
         <a href="../Pages/Contacto.php" class="iconito">
             <?php echo "CONTACTO"; ?>
         </a>
+        <div class="menu-container-escritorio">
+            <div class="menu-item">
+                <button class="menu-btn">PERFIL</button>
+                <div class="submenu" id="submenu">
+                    <a href="#">Perfil</a>
+                    <a href="#">Suscripcion</a>
+                    <a href="#">WishList</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="scriptMenu.js"></script>
     </div>
     <!--Menu en movil-->
-    <div class="menuCompleto">
-        <input type="checkbox" id="hamburguesa">
-        <label for="hamburguesa" id="icono"><ion-icon name="menu-outline"></ion-icon></label>
-        <ul class="menu">
-            <li><a href="../Pages/Indice.php">INDICE</a></li>
-            <li><a href="../Pages/Libros.php">LIBROS</a></li>
-            <li><a href="../Pages/Noticias.php">NOTICIAS</a></li>
-            <li><a href="../Pages/Contacto.php">CONTACTO</a></li>
-        </ul>
+    <div class="menu-container-movil">
+        <div class="menu-item">
+            <button class="menu-btn">Menú</button>
+            <div class="submenu" id="submenu">
+                <a href="#">Indice</a>
+                <a href="#">Libros</a>
+                <a href="#">Noticias</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
     </div>
 </header>

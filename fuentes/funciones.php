@@ -4,7 +4,7 @@ session_start();
 $host    = "localhost";
 $usuario = "root";
 $pass    = "";
-$db      = "librex";
+$db      = "libre";
 
 //Funcion que conecta a la base de datos
 function conectar() {
@@ -36,14 +36,14 @@ function comprobarRol(){
 
 //Funcion que comprueba si el usuario ha iniciado sesion
 //en el caso de que no, lo redirige al login
-function mantener_sesion(){
-    if(!isset($_SESSION["usuarioConectado"])){
-        header("location:../index.php");
+// function mantener_sesion(){
+//     if(!isset($_SESSION["usuarioConectado"])){
+//         header("location:../index.php");
       
-    }
-}
+//     }
+// }
 
-mantener_sesion();
+//mantener_sesion();
 
 //Funcion que comprueba si un libro ya está registrado
 function comprobarExistencias($id){

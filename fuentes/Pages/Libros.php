@@ -18,7 +18,7 @@
         <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main class="todoLibros">
-                <h1>CATALOGO</h1>
+                <h1>LIBROS</h1>
                 <div class="libro" id="games">
                     <h2>TWISTED GAMES</h2>
                     <div class="imagenLibro"><img src="../../Grandes/games.jpg"></div>

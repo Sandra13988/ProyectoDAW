@@ -30,7 +30,7 @@
 
 
 		<?php
-		session_start();
+		include("./fuentes/funciones.php");
 
 		//De momento se queda asi, pero quizas sea mejor cambiar esto por 
 		//una funcion que tengo en funciones de comprobar usuarios registrados
@@ -42,12 +42,14 @@
 			$conexion = conectar();
 			$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario' and pass = '$pass'";
 			$resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
-			$filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
+			$filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
+
 
 			if ($filaUsuario) {
-				$_SESSION['nombre'] = $filaUsuario['nombre'];
+				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
-				header("location:fuentes/listado.php");
+				echo "Sesión iniciada correctamente";
+				header("location:/Proyecto_DAW/fuentes/Pages/Indice.php");
 				exit();
 			} else {
 				echo "Ese usuario no existe";
@@ -61,7 +63,7 @@
 		<h3>Encuentra todo lo que estas imaginando aqui!</h3>
 		</div>
 		
-		<form action="index.php" method="POST" class="formularioLogin">
+		<form action="login.php" method="POST" class="formularioLogin">
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario@usuario.com">
 			<label for="pass">Contraseña </label>
@@ -71,15 +73,18 @@
 
 		<div class="tituloRegistro">
 			<p>Aun no estás registrado? Unete a nosotros!</p>
-			<input type="submit" name="login" value="Registro">
+			<a href="./registro.php">Registrate</a>
+			
+
 		</div>
 		<div class="tituloRegistro">
 			<p>Has olvidado tu contraseña? No te preocupes! </p>
-			<input type="submit" name="login" value="Pincha aqui!">
+			<a href="./registro">Pincha aqui!</a>
+
 		</div>
 		<script>
 			document.getElementById("loginForm").addEventListener("submit", function(event) {
-				event.preventDefault(); // Evita que el formulario se envíe
+			
 
 				// Obtener valores del formulario
 				var username = document.getElementById("usuario").value;
@@ -90,9 +95,9 @@
 				var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; // Al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula y un número
 
 				// Validaciones
-				if (!usuario.match(usernameRegex)) {
+				if (!username.match(usernameRegex)) {
 					alert("El nombre de usuario debe contener solo letras y números.");
-				} else if (!pass.match(passwordRegex)) {
+				} else if (!password.match(passwordRegex)) {
 					alert("La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
 				} else {
 					alert("¡Inicio de sesión exitoso!");

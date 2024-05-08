@@ -21,7 +21,7 @@
                 <h1>CATALOGO</h1>
                 <div class="libro" id="games">
                     <h2>TWISTED GAMES</h2>
-                    <img src="../Grandes/games.jpg">
+                    <div class="imagenLibro"><img src="../../Grandes/games.jpg"></div>
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Erótica, Juvenil, Romántica
                         <strong>Autor: </strong> Ana Huang 
@@ -35,13 +35,19 @@
                             Esta es la historia de un amor inesperado e imposible… y lleno de fantasías prohibidas.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                   
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+
+                    </div>
+                    
                     <br>
                     
                 </div>
                 <div class="libro" id="almas">
                     <h2>ALMAS</h2>
-                    <img src="../Grandes/almas.jpg">
+                    <img src="../../Grandes/almas.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Narrativa
                         <strong>Autor: </strong> Noemí Casquet
@@ -55,11 +61,15 @@
                             Es hora de terminar el juego y dejar caer los disfraces. Porque una  mentira compartida puede convertirse, de pronto, en la verdad.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
+                   
                 </div>
                 <div class="libro" id="bodas">
                     <h2>BODAS DE HUESO</h2>
-                    <img src="../Grandes/bodas.jpg">
+                    <img src="../../Grandes/bodas.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong>Fantasía oscura 
                         <strong>Autor: </strong> H. N. Abbott 
@@ -71,11 +81,14 @@
                             ¿Podrán Nephelia y Darien hacer frente a la enemiga declarada de su familia? ¿Culminará Bibiana Solderini su venganza?
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                 </div>
                 <div class="libro" id="lagrimas">
                     <h2>LAGRIMAS DE SANGRE</h2>
-                    <img src="../Grandes/lagrima.jpg">
+                    <img src="../../Grandes/lagrima.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Romantico/Vampiro 
                         <strong>Autor: </strong> Antonia Romero 
@@ -88,11 +101,14 @@
                             La aparición de Zendra, el águila, y su paso por La Guarida, el hogar de los Cambiantes, llevarán a Ada al fondo de un profundo abismo del que no podrá salir sin perder parte de su alma.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                 </div>
                 <div class="libro" id="harryp">
                     <h2>HARRY POTTER Y LA CAMARA SECRETA</h2>
-                    <img src="../Grandes/harry.jpg">
+                    <img src="../../Grandes/harry.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong>  Fantasía 
                         <strong>Autor: </strong> J.K. Rowling
@@ -103,13 +119,16 @@
                             El verano de Harry Potter ha incluido el peor cumpleaños de su vida, unos presagios muy poco halagüeños por parte de un elfo doméstico llamado Dobby y ser rescatado de casa de los Dursleys por su amigo Ron Weasley en un coche mágico volador. Cuando regresa al Colegio Hogwarts de Magia y Hechicería para cursar su segundo año, Harry escucha susurros extraños por los pasillos vacíos del colegio... Y luego comienzan los ataques. Se encuentran a estudiantes convertidos en piedra... Los terribles presagios de Dobby parecen hacerse realidad.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="orden">
                     <h2>EL ORDEN DE LAS COSAS</h2>
-                    <img src="../Grandes/orden.jpg">
+                    <img src="../../Grandes/orden.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Ficciçon Contemporanea
                         <strong>Autor: </strong> Lydia Garés
@@ -121,13 +140,16 @@
                             Lydia Garés vuelve para adentrarse en el género de la novela corta con este thriller lleno de suspense. En poco más de 150 páginas pretende crear una sensación de locura en el lector, el cual no podrá parar de leer hasta descubrir qué está pasando. Combinando elementos que la apasionan, como los misterios de "habitación cerrada" y el funcionamiento de la mente humana, Garés nos regala una historia ágil y adictiva que devorarás en unas horas. ¿Te atreves a entrar en el Edificio de las Flores?      
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="japon">
                     <h2>MITOLOGIA JAPONESA</h2>
-                    <img src="../Grandes/japon.jpg">
+                    <img src="../../Grandes/japon.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Historia
                         <strong>Autor: </strong> Kimiko Hyuga
@@ -141,13 +163,16 @@
                             En este libro he condensado los mitos y leyendas, la geneanología y las deidades, monstruos y espíritus que conforman el diverso universo fantástico de la mitología japonesa.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="dulce">
                     <h2>DULCE VENENO</h2>
-                    <img src="../Grandes/dulce.jpg">
+                    <img src="../../Grandes/dulce.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Comedia romantica
                         <strong>Autor: </strong> Parker S. Huntington 
@@ -158,13 +183,16 @@
                             Dicen que todas las historias de amor parecen iguales y saben diferente. La mía era trágica y estaba escrita con cicatrices escarlata. Me llamo Charlotte Richards, pero puedes llamarme Veneno.         
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="hija">
                     <h2>LA HIJA DEL REY PIRATA</h2>
-                    <img src="../Grandes/hija.jpg">
+                    <img src="../../Grandes/hija.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía
                         <strong>Autor: </strong> Tricia Levenseller
@@ -175,13 +203,16 @@
                             Alosa ha demostrado con creces su valor. No solo ha cumplido con la misión que le encomendó su padre, el Rey Pirata, sino que los corsarios que la tomaron cautiva ahora son prisioneros en su barco. Incluso Riden, inesperadamente leal, sigue sus órdenes. Pero, cuando el temible Vordan vuelva al ataque con la idea de destruirla, comenzará para Alosa una nueva cuenta atrás para sobrevivir. Pero eso no le preocupa demasiado… después de todo, ella no solo es la hija del Rey Pirata, también es la hija de la Reina Sirena. 
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="mundos">
                     <h2>LA MAGIA DE DOS MUNDOS</h2>
-                    <img src="../Grandes/mundos.jpg">
+                    <img src="../../Grandes/mundos.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía 
                         <strong>Autor: </strong> Carmen Hergueta
@@ -191,13 +222,16 @@
                             Alise se enfrenta desde los ocho años a una vida complicada, ya que desde que su madre los dejó, su padre se convirtió en otra persona por completo. Pero su vida cambia el día que su cuerpo experimenta un suceso de los más extraño. Carol le ayudará a comprender la verdadera naturaleza que la rodea y el secreto que su madre escondía. A partir de ese momento, las historias que su madre le contaba de pequeña cobran vida frente a sus ojos, obligándola a recorrer un camino de la mano de la oscuridad.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="magia">
                     <h2>MAGIA RECLAMADA</h2>
-                    <img src="../Grandes/magia.jpg">
+                    <img src="../../Grandes/magia.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Romance de fantasia 
                         <strong>Autor: </strong> Charmaine Ross
@@ -214,13 +248,16 @@
                             Insisten en que soy cualquier cosa menos humana, dominando mi cuerpo y desatando magia antigua escondida en lo profundo de mí.
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="jaque">
                     <h2>JAQUE AL REY</h2>
-                    <img src="../Grandes/jaque.jpg">
+                    <img src="../../Grandes/jaque.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Terror 
                         <strong>Autor: </strong> Mario Escobar
@@ -231,13 +268,16 @@
                             Tras el primer caso de la inspectora gitana Adela Palazuelo que vive y trabaja en Pan Bendito, ahora le han asignado un caso muy complicado. Una antigua amante del Rey Emérito ha fallecido en Madrid, el CESID se ha hecho cargo de la investigación, pero el Ministro de Interior quiere que un cuerpo especial de la policía haga la suya propia. Mientras tanto, en pan Bendito se están produciendo incendios en casas ocupadas con familias dentro, un partido neonazi parece estar detrás del caso. Adela y su nueva compañera Ana de Armas tendrán que descubrir quién está detrás de la muerte de la amante del rey y parar los incendios en Pan Bendito antes de que más gente inocente muera.         
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="jaula">
                     <h2>LA JAULA DE LOS PERIQUITOS</h2>
-                    <img src="../Grandes/jaula.jpg">
+                    <img src="../../Grandes/jaula.jpg">
                         <div class="contenidoLibro">
                         <strong>Genero: </strong> Ciencia Ficcion
                         <strong>Autor: </strong> Vicente Mesado 
@@ -251,13 +291,16 @@
                             
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                     
                 </div>
                 <div class="libro" id="luz">
                     <h2>ELYRION</h2>
-                    <img src="../Grandes/luz.jpg">
+                    <img src="../../Grandes/luz.jpg">
                     <div class="contenidoLibro">
                         <strong>Genero: </strong> Fantasía 
                         <strong>Autor: </strong> Sheila G. Frutos 
@@ -267,7 +310,10 @@
                             Sl sello que protegía a Elyrion de la oscuridad se ha roto. Ahora, un manto de magia negra se extiende por los territorios, acompañado de los súndur, unas criaturas que destruyen todo a su paso y así crear un imperio de caos y oscuridad. Ragshert está dispuesto a impedirlo. La única forma de hacerlo es encontrar a la nueva portadora de la luz y a los dragones que se creían extintos. Aun a riesgo de repetir el pasado, ¿conseguirán sellar otra vez a la oscuridad o será ella quien gane?                   
                         </p>
                     </div>
-                    <input type="button" value="Descargar Libro">
+                    <div class="botonesLibros">
+                        <input type="button" value="Descargar Libro">
+                        <input type="button" value="Añadir a deseado">
+                    </div>
                     <br>
                 </div>
             </main>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-03-2024 a las 11:49:02
+-- Tiempo de generación: 08-05-2024 a las 17:56:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,7 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `descargas` (
   `id` varchar(50) NOT NULL,
   `isbn` varchar(50) NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` date NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `deseos`
+--
+
+CREATE TABLE `deseos` (
+  `isbn` varchar(50) NOT NULL,
+  `id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,7 +56,8 @@ CREATE TABLE `libros` (
   `nombre` varchar(50) NOT NULL,
   `autor` varchar(50) NOT NULL,
   `genero` varchar(50) NOT NULL,
-  `sinopsis` varchar(500) NOT NULL
+  `sinopsis` varchar(500) NOT NULL,
+  `pdf` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -68,7 +81,9 @@ CREATE TABLE `usuarios` (
   `id` varchar(50) NOT NULL,
   `usuario` varchar(50) NOT NULL,
   `pass` varchar(50) NOT NULL,
-  `suscripcion` varchar(50) NOT NULL
+  `correo` varchar(50) NOT NULL,
+  `suscripcion` varchar(50) NOT NULL,
+  `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 

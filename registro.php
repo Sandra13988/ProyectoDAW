@@ -36,7 +36,7 @@
             $usuario = $_POST["usuario"];
             $pass = $_POST["pass"];
             $correo = $_POST["correo"];
-            
+     
             if (comprobarUsuario($usuario)) {
                 $mensaje =  "Este usuario ya existe";
             } else {
@@ -50,7 +50,7 @@
                 $resultadoAlta = mysqli_query($conexion, $consultaAlta);
                 if (mysqli_affected_rows($conexion)) {
                     $mensaje = "Tu registro se ha realizado alta correctamente";
-                    header("location:./index.php");
+                    header("location:./login.php");
                 } else {
                     $mensaje = "Ha habido un error al registrarte";
                 }
@@ -75,12 +75,13 @@
             <label for="correo">Correo: </label>
             <input type="text" id="correo" name="correo" placeholder="usuario@usuario.com">
             <input type="submit" name="altaUsuario" value="REGISTRAR">
+			<a href="./login.php"><h5>Volver al login</h5></a>
 
         </form>
         <script>
             console.log("Entra en el js")
             document.getElementById("loginForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Evita que el formulario se envíe
+
 
                 // Obtener valores del formulario
                 var username = document.getElementById("usuario").value;

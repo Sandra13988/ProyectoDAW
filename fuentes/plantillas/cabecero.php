@@ -36,7 +36,7 @@
             <div class="menu-item">
                 <button class="menu-btn">PERFIL</button>
                 <div class="submenu" id="submenu">
-                    <a href="#">Perfil</a>
+                    <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="#">Suscripcion</a>
                     <a href="#">WishList</a>
                     <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>

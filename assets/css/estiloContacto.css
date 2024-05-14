@@ -44,6 +44,22 @@ img{
     background-size: cover; /* o contain */
     background-attachment: fixed;
     background-position: center;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#cuerpo > h1{
+    grid-column: span 2;
+}
+
+#cuerpo > form{
+   margin-left: 300px;
+   font-size: 30px;
+}
+
+.politica{
+    display: flex;
 }
 /*Aqio empieza el menú responsivo como movil*/
 

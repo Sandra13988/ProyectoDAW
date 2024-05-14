@@ -36,14 +36,24 @@ function comprobarRol(){
 
 //Funcion que comprueba si el usuario ha iniciado sesion
 //en el caso de que no, lo redirige al login
-function mantener_sesion(){
-    if(!isset($_SESSION["usuarioConectado"])){
-        header("location:../index.php");
-      
-    }
-}
 
-mantener_sesion();
+//HAY QUE CORREGIR RUTA
+ function mantener_sesion(){
+     if(!isset($_SESSION["nombre"])){
+        header("location:/Proyecto_DAW/login.php");
+        echo("no tienes la sesion iniciada");
+        exit();
+     }
+ }
+
+ //mantener_sesion();
+
+//HAY QUE CORREGIR RUTA
+function cerrar_sesion(){
+    session_destroy();
+    header("location:/Proyecto_DAW/login.php");
+    exit();
+}
 
 //Funcion que comprueba si un libro ya está registrado
 function comprobarExistencias($id){
@@ -61,7 +71,7 @@ function comprobarExistencias($id){
 //Funcion que comprueba si un usuario ya está registrado
 function comprobarUsuario($nombre){
     $conexion = conectar();
-    $consultaUsuario = "SELECT * FROM usuarios WHERE nombre = '$nombre'";
+    $consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombre'";
     $resultadoExistencias = mysqli_query($conexion, $consultaUsuario);
     $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
     if($filaUsuario){

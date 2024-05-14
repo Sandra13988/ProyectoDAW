@@ -1,3 +1,5 @@
+<?php include("../funciones.php"); ?>
+
 <header>
     <img id="logotipo" src="../../assets/imagenes/logotipo/librex2.png" alt="logotipo">
     <!--Menu tablet-->
@@ -34,10 +36,12 @@
             <div class="menu-item">
                 <button class="menu-btn">PERFIL</button>
                 <div class="submenu" id="submenu">
-                    <a href="#">Perfil</a>
+                    <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="#">Suscripcion</a>
                     <a href="#">WishList</a>
-                    <a href="#">Logout</a>
+                    <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>
+
+
                 </div>
             </div>
         </div>

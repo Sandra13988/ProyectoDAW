@@ -108,8 +108,10 @@ input{
     margin-bottom: 20px;
 }
 
+
 .libro >img{
     margin-bottom: 10px;
+
 }
 
 
@@ -240,6 +242,8 @@ footer > .redes{
     .todoLibros{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        padding-left: 200px;
+        padding-right: 200px;
     }
 
     .todoLibros .libro:nth-child(4n+2), .todoLibros .libro:nth-child(4n+1){

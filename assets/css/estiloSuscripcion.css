@@ -72,9 +72,8 @@ header a {
     background-size: cover; /* o contain */
     background-attachment: fixed;
     background-position: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px auto;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 50px;
 }
@@ -117,7 +116,7 @@ header a {
 
 .botonSub > input{
     width: 300px;
-    height: 50px;
+    height: 30px;
     font-size: 15px;
 }
 
@@ -133,6 +132,7 @@ header a {
 
 .precioSub{
     font-size: 50px;
+
 }
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
@@ -258,6 +258,16 @@ footer > .redes{
         font-size: 40px;
      }
     
+     #cuerpo{
+        background-image: url('../imagenes/fondo/imagenFondo.jpg');
+        background-size: cover; /* o contain */
+        background-attachment: fixed;
+        background-position: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 50px;
+    }
     
     
 }

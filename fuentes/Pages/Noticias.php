@@ -36,7 +36,6 @@
                             Sus presentaciones de poesía, micros abiertos, o clubes infantiles y el afecto desde el que los organizan, unido a unos vecinos ávidos de cultura, contribuyen a formar la cada vez más impetuosa comunidad literaria de Getafe (Madrid).
                         </p>
                     </div>
-
                 </div>
                 <div class="noticia">
                 <strong class="fecha">

@@ -49,12 +49,12 @@
             <div class="administrarNoticias">
                 <h2>ADMINISTRAR NOTICIAS</h2>
                 <div class="recuadro">
-                    <h3>ALTA NOTICIA</h3>
+                    <h3>AGREGAR NOTICIA</h3>
                     <div>Dar de alta noticias nuevas</div>
                     <div class="botonAdmin"><input type="submit" onclick="" value="AGREGAR" name=""/></div>
                 </div>
                 <div class="recuadro">
-                    <h3>BAJA NOTICIA</h3>
+                    <h3>BORRAR NOTICIA</h3>
                     <div>Dar de baja noticias antiguas</div>
                     <div class="botonAdmin"><input type="submit" onclick="" value="BORRAR" name=""/></div>
                 </div>

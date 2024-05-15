@@ -10,7 +10,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estiloMenus.css">
+    <link rel="stylesheet" href="../../assets/css/estiloMenus.css"/>
     <title>Indice</title>
 </head>
 

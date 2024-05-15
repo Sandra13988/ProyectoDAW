@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body{
+    display: flex;
+    flex: 1;
+    /*font-family: 'Protest Riot', sans-serif;*/
+    font-family: 'Dancing Script', cursive;
+    margin: 0px;
+}
+
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
+
+
+/*Aqui empieza el encabezado*/
+header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    grid-auto-rows: 1fr;
+    background-color:#2e2e2c;
+    color:white;
+    grid-column: span 1;
+    
+}
+
+.iconos, .iconos2{
+    display: none;
+}
+
+img{
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+}
+
+
+
+#cuerpo > h1{
+    grid-column: span 2;
+}
+
+#cuerpo > form{
+   margin-left: 300px;
+   font-size: 30px;
+}
+
+.politica{
+    display: flex;
+}
+/*Aqio empieza el menú responsivo como movil*/
+
+  
+  #icono{
+
+    font-size: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+  
+
+/*Aqui termina el encabezado*/
+/*Aqui empieza el cuerpo*/
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+.administrarNoticias > h2{
+    grid-column: span 2;
+}
+
+.recuadro{
+    display: grid;
+    grid-template-rows: 40% 30% 30%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    margin: 10px;
+}
+
+
+.recuadro > h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content : center;
+    margin-top: 0;
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+
+
+.botonAdmin > input{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+/*Aqui termina el cuerpo*/
+/*Aqui empieza el pie de pagina*/
+footer{
+    background-color: #2e2e2c;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+footer > .redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.redes>ion-icon{
+    height: 50%;
+    width: 50%;
+    color: #a5a6a5;
+}
+
+
+
+@media (min-width: 768px){
+
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30% 70%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+
+    .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+    }
+    .iconito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        
+    }
+    
+    .iconos > .iconito{
+        border: 1px solid #a6a6a5;
+        border-radius: 10px;
+    }
+    
+    .iconos > .iconito:hover{
+        border: 3px solid white;
+        border-radius: 10px;
+    }
+    
+    
+    ion-icon{
+        height: 60%;
+        width: 60%;
+        color: #a5a6a5;
+    }
+    
+    .iconos2{
+        display: none;
+    }
+    
+
+    #main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .mapa{
+        padding: 10px;
+        margin: 10px;
+        
+    }
+
+    h1{
+        grid-column: span 2;
+    }
+
+    .contacto{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border: none;
+        padding: 15px;
+        margin: 15px;
+        border: 1px solid black;
+    }
+}
+
+@media (min-width: 1024px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 20% 80%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+
+   
+
+    .iconos{
+        display: none;
+    }
+
+    .iconos2{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        font-size: 30px;
+    }
+    .iconito{
+        
+        color: #e6e6e2;
+    }
+
+    .iconos2 .iconito:hover{
+        font-size: 40px;
+     }
+    
+  
+
+.administrarLibros{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.administrarLibros > h2{
+    grid-column: span 4;
+}
+
+.administrarNoticias{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+}

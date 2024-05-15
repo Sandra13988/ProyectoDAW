@@ -18,8 +18,69 @@
 
 <body>
 	
+<form id="formulario">
+    <label for="titulo">Título:</label><br>
+    <input type="text" id="titulo" name="titulo"><br>
+    <label for="descripcion">Descripción:</label><br>
+    <textarea id="descripcion" name="descripcion"></textarea><br>
+    <button type="submit">Crear Noticia</button>
+</form>
+<div id="noticias"></div>
+<button id="borrarNoticia">Borrar Última Noticia</button>
 
-	
+	<script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe
+
+    // Obtener valores del formulario
+    var titulo = document.getElementById("titulo").value;
+    var descripcion = document.getElementById("descripcion").value;
+
+    // Obtener fecha actual
+    var fecha = new Date();
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var fechaString = fecha.toLocaleDateString('es-ES', options);
+
+    // Crear elementos de noticia
+    var noticia = document.createElement("div");
+    noticia.classList.add("noticia");
+
+    var fechaElement = document.createElement("strong");
+    fechaElement.classList.add("fecha");
+    var fechaParrafo = document.createElement("p");
+    fechaParrafo.textContent = fechaString;
+    fechaElement.appendChild(fechaParrafo);
+
+    var contenidoNoticia = document.createElement("div");
+    contenidoNoticia.classList.add("contenidoNoticia");
+
+    var tituloElement = document.createElement("h2");
+    tituloElement.textContent = titulo;
+
+    var descripcionParrafo = document.createElement("p");
+    descripcionParrafo.textContent = descripcion;
+
+    contenidoNoticia.appendChild(tituloElement);
+    contenidoNoticia.appendChild(descripcionParrafo);
+
+    noticia.appendChild(fechaElement);
+    noticia.appendChild(contenidoNoticia);
+
+    // Agregar noticia al contenedor de noticias
+    var noticiasDiv = document.getElementById("noticias");
+    noticiasDiv.appendChild(noticia);
+
+    // Limpiar formulario
+    document.getElementById("formulario").reset();
+});
+
+document.getElementById("borrarNoticia").addEventListener("click", function() {
+    var noticiasDiv = document.getElementById("noticias");
+    var ultimaNoticia = noticiasDiv.lastChild;
+    noticiasDiv.removeChild(ultimaNoticia);
+});
+
+    </script>
 </body>
 
 

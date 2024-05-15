@@ -39,12 +39,29 @@
                     echo "<p><strong>Nombre de usuario:</strong> " . $filaUsuario['usuario'] . "</p>";
                     echo "<p><strong>Contraseña:</strong> " . $filaUsuario['pass'] . "</p>";
                     echo "<p><strong>Email:</strong> " . $filaUsuario['correo'] . "</p>";
+                    echo "<p><strong>Suscripcion:</strong> " . $filaUsuario['correo'] . "</p>";
+                    echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a'/>";
                 echo "</div>";
                 // Agrega más campos según sea necesario
 			
 			}
 		
+            if (isset($_POST["bajaSub"])) {
+                $id = $_SESSION["id"];
+                $baja = false;
+                $tipoSub = "none";
 
+                $conexion = conectar();
+                $consultaUsuario = "UPDATE `usuarios` SET `tipoSuscripcion`='$tipoSub',`suscripcion`='$baja' WHERE id = $id";
+                $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
+                $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
+
+                if ($filaUsuario) {
+                    echo "Suscripcion al plan Deluxe realizada!";
+                } else {
+                    echo "Fallo en darse de baja";
+                }
+            }
 
 		?>
         </main>

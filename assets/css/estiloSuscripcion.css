@@ -15,7 +15,6 @@ body{
     width: 100%;
 }
 
-
 /*Aqui empieza el encabezado*/
 header{
     display: grid;
@@ -28,6 +27,9 @@ header{
     
 }
 
+
+
+
 .iconos, .iconos2{
     display: none;
 }
@@ -39,27 +41,6 @@ img{
     object-fit: fill;
 }
 
-#cuerpo{
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover; /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-#cuerpo > h1{
-    grid-column: span 2;
-}
-
-#cuerpo > form{
-   margin-left: 300px;
-   font-size: 30px;
-}
-
-.politica{
-    display: flex;
-}
 /*Aqio empieza el menú responsivo como movil*/
 
   
@@ -72,48 +53,87 @@ img{
     
   }
   
+ 
 
 header a {
     color: white;
     text-decoration: none;
 }
 
-  
 
+.iconos2{
+    display: none;
+}
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
-
-#main{
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px auto;
+    gap: 20px;
+    padding: 50px;
+}
+
+#cuerpo > h1{
+    grid-column: span 3;
+    text-align: center;
+    margin-top: 0;
+    height: 30px;
     
 }
 
-form{
-    margin-left: 20px;
+.suscripcion{
+    font-size: 25px;
+    border: 2px solid black;
+    gap: 10px;
+    border-radius: 5px;
+    height: 600px;
+    justify-items: center;
+ 
+}
+
+.desc{
     font-size: 20px;
-}
-.contacto{
-    border: 1px solid black;
-    padding: 15px;
-    margin: 15px;
-}
-
-h1{
+    padding: 50px;
+    padding-top: 10px;
     text-align: center;
-    grid-column: span 2;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
 }
 
-.mapa{
-    padding: 10px;
-    margin: 10px;
+.botonSub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
 }
 
-.mapa2{
-    display: none;
+.botonSub > input{
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
 }
 
+
+.suscripcion > h2{
+    margin-top: 0;
+    color: white;
+    background-color:#2e2e2c;
+    text-align: center;
+    padding: 0;
+}
+
+
+.precioSub{
+    font-size: 50px;
+}
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
 footer{
@@ -139,10 +159,15 @@ footer > .redes{
     color: #a5a6a5;
 }
 
-
-
+.iconito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    
+}
 @media (min-width: 768px){
-
     header{
         display: grid;
         width: 100%;
@@ -152,6 +177,7 @@ footer > .redes{
         grid-column: span 1;
         
     }
+
 
     .iconos{
         display: grid;
@@ -190,32 +216,14 @@ footer > .redes{
     .iconos2{
         display: none;
     }
+
+    .noticia{
+
+        margin-left: 100px ;
+        margin-right: 100px ;
+       
+    }
     
-
-    #main{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
-
-    .mapa{
-        padding: 10px;
-        margin: 10px;
-        
-    }
-
-    h1{
-        grid-column: span 2;
-    }
-
-    .contacto{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        border: none;
-        padding: 15px;
-        margin: 15px;
-        border: 1px solid black;
-    }
 }
 
 @media (min-width: 1024px){
@@ -250,17 +258,6 @@ footer > .redes{
         font-size: 40px;
      }
     
-    .unidad{
-        width: 400px;
-        height: auto;
-    }
-
-
-    .contacto{
-        font-size: 23px;
-    }
-  
-    form{
-      justify-self: center;
-    }
+    
+    
 }

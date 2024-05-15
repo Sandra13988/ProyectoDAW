@@ -46,6 +46,7 @@
 
 
 			if ($filaUsuario) {
+				$_SESSION['id'] = $filaUsuario['usuario'];
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
 				echo "Sesión iniciada correctamente";

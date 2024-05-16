@@ -50,7 +50,7 @@
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
 				echo "Sesión iniciada correctamente";
-				header("location:/Proyecto_DAW/fuentes/Pages/Indice.php");
+				header("location:./fuentes/Pages/Indice.php");
 				exit();
 			} else {
 				echo "Ese usuario no existe";
@@ -64,7 +64,7 @@
 		<h3>Encuentra todo lo que estas imaginando aqui!</h3>
 		</div>
 		
-		<form action="login.php" method="POST" class="formularioLogin">
+		<form action="login.php" method="POST" class="formularioLogin"  id="loginForm">
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario@usuario.com">
 			<label for="pass">Contraseña </label>
@@ -90,11 +90,14 @@
 				// Obtener valores del formulario
 				var username = document.getElementById("usuario").value;
 				var password = document.getElementById("pass").value;
+				console.log(username)
+				console.log(password)
 
+				//LAS EXPRESIONES SE PONENE EN EL REGISTRO
 				// Expresiones regulares para validar nombre de usuario y contraseña
 				var usernameRegex = /^[a-zA-Z0-9]+$/; // Solo letras y números
 				var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; // Al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula y un número
-
+				
 				// Validaciones
 				if (!username.match(usernameRegex)) {
 					alert("El nombre de usuario debe contener solo letras y números.");
@@ -103,6 +106,7 @@
 				} else {
 					alert("¡Inicio de sesión exitoso!");
 					// Aquí podrías redirigir al usuario a otra página
+					console.log("Enviado")
 				}
 			});
 		</script>

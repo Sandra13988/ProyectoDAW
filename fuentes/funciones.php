@@ -96,3 +96,5 @@ function asignarId(){
         return $filaUsuario['ultimo_id']+1;
     }
 }
+
+?>

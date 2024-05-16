@@ -28,22 +28,22 @@
                 <div class="recuadro">
                     <h3>ALTA LIBRO</h3>
                     <div>Dar de alta libros nuevos</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="ALTA" name=""/></div>
+                    <div class="botonAdmin"><input type="submit" onclick="window.location.href='./altaLibro.php'" value="ALTA" name=""/></div>
                 </div>
                 <div class="recuadro">
                     <h3>BAJA LIBRO</h3>
                     <div>Dar de baja libros antiguos</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="BAJA" name=""/></div>
+                    <div class="botonAdmin"><input type="submit" onclick="window.location.href='./borradoLibro.php'" value="BAJA" name=""/></div>
                 </div>
                 <div class="recuadro">
                     <h3>MODIFICAR LIBRO</h3>
                     <div>Modificar libros que tenemos en Librex</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="MODIFICAR" name=""/></div>
+                    <div class="botonAdmin"><input type="submit" onclick="window.location.href='./modificarLibro.php'" value="MODIFICAR" name=""/></div>
                 </div>
                 <div class="recuadro">
                     <h3>LISTAR LIBROS</h3>
                     <div>Consultar los libros que tenemos en Librex</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="LISTAR" name=""/></div>
+                    <div class="botonAdmin"><input type="submit" onclick="window.location.href='./listadoLibro.php'" value="LISTAR" name=""/></div>
                 </div>
             </div>
             <div class="administrarNoticias">

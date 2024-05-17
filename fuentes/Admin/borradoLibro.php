@@ -1,4 +1,8 @@
-<?php $mensaje = ""; ?>
+<?php
+$mensaje = "";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,34 +23,40 @@
 	<div id="contenedor">
 		<?php include('../plantillas/cabecero.php'); ?>
 		<main id="cuerpo">
-
 			<?php
-
 
 			if (isset($_POST["enviarBaja"])) {
 				$id = $_POST["id"];
 
-
 				if (!comprobarExistencias($id)) {
-					$mensaje =  "Este articulo NO existe";
+					$mensaje =  "Este artículo NO existe";
 				} else {
 					$conexion = conectar();
-					$consultaAlta = "DELETE FROM `articulos` WHERE id = '$id'";
-					$resultadoAlta = mysqli_query($conexion, $consultaAlta);
+					$consulta = "SELECT pdf FROM libros WHERE isbn = '$id'";
+					$resultado = mysqli_query($conexion, $consulta);
+					$fila = mysqli_fetch_assoc($resultado);
+					$pdf = $fila['pdf'];
+
+					$consultaBaja = "DELETE FROM libros WHERE isbn = '$id'";
+					$resultadoBaja = mysqli_query($conexion, $consultaBaja);
 					if (mysqli_affected_rows($conexion)) {
-						$mensaje = "El articulo ha sido dado de baja correctamente";
+						// Eliminar el archivo PDF asociado
+						if ($pdf !== "") {
+							$ruta_pdf = './pdf/' . $pdf;
+							if (file_exists($ruta_pdf)) {
+								unlink($ruta_pdf);
+							}
+						}
+						$mensaje = "El artículo ha sido dado de baja correctamente";
 					} else {
-						$mensaje = "Ha habido un error al dar de baja el articulo";
+						$mensaje = "Ha habido un error al dar de baja el artículo";
 					}
 				}
 			}
-
-
-
 			?>
 			<div class="recuadro">
 				<h3>BAJA LIBRO</h3>
-				<form action="borrado.php" method="POST">
+				<form action="borradoLibro.php" method="POST">
 					<table>
 						<tr>
 							<td><label for="id">Introduzca el ID del libro que desea borrar: </label></td>
@@ -57,17 +67,13 @@
 								<div class="botonAdmin"><input type="submit" name="enviarBaja" value="BAJA"></div>
 							</td>
 						</tr>
-
 					</table>
 				</form>
-				<?php echo $mensaje; ?>
+				<p><?php echo $mensaje; ?></p>
 			</div>
 		</main>
 		<?php include("../plantillas/fotter.php"); ?>
 	</div>
-
 </body>
-
-
 
 </html>

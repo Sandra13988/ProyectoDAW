@@ -1,4 +1,5 @@
 <?php $mensaje = ""; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,79 +14,72 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-	<title>Noticias</title>
+	<title>MODIFICAR LIBRO</title>
 </head>
 
 <body>
 	<div id="contenedor">
-		<?php include('../plantillas/cabecero.php'); ?>
+		<?php include('../plantillas/cabecero.php') ?>
 		<main id="cuerpo">
 			<?php
-			if (isset($_POST["enviarModificar"])) {
-				$id = $_POST["id"];
+			$libro = array();
 
-				if (comprobarExistencias($id) == FALSE) {
-					$mensaje = "Este articulo no existe";
+			if (isset($_POST["buscarLibro"])) {
+				$id = $_POST["id"];
+				$conexion = conectar();
+				$consulta = "SELECT * FROM libros WHERE isbn = '$id'";
+				$resultado = mysqli_query($conexion, $consulta);
+				if ($resultado && mysqli_num_rows($resultado) > 0) {
+					$libro = mysqli_fetch_assoc($resultado);
 				} else {
-					$conexion = conectar();
-					$consultaListado = "SELECT * FROM articulos WHERE id = '$id'";
-					$resultadoListado = mysqli_query($conexion, $consultaListado);
-					$filaListado = mysqli_fetch_assoc($resultadoListado);
-					if ($filaListado) {
-						echo "<form action='modificar.php' method='POST'>";
-						echo "<input type='hidden' name='modificarId' value='" . $filaListado['id'] . "'>";
-						echo "<label>Nombre: <input type='text' name='modificarNombre' value='" . $filaListado['nombre'] . "'></label>";
-						echo "<label>Categoria: <input type='text' name='modificarCategoria' value='" . $filaListado['categoría'] . "'></label>";
-						echo "<label>Precio: <input type='text' name='modificarPrecio' value='" . $filaListado['precio'] . "'></label>";
-						echo "<label>Procedencia: <input type='text' name='modificarProcedencia' value='" . $filaListado['procedencia'] . "'></label>";
-						echo "<label><input type='submit' name='enviarCambios' value='Enviar cambios'</td></form>";
-					}
+					$mensaje = "No se encontró ningún libro con ese ID.";
 				}
 			}
-			?>
 
-			<?php
-			if (isset($_POST["enviarCambios"])) {
-				$id = $_POST["modificarId"];
-				$nombreNuevo = $_POST["modificarNombre"];
-				$categoriaNueva = $_POST["modificarCategoria"];
-				$precioNuevo = $_POST["modificarPrecio"];
-				$procedenciaNueva = $_POST["modificarProcedencia"];
+			if (isset($_POST["modificarLibro"])) {
+				$isbn = $_POST["isbn"];
+				$nombre = $_POST["nombre"];
+				$autor = $_POST["autor"];
+				$genero = $_POST["genero"];
+				$sinopsis = $_POST["sinopsis"];
 
 				$conexion = conectar();
-				$consultaUpdate = "UPDATE `articulos` SET `nombre`='$nombreNuevo',`categoría`='$categoriaNueva',`precio`='$precioNuevo',`procedencia`='$procedenciaNueva' WHERE id = '$id'";
-				$resultadoUpdate = mysqli_query($conexion, $consultaUpdate);
-				if (mysqli_affected_rows($conexion)) {
-					$mensaje = "Modificacion realizada correctamente";
+				$consulta = "UPDATE libros SET isbn='$isbn', nombre='$nombre', autor='$autor', genero='$genero', sinopsis='$sinopsis' WHERE isbn='$isbn'";
+				$resultado = mysqli_query($conexion, $consulta);
+				if ($resultado) {
+					$mensaje = "Los datos del libro han sido modificados correctamente.";
 				} else {
-					$mensaje = "Ha habido un error al actualizar el articulo";
+					$mensaje = "Ha ocurrido un error al modificar los datos del libro.";
 				}
 			}
-
 			?>
-			<div class="recuadro">
-				<h3>MODIFICAR LIBRO</h3>
-				<form action="modificar.php" method="POST">
-					<table>
-						<tr>
-							<td><label for="id">Introduzca el ID del libro que desea modificar: </label></td>
-							<td><input type="text" name="id"></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="botonAdmin"><input type="submit" name="enviarModificar" value="MODIFICAR"></div>
-							</td>
-						</tr>
-						<?php echo $mensaje; ?>
-					</table>
+
+			<h2>Modificar Libro</h2>
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+				<label for="id">ISBN del Libro:</label>
+				<input type="text" name="id" id="id">
+				<button type="submit" name="buscarLibro">Buscar Libro</button>
+			</form>
+			<?php if (!empty($libro)) { ?>
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+
+					<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>"><br>
+					<label for="nombre">Nombre:</label>
+					<input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>"><br>
+					<label for="autor">Autor:</label>
+					<input type="text" name="autor" value="<?php echo $libro['autor']; ?>"><br>
+					<label for="genero">Género:</label>
+					<input type="text" name="genero" value="<?php echo $libro['genero']; ?>"><br>
+					<label for="sinopsis">Sinopsis:</label>
+					<textarea name="sinopsis"><?php echo $libro['sinopsis']; ?></textarea><br>
+					<button type="submit" name="modificarLibro">Modificar Libro</button>
 				</form>
-			</div>
+			<?php } ?>
+			<p><?php echo $mensaje; ?></p>
 		</main>
 		<?php include("../plantillas/fotter.php"); ?>
+
 	</div>
-
 </body>
-
-
 
 </html>

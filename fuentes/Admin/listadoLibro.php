@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-	<link rel="stylesheet" href="../../assets/css/estiloComponentesAdmin.css" />
+	<link rel="stylesheet" href="../../assets/css/estiloListado.css" />
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
 			$resultadoRegistros = mysqli_query($conexion, $consultaRegistros);
 
 			$numeroDeRegistros = mysqli_num_rows($resultadoRegistros);
-			$numeroDeRegistrosPorPagina = 5;
+			$numeroDeRegistrosPorPagina = 2;
 			$totalPaginas = ceil($numeroDeRegistros / $numeroDeRegistrosPorPagina);
 			$limite = " limit " . (($indice - 1) * $numeroDeRegistrosPorPagina) . " , " . $numeroDeRegistrosPorPagina;
 
@@ -45,32 +45,34 @@
 			$resultadoLibros = mysqli_query($conexion, $consultaLibros);
 			$filaLibros = mysqli_fetch_assoc($resultadoLibros);
 			if ($filaLibros) {
-				echo "<table>";
+				echo "<div class='posicionDiv'>";
+				echo "<table class='tablaListado'>";
 				echo "<tr>";
 				echo "<th>ISBN</th>";
 				echo "<th>NOMBRE</th>";
 				echo "<th>AUTOR</th>";
 				echo "<th>GENERO</th>";
-				echo "<th>SINOPSIS</th>";
-				echo "<th>PDF</th>";
-				echo "<th></th>";
-				echo "<th></th>";
+				echo "<th class='cuadroPDF'>PDF</th>";
 				echo "</tr>";
 
 				do {
 					echo "<tr>";
-					echo "<td>" . $filaDescargas['id'] . "</td>";
-					echo "<td>" . $filaDescargas['isbn'] . "</td>";
-					echo "<td>" . $filaDescargas['nombre'] . "</td>";
-					echo "<td>" . "BOTON MODIFICAR" . "</td>"; //Hay que agregar el boton de modificar
-					echo "<td>" . "BOTON BORRAR" . "</td>"; //Hay que agregar el boton de borrar
+					echo "<td>" . $filaLibros['isbn'] . "</td>";
+					echo "<td>" . $filaLibros['nombre'] . "</td>";
+					echo "<td>" . $filaLibros['autor'] . "</td>";
+					echo "<td>" . $filaLibros['genero'] . "</td>";
+					echo "<td>" . $filaLibros['pdf'] . "</td>";
 
 
 					echo "</tr>";
 				} while ($filaLibros = mysqli_fetch_assoc($resultadoLibros));
 				echo "</table>";
-				echo "<a href='listadoDescargas.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
-				echo "<a href='listadoDescargas.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
+				echo "</div>";
+				echo "<div class='botonesPaginacion'>";
+				echo "<a href='listadoLibro.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
+				echo "<a href='generarPdf.php'>GENERAR PDF</a>";
+				echo "<a href='listadoLibro.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
+				echo "</div>";
 			}
 			?>
 		</main>

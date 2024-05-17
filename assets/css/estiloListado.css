@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body{
+    display: flex;
+    flex: 1;
+    /*font-family: 'Protest Riot', sans-serif;*/
+    font-family: 'Dancing Script', cursive;
+    margin: 0px;
+}
+
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
+
+/*Aqui empieza el encabezado*/
+header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    grid-auto-rows: 1fr;
+    background-color:#2e2e2c;
+    color:white;
+    grid-column: span 1;
+    
+}
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+}
+.posicionDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-size: 25px;
+    padding: 10px;
+}
+.tablaListado{
+    border: 1px solid black;
+}
+
+th{
+    color: white;
+    text-align: center;
+    background-color: #2e2e2c;
+    margin: 0;
+}
+td{
+    width: 200px;
+    border: 1px solid black;
+}
+
+.cuadroPDF{
+    width: 450px;
+}
+
+.botonesPaginacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 80px;
+    font-size: 25px;
+}
+
+
+.iconos, .iconos2{
+    display: none;
+}
+
+img{
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+}
+
+/*Aqio empieza el menú responsivo como movil*/
+
+  
+  #icono{
+
+    font-size: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+ 
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.iconos2{
+    display: none;
+}
+/*Aqui termina el encabezado*/
+/*Aqui empieza el cuerpo*/
+
+h1{
+    text-align: center;
+ 
+}
+.fecha{
+    background-color: #2e2e2c;
+    color:white;
+}
+.noticia{
+    margin: 20px;
+    margin-left: 30px ;
+    margin-right: 30px ;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    font-size: 20px;
+}
+
+
+.contenidoNoticia> h2, p{
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+
+.noticias .noticia:nth-child(even){
+    background-color: rgb(238, 236, 236);
+
+}
+
+
+/*Aqui termina el cuerpo*/
+/*Aqui empieza el pie de pagina*/
+footer{
+
+    background-color: #2e2e2c;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+   
+}
+
+footer > .redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.redes>ion-icon{
+    height: 50%;
+    width: 50%;
+    color: #a5a6a5;
+}
+
+.iconito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    
+}
+@media (min-width: 768px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30% 70%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+
+
+    .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+    }
+    .iconito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        
+    }
+    
+    .iconos > .iconito{
+        border: 1px solid #a6a6a5;
+        border-radius: 10px;
+    }
+    
+    .iconos > .iconito:hover{
+        border: 3px solid white;
+        border-radius: 10px;
+    }
+    
+    
+    ion-icon{
+        height: 60%;
+        width: 60%;
+        color: #a5a6a5;
+    }
+    
+    .iconos2{
+        display: none;
+    }
+
+    .noticia{
+
+        margin-left: 100px ;
+        margin-right: 100px ;
+       
+    }
+    
+}
+
+@media (min-width: 1024px){
+    header{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 20% 80%;
+        background-color:#2e2e2c;
+        color:white;
+        grid-column: span 1;
+        
+    }
+
+   
+
+    .iconos{
+        display: none;
+    }
+
+    .iconos2{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        font-size: 30px;
+    }
+    .iconito{
+        
+        color: #e6e6e2;
+    }
+
+    .iconos2 .iconito:hover{
+        font-size: 40px;
+     }
+    
+    .unidad{
+        width: 400px;
+        height: auto;
+    }
+
+    .noticia{
+
+        margin-left: 100px ;
+        margin-right: 100px ;
+       
+    }
+    
+}

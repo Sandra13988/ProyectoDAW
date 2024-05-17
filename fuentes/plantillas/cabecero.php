@@ -38,7 +38,7 @@
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
-                    <a href="#">WishList</a>
+                    <a href="../Pages/WishList.php">WishList</a>
                     <a href="../Admin/MenuAdmin.php">Panel Administrador</a>
                     <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>
 

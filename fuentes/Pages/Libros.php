@@ -44,16 +44,21 @@
                     echo '<div class="botonesLibros">';
                     // Aquí se agrega el enlace al botón de Descargar Libro
                     echo '<a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
-                    echo '<input type="button" value="Añadir a deseado">';
+                    
+                    // Formulario para agregar el libro a la lista de deseos
+                    echo '<form action="agregar_deseo.php" method="POST">';
+                    echo '<input type="hidden" name="id_libro" value="' . $row['isbn'] . '">';
+                    echo '<input type="hidden" name="nombre_libro" value="' . $row['nombre'] . '">';
+                    echo '<input type="hidden" name="genero_libro" value="' . $row['genero'] . '">';
+                    echo '<input type="hidden" name="autor_libro" value="' . $row['autor'] . '">';
+                    echo '<input type="submit" name="agregar_deseo" value="Añadir a deseado">';
+                    echo '</form>';
+                    
                     echo '</div>';
                     echo '</div>';
+
                 }
-            } else {
-                echo "Error al obtener los libros de la base de datos";
             }
-
-            // Cierra la conexión a la base de datos
-
             ?>
         </main>
         <?php include('../plantillas/fotter.php'); ?>

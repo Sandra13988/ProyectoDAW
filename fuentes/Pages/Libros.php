@@ -24,8 +24,6 @@
             <?php
             $conexion = conectar();
 
-            // Suponiendo que tienes una tabla llamada 'libros' con los campos: titulo, genero, autor, sinopsis, imagen, pdf
-            // Realiza la consulta a la base de datos
             $query = "SELECT * FROM libros";
             $result = mysqli_query($conexion, $query);
 
@@ -45,7 +43,7 @@
                     echo '</div>';
                     echo '<div class="botonesLibros">';
                     // Aquí se agrega el enlace al botón de Descargar Libro
-                    echo '<a href="../../pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
+                    echo '<a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
                     echo '<input type="button" value="Añadir a deseado">';
                     echo '</div>';
                     echo '</div>';

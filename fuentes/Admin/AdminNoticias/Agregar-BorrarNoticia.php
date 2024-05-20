@@ -13,12 +13,13 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-	<title>Noticias</title>
+	<script src="jquery-3.7.1.min.js"></script>
+    <title>Noticias</title>
 </head>
 
 <body>
 	
-<form id="formulario">
+<form id="formulario" action="../../Pages/Noticias.php" method="post">
     <label for="titulo">Título:</label><br>
     <input type="text" id="titulo" name="titulo"><br>
     <label for="descripcion">Descripción:</label><br>

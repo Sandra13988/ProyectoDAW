@@ -47,16 +47,11 @@
                 </div>
             </div>
             <div class="administrarNoticias">
-                <h2>ADMINISTRAR NOTICIAS</h2>
+                <h2>ADMINISTRAR USUARIOS</h2>
                 <div class="recuadro">
-                    <h3>AGREGAR NOTICIA</h3>
-                    <div>Dar de alta noticias nuevas</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="AGREGAR" name=""/></div>
-                </div>
-                <div class="recuadro">
-                    <h3>BORRAR NOTICIA</h3>
-                    <div>Dar de baja noticias antiguas</div>
-                    <div class="botonAdmin"><input type="submit" onclick="" value="BORRAR" name=""/></div>
+                    <h3>LISTAR USUARIOS</h3>
+                    <div>Lista de usuarios registrados</div>
+                    <div class="botonAdmin"><input type="submit" onclick="window.location.href='./listadoUsuarios.php'" value="LISTAR USUARIOS" name=""/></div>
                 </div>
             </div>
         </div>

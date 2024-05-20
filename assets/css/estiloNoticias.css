@@ -12,7 +12,9 @@ body{
     display: grid;
     height: 100vh;
     grid-template-rows: 70px auto 50px;
+    width: 100%;
 }
+
 
 /*Aqui empieza el encabezado*/
 header{
@@ -32,6 +34,10 @@ header{
     background-attachment: fixed;
     background-position: center;
 }
+
+
+
+
 
 
 .iconos, .iconos2{
@@ -238,5 +244,6 @@ footer > .redes{
         margin-right: 100px ;
        
     }
+    
     
 }

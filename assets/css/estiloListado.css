@@ -273,5 +273,11 @@ footer > .redes{
         margin-right: 100px ;
        
     }
+    #contenedor{
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 70px auto 50px;
+        width: 100%;
+    }
     
 }

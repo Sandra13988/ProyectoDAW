@@ -41,7 +41,7 @@
 			$totalPaginas = ceil($numeroDeRegistros / $numeroDeRegistrosPorPagina);
 			$limite = " limit " . (($indice - 1) * $numeroDeRegistrosPorPagina) . " , " . $numeroDeRegistrosPorPagina;
 
-			$consultaLibros = "SELECT * FROM libros $limite";
+			$consultaLibros = "SELECT * FROM usuarios $limite";
 			$resultadoLibros = mysqli_query($conexion, $consultaLibros);
 			$filaLibros = mysqli_fetch_assoc($resultadoLibros);
 			if ($filaLibros) {
@@ -54,8 +54,6 @@
 				echo "<th>CORREO</th>";
 				echo "<th>SUSCRIPCION</th>";
 				echo "<th>ROL</th>";
-				echo "<th>MODIFICAR</th>";
-				echo "<th>BORRAR</th>";
 				echo "</tr>";
 
 				do {
@@ -66,8 +64,8 @@
 					echo "<td>" . $filaLibros['correo'] . "</td>";
 					echo "<td>" . $filaLibros['suscripcion'] . "</td>";
 					echo "<td>" . $filaLibros['rol'] . "</td>";
-					echo "<td><input type='' name='' value='Modificar'</td>";
-					echo "<td><input type='' name='' value='Borrar'</td>";
+
+
 
 
 					echo "</tr>";
@@ -75,9 +73,9 @@
 				echo "</table>";
 				echo "</div>";
 				echo "<div class='botonesPaginacion'>";
-				echo "<a href='listadoLibro.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
-				echo "<a href='generarPdf.php'>GENERAR PDF</a>";
-				echo "<a href='listadoLibro.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
+				echo "<a href='listadoIsiarios.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
+
+				echo "<a href='listadoUsuarios.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
 				echo "</div>";
 			}
 			?>

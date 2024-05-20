@@ -68,6 +68,7 @@ function comprobarExistencias($isbn){
     }
 }
 
+
 //Funcion que comprueba si un usuario ya está registrado
 function comprobarUsuario($nombre){
     $conexion = conectar();

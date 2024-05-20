@@ -58,7 +58,7 @@
            
             </main>
             <?php
-                session_start();
+              
 
                 //SUSCRIPCION AL PLAN BASICO
                 if (isset($_POST["suscripcionBasica"])) {

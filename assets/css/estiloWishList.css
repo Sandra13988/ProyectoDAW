@@ -15,7 +15,6 @@ body{
     width: 100%;
 }
 
-
 /*Aqui empieza el encabezado*/
 header{
     display: grid;
@@ -34,10 +33,40 @@ header{
     background-attachment: fixed;
     background-position: center;
 }
+.posicionDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-size: 25px;
+    padding: 10px;
+}
+.tablaListado{
+    border: 1px solid black;
+}
 
+th{
+    color: white;
+    text-align: center;
+    background-color: #2e2e2c;
+    margin: 0;
+}
+td{
+    width: 200px;
+    border: 1px solid black;
+}
 
+.cuadroPDF{
+    width: 450px;
+}
 
-
+.botonesPaginacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 80px;
+    font-size: 25px;
+}
 
 
 .iconos, .iconos2{
@@ -244,6 +273,5 @@ footer > .redes{
         margin-right: 100px ;
        
     }
-    
     
 }

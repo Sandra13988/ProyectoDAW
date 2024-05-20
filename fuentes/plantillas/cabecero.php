@@ -1,4 +1,4 @@
-<?php include("../funciones.php"); ?>
+<?php include('../funciones.php'); ?>
 
 <header>
     <img id="logotipo" src="../../assets/imagenes/logotipo/librex2.png" alt="logotipo">
@@ -37,8 +37,9 @@
                 <button class="menu-btn">PERFIL</button>
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
-                    <a href="#">Suscripcion</a>
-                    <a href="#">WishList</a>
+                    <a href="../Pages/Suscripcion.php">Suscripcion</a>
+                    <a href="../Pages/WishList.php">WishList</a>
+                    <a href="../Admin/MenuAdmin.php">Panel Administrador</a>
                     <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>
 
 

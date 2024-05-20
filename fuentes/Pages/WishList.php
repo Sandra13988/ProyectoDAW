@@ -4,49 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="../../assets/css/estiloPerfil.css" />
+    <link rel="stylesheet" href="../../assets/css/estiloListado.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/estiloMenus.css"/>
-    <title>Libros</title>
+    <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
+    <title>Deseos</title>
 </head>
 
 <body>
-    <div id="contenedor">
-        <?php include('../plantillas/cabecero.php'); ?>
-
-        <main id="cuerpoPerfil">
-            <h1>PERFIL</h1>
+<div id="contenedor">
+		<?php include('../plantillas/cabecero.php'); ?>
+		<main id="cuerpo">
+            <h1>LISTA DE DESEOS</h1>
             <?php
 
 
-		//De momento se queda asi, pero quizas sea mejor cambiar esto por 
-		//una funcion que tengo en funciones de comprobar usuarios registrados
-            $nombreUsuario = $_SESSION['nombre'];
-			$conexion = conectar();
-			$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
-			$resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
-			$filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
+            if (!isset($_SESSION['id'])) {
+                // Si el usuario no ha iniciado sesión, redirigirlo al inicio de sesión
+                header("Location: iniciar_sesion.php");
+                exit();
+            }
+
+            // Obtener el ID del usuario de la sesión
+            $id_usuario = $_SESSION['id'];
+
+            // Realizar la consulta para obtener los libros en la lista de deseos del usuario
+            $conexion = conectar();
+            $query = "SELECT * FROM deseos WHERE id_usuario = '$id_usuario'";
+            $result = mysqli_query($conexion, $query);
+            ?>
 
 
-			if ($filaUsuario) {
-                echo "<div class='datosPerfil'>";
-                    echo "<p><strong>Nombre de usuario:</strong> " . $filaUsuario['usuario'] . "</p>";
-                    echo "<p><strong>Contraseña:</strong> " . $filaUsuario['pass'] . "</p>";
-                    echo "<p><strong>Email:</strong> " . $filaUsuario['correo'] . "</p>";
-                echo "</div>";
-                // Agrega más campos según sea necesario
-			
-			}
-		
 
+            <?php
 
-		?>
+            echo "<div class='posicionDiv'>";
+            echo "<table class='tablaListado'>";
+            if (mysqli_num_rows($result) > 0) {
+                echo "<tr>";
+                echo "<th>TITULO</th>";
+                echo "<th>GENERO</th>";
+                echo "<th>AUTOR</th>";
+                echo "<th></th>";
+                echo "</tr>";
+                // Mostrar la lista de libros en la lista de deseos
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['nombre'] . "</td>";
+                    echo "<td>" . $row['genero'] . "</td>";
+                    echo "<td>" . $row['autor'] . "</td>";
+                    // Agregar botón de descarga
+                    echo '<td><a href="../Admin/pdf/' . $row['nombre'] . '.pdf" download><button>Descargar</button></a></td>';
+                    echo "</tr>";
+                }
+            } else {
+                echo "No tienes ningún libro en tu lista de deseos.";
+            }
+            echo "</table>";
+            echo "</div>";
+            ?>
         </main>
         <?php include('../plantillas/fotter.php'); ?>
     </div>

@@ -56,9 +56,9 @@ function cerrar_sesion(){
 }
 
 //Funcion que comprueba si un libro ya está registrado
-function comprobarExistencias($id){
+function comprobarExistencias($isbn){
     $conexion = conectar();
-    $consultaExistencias = "SELECT * FROM libros WHERE id = '$id'";
+    $consultaExistencias = "SELECT * FROM libros WHERE isbn = '$isbn'";
     $resultadoExistencias = mysqli_query($conexion, $consultaExistencias);
     $filaExistencias = mysqli_fetch_assoc($resultadoExistencias);
     if($filaExistencias){
@@ -96,3 +96,5 @@ function asignarId(){
         return $filaUsuario['ultimo_id']+1;
     }
 }
+
+?>

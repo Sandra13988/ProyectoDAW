@@ -49,6 +49,7 @@
 			if ($filaUsuario) {
 				$_SESSION['id'] = $filaUsuario['usuario'];
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
+				$_SESSION['suscripcion'] = $filaUsuario['suscripcion'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
 				echo "Sesión iniciada correctamente";
 				header("location:./fuentes/Pages/Indice.php");

@@ -40,7 +40,7 @@
 				$id = $_POST["id"];
 				$usuario = $_POST["usuario"];
 				$pass = $_POST["pass"];
-				$correo = $_POST ["correo"];
+				$correo = $_POST["correo"];
 				$suscripcion = $_POST["suscripcion"];
 				$rol = $_POST["rol"];
 
@@ -63,20 +63,48 @@
 			</form>
 			<?php if (!empty($libro)) { ?>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-
-					<input type="hidden" name="id" value="<?php echo $libro['id']; ?>"><br>
-					<label for="usuario">Usuario:</label>
-					<input type="text" name="usuario" value="<?php echo $libro['usuario']; ?>"><br>
-					<label for="pass">Contraseña:</label>
-					<input type="text" name="pass" value="<?php echo $libro['pass']; ?>"><br>
-					<label for="correo">Correo:</label>
-					<input type="text" name="correo" value="<?php echo $libro['correo']; ?>"><br>
-					<label for="suscripcion">Suscripcion:</label>
-					<input type="text" name="suscripcion" value="<?php echo $libro['suscripcion']; ?>"><br>
-					<label for="rol">Rol:</label>
-					<input type="text" name="rol" value="<?php echo $libro['rol']; ?>"><br>
-					<button type="submit" name="modificarUsuario">Modificar Usuario</button>
+					<input type="hidden" name="id" value="<?php echo $libro['id']; ?>">
+					<table>
+						<tr>
+							<td><label for="usuario">Usuario:</label></td>
+							<td><input type="text" name="usuario" value="<?php echo $libro['usuario']; ?>"></td>
+						</tr>
+						<tr>
+							<td><label for="pass">Contraseña:</label></td>
+							<td><input type="text" name="pass" value="<?php echo $libro['pass']; ?>"></td>
+						</tr>
+						<tr>
+							<td><label for="correo">Correo:</label></td>
+							<td><input type="text" name="correo" value="<?php echo $libro['correo']; ?>"></td>
+						</tr>
+						<tr>
+							<td><label for="suscripcion">Suscripción:</label></td>
+							<td>
+								<select name="suscripcion" id="suscripcion">
+									<option value="none" <?php if ($libro['suscripcion'] == 'none') echo 'selected'; ?>>None</option>
+									<option value="basico" <?php if ($libro['suscripcion'] == 'basico') echo 'selected'; ?>>Básico</option>
+									<option value="estandar" <?php if ($libro['suscripcion'] == 'estandar') echo 'selected'; ?>>Estándar</option>
+									<option value="delux" <?php if ($libro['suscripcion'] == 'delux') echo 'selected'; ?>>Delux</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="rol">Rol:</label></td>
+							<td>
+								<select name="rol" id="rol">
+									<option value="normal" <?php if ($libro['rol'] == 'normal') echo 'selected'; ?>>Normal</option>
+									<option value="admin" <?php if ($libro['rol'] == 'admin') echo 'selected'; ?>>Administrador</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;">
+								<button type="submit" name="modificarUsuario">Modificar Usuario</button>
+							</td>
+						</tr>
+					</table>
 				</form>
+
 			<?php } ?>
 			<p><?php echo $mensaje; ?></p>
 		</main>

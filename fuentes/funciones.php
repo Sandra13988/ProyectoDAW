@@ -83,8 +83,13 @@ function comprobarUsuario($nombre){
 }
 
 //Funcion que comprueba si el usuario está suscrito
-function comprobarSuscripcion($id){
-
+function comprobarSuscripcion(){
+    $suscripcion = $_SESSION["suscripcion"];
+    if($suscripcion !== "none"){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
 
 }
 

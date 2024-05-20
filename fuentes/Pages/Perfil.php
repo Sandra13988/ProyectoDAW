@@ -39,7 +39,8 @@
                     echo "<p><strong>Nombre de usuario:</strong> " . $filaUsuario['usuario'] . "</p>";
                     echo "<p><strong>Contraseña:</strong> " . $filaUsuario['pass'] . "</p>";
                     echo "<p><strong>Email:</strong> " . $filaUsuario['correo'] . "</p>";
-                    echo "<p><strong>Suscripcion:</strong> " . $filaUsuario['correo'] . "</p>";
+                    echo "<p><strong>Suscripcion:</strong> " . $filaUsuario['suscripcion'] . "</p>";
+                    
                     echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a'/>";
                 echo "</div>";
                 // Agrega más campos según sea necesario

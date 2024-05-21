@@ -33,7 +33,7 @@
             } else {
 
                 $id = asignarId();
-                $suscripcion = false;
+                $suscripcion = "none";
                 $rol = "normal";
 
                 $conexion = conectar();

@@ -68,6 +68,7 @@ function comprobarExistencias($isbn){
     }
 }
 
+
 //Funcion que comprueba si un usuario ya está registrado
 function comprobarUsuario($nombre){
     $conexion = conectar();
@@ -82,8 +83,13 @@ function comprobarUsuario($nombre){
 }
 
 //Funcion que comprueba si el usuario está suscrito
-function comprobarSuscripcion($id){
-
+function comprobarSuscripcion(){
+    $suscripcion = $_SESSION["suscripcion"];
+    if($suscripcion !== "none"){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
 
 }
 

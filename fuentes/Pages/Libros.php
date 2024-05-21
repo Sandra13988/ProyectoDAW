@@ -43,7 +43,15 @@
                     echo '</div>';
                     echo '<div class="botonesLibros">';
                     // Aquí se agrega el enlace al botón de Descargar Libro
-                    echo '<a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
+                    $suscrito = comprobarSuscripcion();
+
+                    if ($suscrito) {
+                        echo '<a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
+                    } else {
+                        // Si el usuario no está suscrito, mostrar el botón deshabilitado con el mensaje
+                        echo '<input type="button" value="Descargar Libro" title="Debes suscribirte para poder descargar este libro" disabled>';
+                    }
+                    
                     
                     // Formulario para agregar el libro a la lista de deseos
                     echo '<form action="agregar_deseo.php" method="POST">';

@@ -53,6 +53,13 @@
                     <div>Lista de usuarios registrados</div>
                     <div class="botonAdmin"><input type="submit" onclick="window.location.href='./listadoUsuarios.php'" value="LISTAR USUARIOS" name=""/></div>
                 </div>
+                <div class="recuadro">
+                    <h3>ACTUALIZAR NOVEDADES</h3>
+                    <div>Actualizar carrousel</div>
+                    <div class="botonAdmin"><button id="actualizarBtn">Actualizar Datos</button></div>
+                    <script src="./InsertarNovedades.js"></script>
+
+                </div>
             </div>
         </div>
     <?php include('../plantillas/fotter.php'); ?>

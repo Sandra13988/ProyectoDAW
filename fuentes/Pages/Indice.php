@@ -23,6 +23,7 @@
             <script>
                 <?php include('../Utiles/carousel.js'); ?>
             </script>
+            
         </div>
         <?php include('../plantillas/fotter.php'); ?>
     </div>

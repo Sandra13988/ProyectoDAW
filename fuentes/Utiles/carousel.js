@@ -20,7 +20,7 @@ class Carousel {
   constructor(el, data) {
     this.el = el;
     this.carouselOptions = ['previous', 'play', 'next'];
-    this.carouselData = data; // Usa los datos obtenidos de JSONbin
+    this.carouselData = data.record; // Usa los datos obtenidos de JSONbin
     this.carouselInView = [1, 2, 3, 4, 5];
     this.carouselContainer;
     this.carouselPlayState;
@@ -41,9 +41,10 @@ class Carousel {
     this.carouselData.forEach((item, index) => {
       const carouselItem = item.src ? document.createElement('img') : document.createElement('div');
       container.append(carouselItem);
-
+      console.log(carouselItem)
       carouselItem.className = `carousel-item carousel-item-${index + 1}`;
       carouselItem.src = item.src;
+      console.log(item.src)
       carouselItem.setAttribute('loading', 'lazy');
       carouselItem.setAttribute('data-index', `${index + 1}`);
 

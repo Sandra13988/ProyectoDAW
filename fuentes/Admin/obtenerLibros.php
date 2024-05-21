@@ -7,7 +7,9 @@ header('Content-Type: application/json');
 
 
 $conexion = conectar();
-$consultaRegistros = "SELECT * FROM libros";
+$consultaRegistros = "SELECT * FROM libros ORDER BY tiempo DESC LIMIT 5";
+
+
 $resultadoRegistros = mysqli_query($conexion, $consultaRegistros);
 
 $libros = array();

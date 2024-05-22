@@ -21,7 +21,7 @@
     <!--Menu en escritorio-->
     <div class="iconos2">
         <a href="../Pages/Indice.php" class="iconito">
-            <?php echo "HOME"; ?>
+            <?php echo "NOVEDADES"; ?>
         </a>
         <a href="../Pages/Libros.php" class="iconito">
             <?php echo "LIBROS"; ?>
@@ -39,8 +39,13 @@
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
                     <a href="../Pages/WishList.php">WishList</a>
-                    <a href="../Admin/MenuAdmin.php">Panel Administrador</a>
-                    <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>
+                    <?php
+                        if(comprobarRol()){
+                            echo '<a href="../Admin/MenuAdmin.php">Panel Administrador</a>';
+                        } 
+                    ?>
+                    
+                    <a href="../../cerrar.php">Cerrar sesión</a>
 
 
                 </div>

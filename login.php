@@ -47,7 +47,7 @@
 
 
 			if ($filaUsuario) {
-				$_SESSION['id'] = $filaUsuario['usuario'];
+				$_SESSION['id'] = $filaUsuario['id'];
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['suscripcion'] = $filaUsuario['suscripcion'];
 				$_SESSION['rol'] = $filaUsuario['rol'];

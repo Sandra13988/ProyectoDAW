@@ -51,6 +51,10 @@
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['suscripcion'] = $filaUsuario['suscripcion'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
+
+				setcookie("nombre_usuario", $filaUsuario['usuario'], time() + (86400 * 30), "/"); // Cookie válida por 30 días
+
+				
 				echo "Sesión iniciada correctamente";
 				header("location:./fuentes/Pages/Indice.php");
 				exit();

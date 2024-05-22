@@ -67,7 +67,7 @@
 
                     $conexion = conectar();
                     //Aqui hay que hacer un update
-                    $consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario' and pass = '$pass'";
+                    $consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
                     $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
                     $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
 

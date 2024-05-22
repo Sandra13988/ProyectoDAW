@@ -28,6 +28,7 @@ class Carousel {
 
   mounted() {
     this.setupCarousel();
+    this.play(); 
   }
 
   setupCarousel() {

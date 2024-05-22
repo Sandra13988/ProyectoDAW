@@ -76,6 +76,7 @@ header a {
     flex-direction: column;
     gap: 20px;
     padding: 50px;
+    padding-top: 10px;
 }
 
 #cuerpo > h1{
@@ -263,6 +264,9 @@ footer > .redes{
         background-size: cover; /* o contain */
         background-attachment: fixed;
         background-position: center;
+    }
+
+    .otroCuerpo{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;

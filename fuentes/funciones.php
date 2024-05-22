@@ -49,11 +49,11 @@ function comprobarRol(){
  //mantener_sesion();
 
 //HAY QUE CORREGIR RUTA
-function cerrar_sesion(){
-    session_destroy();
-    header("location:/Proyecto_DAW/login.php");
-    exit();
-}
+//function cerrar_sesion(){
+  //  session_destroy();
+    //header("location:/Proyecto_DAW/login.php");
+    //exit();
+//}
 
 //Funcion que comprueba si un libro ya está registrado
 function comprobarExistencias($isbn){

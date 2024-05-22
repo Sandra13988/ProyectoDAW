@@ -16,12 +16,31 @@
         <a href="../Pages/Contacto.php" class="iconito">
             <ion-icon name="call-outline"></ion-icon>
         </a>
+        <div class="menu-container-escritorio">
+            <div class="menu-item">
+                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
+                <div class="submenu" id="submenu">
+                    <a href="../Pages/Perfil.php">Perfil</a>
+                    <a href="../Pages/Suscripcion.php">Suscripcion</a>
+                    <a href="../Pages/WishList.php">WishList</a>
+                    <?php
+                    if (comprobarRol()) {
+                        echo '<a href="../Admin/MenuAdmin.php">Panel Administrador</a>';
+                    }
+                    ?>
+
+                    <a href="../../cerrar.php">Cerrar sesión</a>
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--Menu en escritorio-->
     <div class="iconos2">
         <a href="../Pages/Indice.php" class="iconito">
-            <?php echo "HOME"; ?>
+            <?php echo "NOVEDADES"; ?>
         </a>
         <a href="../Pages/Libros.php" class="iconito">
             <?php echo "LIBROS"; ?>
@@ -34,13 +53,18 @@
         </a>
         <div class="menu-container-escritorio">
             <div class="menu-item">
-                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario']?></button>
+                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
                     <a href="../Pages/WishList.php">WishList</a>
-                    <a href="../Admin/MenuAdmin.php">Panel Administrador</a>
-                    <a href="/login.php" onclick=cerrar_sesion()>Cerrar sesión</a>
+                    <?php
+                    if (comprobarRol()) {
+                        echo '<a href="../Admin/MenuAdmin.php">Panel Administrador</a>';
+                    }
+                    ?>
+
+                    <a href="../../cerrar.php">Cerrar sesión</a>
 
 
                 </div>
@@ -50,14 +74,24 @@
         <script src="scriptMenu.js"></script>
     </div>
     <!--Menu en movil-->
-    <div class="menu-container-movil">
+    <div class="menu-container-movil" >
         <div class="menu-item">
-            <button class="menu-btn">Menú</button>
+            <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
             <div class="submenu" id="submenu">
-                <a href="#">Indice</a>
-                <a href="#">Libros</a>
-                <a href="#">Noticias</a>
-                <a href="#">Contacto</a>
+                <a href="../Pages/Indice.php">Novedades</a>
+                <a href="../Pages/Libros.php">Libros</a>
+                <a href="../Pages/Noticias.php">Noticias</a>
+                <a href="../Pages/Contacto.php">Contacto</a>
+                <a href="../Pages/Perfil.php">Perfil</a>
+                <a href="../Pages/Suscripcion.php">Suscripcion</a>
+                <a href="../Pages/WishList.php">WishList</a>
+                <?php
+                if (comprobarRol()) {
+                    echo '<a href="../Admin/MenuAdmin.php">Panel Administrador</a>';
+                }
+                ?>
+
+                <a href="../../cerrar.php">Cerrar sesión</a>
             </div>
         </div>
     </div>

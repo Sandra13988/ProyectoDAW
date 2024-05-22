@@ -21,7 +21,7 @@
         <?php include('../plantillas/cabecero.php'); ?>
 
         <main id="cuerpo">
-            <h1>CONTACTO</h1>
+        <h1>CONTACTO</h1>
             <form method="post" action="#">
                 <label for="nombre">Nombre</label><br>
                 <input type="text" id="nombre" name="nombre" autofocus required placeholder="Nombre"><br><br>

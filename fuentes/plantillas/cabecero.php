@@ -34,7 +34,7 @@
         </a>
         <div class="menu-container-escritorio">
             <div class="menu-item">
-                <button class="menu-btn">PERFIL</button>
+                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario']?></button>
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>

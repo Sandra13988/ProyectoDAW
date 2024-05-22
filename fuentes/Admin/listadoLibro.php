@@ -70,7 +70,7 @@
 				echo "</div>";
 				echo "<div class='botonesPaginacion'>";
 				echo "<a href='listadoLibro.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
-				echo "<a href='generarPdf.php'>GENERAR PDF</a>";
+				echo "<a href='fpdf.php'>Descargar PDF</a>";
 				echo "<a href='listadoLibro.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
 				echo "</div>";
 			}

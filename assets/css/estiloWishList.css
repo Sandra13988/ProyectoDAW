@@ -26,6 +26,12 @@ header{
     grid-column: span 1;
     
 }
+.menu-container-movil{
+    display: flex;
+    align-items: center;
+    
+}
+
 
 #cuerpo{
     background-image: url('../imagenes/fondo/imagenFondo.jpg');
@@ -185,7 +191,7 @@ footer > .redes{
 
     .iconos{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(1, 1fr);
         gap: 10px;
         padding: 10px;
@@ -195,7 +201,7 @@ footer > .redes{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50%;
+        height: 80%;
         width: 100%;
         
     }

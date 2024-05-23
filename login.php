@@ -84,11 +84,7 @@
 			
 
 		</div>
-		<div class="tituloRegistro">
-			<p>Has olvidado tu contraseña? No te preocupes! </p>
-			<a href="./registro">Pincha aqui!</a>
-
-		</div>
+		
 		<script>
 			document.getElementById("loginForm").addEventListener("submit", function(event) {
 			

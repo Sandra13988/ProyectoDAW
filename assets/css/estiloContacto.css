@@ -44,27 +44,7 @@ img{
     object-fit: fill;
 }
 
-#cuerpo{
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover; /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
 
-#cuerpo > h1{
-    grid-column: span 2;
-}
-
-#cuerpo > form{
-   margin-left: 300px;
-   font-size: 30px;
-}
-
-.politica{
-    display: flex;
-}
 /*Aqio empieza el menú responsivo como movil*/
 
   
@@ -96,8 +76,8 @@ header a {
 }
 
 form{
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 40px;
+    font-size: 30px;
 }
 .contacto{
     border: 1px solid black;
@@ -110,15 +90,30 @@ h1{
     grid-column: span 2;
 }
 
-.mapa{
-    padding: 10px;
-    margin: 10px;
+
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.mapa2{
+.mapa{
     display: none;
 }
+.mapa2{
+    display: block;
+    margin: 40px;
+}
 
+
+
+.politica{
+    display: flex;
+}
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
 footer{
@@ -234,7 +229,18 @@ footer > .redes{
         
     }
 
-   
+   #cuerpo{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+   }
+
+   .mapa2{
+    display: none;
+}
+.mapa{
+    display: block;
+    margin: 40px;
+}
 
     .iconos{
         display: none;

@@ -11,12 +11,13 @@ if (isset($_POST['agregar_deseo'])) {
         $nombre_libro = $_POST['nombre_libro'];
         $genero_libro = $_POST['genero_libro'];
         $autor_libro = $_POST['autor_libro'];
+        $pdf_libro = $_POST['pdf_libro'];
         $id_usuario = $_SESSION['id']; // Obtener el ID del usuario de la sesión
 
         // Realizar la inserción en la tabla de deseos
         $conexion = conectar();
-        $query = "INSERT INTO deseos (id_usuario, isbn, nombre, genero, autor) 
-                  VALUES ('$id_usuario', '$id_libro', '$nombre_libro', '$genero_libro', '$autor_libro')";
+        $query = "INSERT INTO deseos (id_usuario, isbn, nombre, genero, autor, pdf) 
+                  VALUES ('$id_usuario', '$id_libro', '$nombre_libro', '$genero_libro', '$autor_libro', '$pdf_libro')";
         $result = mysqli_query($conexion, $query);
 
         if ($result) {

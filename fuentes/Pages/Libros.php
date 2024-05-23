@@ -59,6 +59,7 @@
                     echo '<input type="hidden" name="nombre_libro" value="' . $row['nombre'] . '">';
                     echo '<input type="hidden" name="genero_libro" value="' . $row['genero'] . '">';
                     echo '<input type="hidden" name="autor_libro" value="' . $row['autor'] . '">';
+                    echo '<input type="hidden" name="pdf_libro" value="' . $row['pdf'] . '">';
                     echo '<input type="submit" name="agregar_deseo" value="Añadir a deseado">';
                     echo '</form>';
                     

@@ -87,22 +87,22 @@
 					<h3>Modificar Libro</h3>
 					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 						<table>
-							<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>">
+							<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>" required>
 							<tr>
 								<td><label for="nombre">Nombre:</label></td>
-								<td><input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>"></td>
+								<td><input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>" required></td>
 							</tr>
 							<tr>
 								<td><label for="autor">Autor:</label></td>
-								<td><input type="text" name="autor" value="<?php echo $libro['autor']; ?>"></td>
+								<td><input type="text" name="autor" value="<?php echo $libro['autor']; ?>" required></td>
 							</tr>
 							<tr>
 								<td><label for="genero">Género:</label></td>
-								<td><input type="text" name="genero" value="<?php echo $libro['genero']; ?>"></td>
+								<td><input type="text" name="genero" value="<?php echo $libro['genero']; ?>" required></td>
 							</tr>
 							<tr>
 								<td><label for="sinopsis">Sinopsis:</label></td>
-								<td><textarea name="sinopsis" style="width: 350px; height: 200px;"><?php echo $libro['sinopsis']; ?></textarea></td>
+								<td><textarea name="sinopsis" style="width: 350px; height: 200px;" required><?php echo $libro['sinopsis']; ?></textarea></td>
 							</tr>
 							<tr>
 								<td colspan="2"><button type="submit" name="modificarLibro">Modificar Libro</button></td>
@@ -111,7 +111,7 @@
 					</form>
 				<?php } ?>
 			</div>
-			<p><?php echo $mensaje; ?></p>
+			
 		</main>
 		<?php include("../plantillas/fotter.php"); ?>
 

@@ -27,7 +27,7 @@
 
                 //Comprobamos si el usuario existe
                 if (!comprobarExistencias($id)) {
-                    $mensaje =  "Este usuario NO existe";
+                    $mensaje =  "Este libro NO existe";
                 } else {
                     //Si existe...
                     $conexion = conectar();

@@ -80,7 +80,7 @@
 				echo "<div class='botonesPaginacion'>";
 
 				//Paginacion hacia delante y hacia atras
-				echo "<a href='listadoIsiarios.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
+				echo "<a href='listadoUsuarios.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
 				echo "<a href='listadoUsuarios.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
 				echo "</div>";
 			}

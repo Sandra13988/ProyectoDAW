@@ -1,3 +1,4 @@
+<?php $mensaje = ""?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +37,9 @@
                 $conexion = conectar();
                 $consultaAlta = "INSERT INTO `contacto`(`nombre`, `correo`, `edad`, `telefono`, `consulta`) VALUES ('$nombre','$email','$edad','$telefono','$consulta')";
                 $resultadoAlta = mysqli_query($conexion, $consultaAlta);
+                if($resultadoAlta){
+                    $mensaje = "Consulta enviada";
+                }
                 desconectar($conexion);
             }
             ?>
@@ -57,6 +61,7 @@
                     <label for="politicaYCookies">Politica de privacidad y cookies</label><br>
                 </div>
                 <input type="submit" id="enviar" name="enviar" required><br><br>
+                <?php echo $mensaje?>;
             </form>
             <!--Mapas para saber donde nos encontramos-->
             <div class="mapa">

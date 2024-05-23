@@ -75,7 +75,7 @@
 		<!--Formulario de login-->
 		<form action="login.php" method="POST" class="formularioLogin"  id="loginForm">
 			<label for="usuario">Usuario </label>
-			<input type="text" name="usuario" placeholder="usuario@usuario.com">
+			<input type="text" name="usuario" placeholder="usuario">
 			<label for="pass">Contraseña </label>
 			<input type="text" name="pass" placeholder="contraseña">
 			<input type="submit" name="login" value="Login">

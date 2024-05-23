@@ -22,7 +22,7 @@
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <?php
-            //Recoger los datos enviados por el formulario y almacenarlos en variables
+            // Recoger los datos enviados por el formulario y almacenarlos en variables
             if (isset($_POST["altaLibro"])) {
                 $isbn = $_POST["isbn"];
                 $nombre = $_POST["nombre"];
@@ -37,15 +37,10 @@
                 $pdf = $_FILES["pdf"];
                 $portada = $_FILES["portada"];
 
-                //Comprobar si ya existe ese libro
+                // Comprobar si ya existe ese libro
                 if (comprobarExistencias($isbn)) {
-                    $mensaje =  "Este libro ya existe";
+                    $mensaje = "Este libro ya existe";
                 } else {
-                    //Si no existe, hacemos el alta
-                    $conexion = conectar();
-                    $consultaAlta = "INSERT INTO `libros`(`isbn`, `nombre`, `autor`, `genero`, `sinopsis`, `pdf`, `portada`) VALUES ('$isbn','$nombre','$autor','$genero','$sinopsis','$nombreLimpio.pdf', '$nombreLimpio.jpg')";
-                    $resultadoAlta = mysqli_query($conexion, $consultaAlta);
-
                     // Manejo del PDF
                     $pdfPermitidos = array("application/pdf");
                     $pdfTemp = $pdf['tmp_name'];
@@ -53,17 +48,6 @@
                     $pdfRuta = './pdf/';
                     $pdfNombre = $nombreLimpio . '.pdf';
                     $pdfSubido = false;
-
-                    //Se comprueba si el tipo de archivo es permitido y dependiendo si es o no, muestra el mensaje
-                    if (in_array($pdfTipo, $pdfPermitidos)) {
-                        if (move_uploaded_file($pdfTemp, $pdfRuta . $pdfNombre)) {
-                            $pdfSubido = true;
-                        } else {
-                            $mensaje .= "Ha habido un error al subir el archivo PDF. ";
-                        }
-                    } else {
-                        $mensaje .= "Tipo de archivo PDF no permitido. ";
-                    }
 
                     // Manejo de la imagen de portada
                     $imgPermitidos = array("image/jpeg", "image/png", "image/gif");
@@ -73,26 +57,43 @@
                     $imgNombre = $nombreLimpio . '.jpg';
                     $imgSubida = false;
 
-                    //Se comprueba si el tipo de archivo es permitido y dependiendo si es o no, muestra el mensaje
-                    if (in_array($imgTipo, $imgPermitidos)) {
+                    // Verificar tipos de archivo
+                    if (in_array($pdfTipo, $pdfPermitidos) && in_array($imgTipo, $imgPermitidos)) {
+                        // Intentar subir archivos
+                        if (move_uploaded_file($pdfTemp, $pdfRuta . $pdfNombre)) {
+                            $pdfSubido = true;
+                        } else {
+                            $mensaje .= "Ha habido un error al subir el archivo PDF. ";
+                        }
+
                         if (move_uploaded_file($imgTemp, $imgRuta . $imgNombre)) {
                             $imgSubida = true;
                         } else {
                             $mensaje .= "Ha habido un error al subir la imagen de portada. ";
                         }
-                    } else {
-                        $mensaje .= "Tipo de archivo de imagen no permitido. ";
-                    }
 
-                    // Verificar si ambos archivos se subieron correctamente
-                    if ($pdfSubido && $imgSubida && mysqli_affected_rows($conexion)) {
-                        $mensaje = "El libro ha sido dado de alta correctamente.";
+                        // Si ambos archivos se subieron correctamente, insertar en la base de datos
+                        if ($pdfSubido && $imgSubida) {
+                            $conexion = conectar();
+                            $consultaAlta = "INSERT INTO `libros`(`isbn`, `nombre`, `autor`, `genero`, `sinopsis`, `pdf`, `portada`) VALUES ('$isbn','$nombre','$autor','$genero','$sinopsis','$nombreLimpio.pdf', '$nombreLimpio.jpg')";
+                            $resultadoAlta = mysqli_query($conexion, $consultaAlta);
+
+                            if (mysqli_affected_rows($conexion)) {
+                                $mensaje = "El libro ha sido dado de alta correctamente.";
+                            } else {
+                                $mensaje = "Ha habido un error al dar de alta el libro.";
+                            }
+                            desconectar($conexion);
+                        }
                     } else {
-                        $mensaje = "Ha habido un error al dar de alta el libro.";
+                        if (!in_array($pdfTipo, $pdfPermitidos)) {
+                            $mensaje .= "Tipo de archivo PDF no permitido. ";
+                        }
+                        if (!in_array($imgTipo, $imgPermitidos)) {
+                            $mensaje .= "Tipo de archivo de imagen no permitido. ";
+                        }
                     }
-                    desconectar($conexion);
                 }
-                
             }
             ?>
             <!--Formulario para dar de alta un libro -->

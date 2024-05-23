@@ -39,6 +39,11 @@
                     $conexion = conectar();
                     $consultaAlta = "INSERT INTO `usuarios`(`id`, `usuario`, `pass`, `correo`, `suscripcion`, `rol`) VALUES ('$id','$usuario','$pass','$correo','$suscripcion','$rol')";
                     $resultadoAlta = mysqli_query($conexion, $consultaAlta);
+                    if($resultadoAlta){
+                        $mensaje = "Usuario dado de alta correctamente";
+                    }else{
+                        $mensaje = "Error al dar de alta";
+                    }
                     desconectar($conexion);
                 }
             }
@@ -50,24 +55,25 @@
                     <table>
                         <tr>
                             <td><label for="usuario">Usuario: </label></td>
-                            <td><input type="text" name="usuario"></td>
+                            <td><input type="text" name="usuario" required></td>
                         </tr>
                         <tr>
                             <td><label for="pass">Contraseña: </label></td>
-                            <td><input type="text" name="pass"></td>
+                            <td><input type="password" name="pass" required></td>
                         </tr>
                         <tr>
                             <td><label for="correo">Correo: </label></td>
-                            <td><input type="text" name="correo"></td>
+                            <td><input type="text" name="correo" required></td>
                         </tr>
                         
                         <tr>
                             <td colspan="2"><input type="submit" name="altaLibro" value="ALTA"></td>
                         </tr>
                     </table>
+                    <p><?php echo $mensaje; ?></p>
                 </form>
             </div>
-            <p><?php echo $mensaje; ?></p>
+           
         </main>
         <?php include("../plantillas/fotter.php"); ?>
     </div>

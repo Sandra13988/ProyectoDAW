@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-	<link rel="stylesheet" href="../../assets/css/estiloComponentesAdmin.css" />
+	<link rel="stylesheet" href="../../assets/css/estiloComponentesAdminAlta.css" />
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,21 +60,36 @@
 				<input type="text" name="id" id="id">
 				<button type="submit" name="buscarLibro">Buscar Libro</button>
 			</form>
-			<?php if (!empty($libro)) { ?>
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-
-					<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>"><br>
-					<label for="nombre">Nombre:</label>
-					<input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>"><br>
-					<label for="autor">Autor:</label>
-					<input type="text" name="autor" value="<?php echo $libro['autor']; ?>"><br>
-					<label for="genero">Género:</label>
-					<input type="text" name="genero" value="<?php echo $libro['genero']; ?>"><br>
-					<label for="sinopsis">Sinopsis:</label>
-					<textarea name="sinopsis"><?php echo $libro['sinopsis']; ?></textarea><br>
-					<button type="submit" name="modificarLibro">Modificar Libro</button>
-				</form>
-			<?php } ?>
+			<div class="recuadro">
+				
+				<?php if (!empty($libro)) { ?>
+					<h3>Modificar Libro</h3>
+					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+						<table>
+							<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>">
+							<tr>
+								<td><label for="nombre">Nombre:</label></td>
+								<td><input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>"></td>
+							</tr>
+							<tr>
+								<td><label for="autor">Autor:</label></td>
+								<td><input type="text" name="autor" value="<?php echo $libro['autor']; ?>"></td>
+							</tr>
+							<tr>
+								<td><label for="genero">Género:</label></td>
+								<td><input type="text" name="genero" value="<?php echo $libro['genero']; ?>"></td>
+							</tr>
+							<tr>
+								<td><label for="sinopsis">Sinopsis:</label></td>
+								<td><textarea name="sinopsis" style="width: 350px; height: 200px;"><?php echo $libro['sinopsis']; ?></textarea></td>
+							</tr>
+							<tr>
+								<td colspan="2"><button type="submit" name="modificarLibro">Modificar Libro</button></td>
+							</tr>
+						</table>
+					</form>
+				<?php } ?>
+			</div>
 			<p><?php echo $mensaje; ?></p>
 		</main>
 		<?php include("../plantillas/fotter.php"); ?>

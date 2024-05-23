@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="../../assets/css/estiloComponentesAdmin.css" />
+    <link rel="stylesheet" href="../../assets/css/estiloComponentesAdminAlta.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,7 +110,7 @@
                         </tr>
                         <tr>
                             <td><label for="sinopsis">SINOPSIS: </label></td>
-                            <td><input type="text" name="sinopsis"></td>
+                            <td><textarea name="sinopsis" style="width: 350px; height: 200px;"></textarea></td>
                         </tr>
                         <tr>
                             <td><label for="pdf">PDF: </label></td>

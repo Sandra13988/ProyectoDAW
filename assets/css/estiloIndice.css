@@ -8,11 +8,6 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    grid-template-rows: 70px auto 50px;
-    height: 100vh;
-}
 
 
 /*Aqui empieza el encabezado*/
@@ -66,6 +61,11 @@ header a {
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
+#contenedor{
+    display: grid;
+    grid-template-rows: 70px auto 50px;
+    height: 100vh;
+}
 
     
 /*Aqui termina el cuerpo*/
@@ -97,6 +97,7 @@ h1{
     color: #a5a6a5;
 }
 
+/* Responsivo tablet */
 @media (min-width: 768px){
     header{
         display: grid;
@@ -165,6 +166,7 @@ h1{
     
 }
 
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

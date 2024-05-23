@@ -140,7 +140,7 @@ footer > .redes{
 }
 
 
-
+/* Responsivo tablet */
 @media (min-width: 768px){
 
     header{
@@ -218,6 +218,8 @@ footer > .redes{
     }
 }
 
+
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

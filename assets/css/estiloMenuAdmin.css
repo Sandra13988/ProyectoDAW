@@ -8,12 +8,7 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
+
 
 
 /*Aqui empieza el encabezado*/
@@ -40,19 +35,6 @@ img{
 }
 
 
-
-#cuerpo > h1{
-    grid-column: span 2;
-}
-
-#cuerpo > form{
-   margin-left: 300px;
-   font-size: 30px;
-}
-
-.politica{
-    display: flex;
-}
 /*Aqio empieza el menú responsivo como movil*/
 
   
@@ -82,6 +64,25 @@ header a {
 
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
+
+#cuerpo > h1{
+    grid-column: span 2;
+}
+
+#cuerpo > form{
+   margin-left: 300px;
+   font-size: 30px;
+}
+
+.politica{
+    display: flex;
+}
 
 #cuerpo{
     background-image: url('../imagenes/fondo/imagenFondo.jpg');
@@ -154,7 +155,7 @@ footer > .redes{
 }
 
 
-
+/* Responsivo tablet */
 @media (min-width: 768px){
 
     header{
@@ -232,6 +233,8 @@ footer > .redes{
     }
 }
 
+
+/* Responsivo tablet */
 @media (min-width: 1024px){
     header{
         display: grid;

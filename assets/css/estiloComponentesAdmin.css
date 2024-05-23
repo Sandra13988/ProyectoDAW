@@ -8,12 +8,7 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
+
 
 
 /*Aqui empieza el encabezado*/
@@ -54,7 +49,6 @@ img{
 .politica{
     display: flex;
 }
-/*Aqio empieza el menú responsivo como movil*/
 
   
   #icono{
@@ -77,6 +71,12 @@ header a {
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
 #cuerpo{
     background-image: url('../imagenes/fondo/imagenFondo.jpg');
     background-size: cover; /* o contain */
@@ -119,7 +119,7 @@ header a {
     margin-top: 30px;
     width: 200px;
     height: 30px;
-    font-size: 15px;/*Es lo ultimo*/
+    font-size: 15px;
 }
 
 /*Aqui termina el cuerpo*/
@@ -147,7 +147,7 @@ footer > .redes{
 }
 
 
-
+/* Responsivo tablet */
 @media (min-width: 768px){
 
     header{
@@ -204,6 +204,7 @@ footer > .redes{
 
 }
 
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

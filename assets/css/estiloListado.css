@@ -40,7 +40,7 @@ img{
     object-fit: fill;
 }
 
-/*Aqio empieza el menú responsivo como movil*/
+
 
   
   #icono{
@@ -196,6 +196,8 @@ footer > .redes{
     width: 100%;
     
 }
+
+/* Responsivo tablet */
 @media (min-width: 768px){
     header{
         display: grid;
@@ -255,6 +257,8 @@ footer > .redes{
     
 }
 
+
+/* Responsivo tablet */
 @media (min-width: 1024px){
     header{
         display: grid;

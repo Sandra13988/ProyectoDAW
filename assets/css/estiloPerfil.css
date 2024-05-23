@@ -9,12 +9,6 @@ body {
     margin: 0px;
 }
 
-#contenedor {
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
 
 
 /*Aqui empieza el encabezado*/
@@ -52,8 +46,6 @@ img {
     display: flex;
 }
 
-/*Aqio empieza el menú responsivo como movil*/
-
 
 #icono {
 
@@ -90,6 +82,12 @@ header a {
     flex-direction: column;;
     justify-content: space-between;
     align-items: center;
+}
+#contenedor {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
 }
 
 input{
@@ -154,7 +152,7 @@ footer>.redes {
 }
 
 
-
+/* Responsivo tablet */
 @media (min-width: 768px) {
 
     header {
@@ -232,6 +230,8 @@ footer>.redes {
         border: 1px solid black;
     }
 }
+
+/* Responsivo escritorio */
 
 @media (min-width: 1024px) {
     header {

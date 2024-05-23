@@ -8,12 +8,6 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
 
 
 /*Aqui empieza el encabezado*/
@@ -27,14 +21,6 @@ header{
     grid-column: span 1;
     
 }
-
-#cuerpo{
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover; /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-}
-
 
 
 
@@ -74,17 +60,39 @@ header a {
 .iconos2{
     display: none;
 }
+
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
+
+#cuerpo{
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
+
 
 h1{
     text-align: center;
  
 }
+
 .fecha{
     background-color: #2e2e2c;
     color:white;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+
 .noticia{
     margin: 20px;
     margin-left: 30px ;
@@ -95,10 +103,7 @@ h1{
     font-size: 20px;
 }
 
-.fecha{
-    padding-left: 20px;
-    padding-right: 20px;
-}
+   
 .contenidoNoticia{
     padding-left: 20px;
     padding-right: 20px;
@@ -152,6 +157,9 @@ footer > .redes{
     width: 100%;
     
 }
+
+
+/* Responsivo tablet */
 @media (min-width: 768px){
     header{
         display: grid;
@@ -211,6 +219,8 @@ footer > .redes{
     
 }
 
+
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

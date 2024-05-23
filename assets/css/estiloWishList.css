@@ -8,12 +8,7 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
+
 
 /*Aqui empieza el encabezado*/
 header{
@@ -33,6 +28,49 @@ header{
 }
 
 
+
+.iconos, .iconos2{
+    display: none;
+}
+
+img{
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+}
+
+/*Aqio empieza el menú responsivo como movil*/
+
+  
+  #icono{
+
+    font-size: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+ 
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.iconos2{
+    display: none;
+}
+/*Aqui termina el encabezado*/
+/*Aqui empieza el cuerpo*/
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
 #cuerpo{
     background-image: url('../imagenes/fondo/imagenFondo.jpg');
     background-size: cover; /* o contain */
@@ -73,44 +111,6 @@ td{
     margin: 80px;
     font-size: 25px;
 }
-
-
-.iconos, .iconos2{
-    display: none;
-}
-
-img{
-    justify-self: center;
-    height: 100%;
-    width: 50%;
-    object-fit: fill;
-}
-
-/*Aqio empieza el menú responsivo como movil*/
-
-  
-  #icono{
-
-    font-size: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    
-  }
-  
- 
-
-header a {
-    color: white;
-    text-decoration: none;
-}
-
-
-.iconos2{
-    display: none;
-}
-/*Aqui termina el encabezado*/
-/*Aqui empieza el cuerpo*/
 
 h1{
     text-align: center;
@@ -177,6 +177,8 @@ footer > .redes{
     width: 100%;
     
 }
+
+/* Responsivo tablet */
 @media (min-width: 768px){
     header{
         display: grid;
@@ -236,6 +238,7 @@ footer > .redes{
     
 }
 
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

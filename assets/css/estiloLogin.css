@@ -8,40 +8,7 @@ body {
     margin: 0px;
 }
 
-#contenedorLogin {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover; /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-}
 
-.titulo{
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.titulo > h2{
-    font-size: 50px;
-}
-.formularioLogin{
-    flex:1;
-    gap: 5px;
-    font-size: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.tituloRegistro{
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
 
 /*Aqui empieza el encabezado*/
 header {
@@ -89,7 +56,40 @@ header a {
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
+#contenedorLogin {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover; /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+}
 
+.titulo{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.titulo > h2{
+    font-size: 50px;
+}
+.formularioLogin{
+    flex:1;
+    gap: 5px;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloRegistro{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
@@ -121,6 +121,8 @@ h1 {
     color: #a5a6a5;
 }
 
+
+
 @media (min-width: 768px) {
     header {
         display: grid;
@@ -131,10 +133,6 @@ h1 {
         grid-column: span 1;
 
     }
-
-
-
-
 
 
     ion-icon {
@@ -150,6 +148,8 @@ h1 {
 
 }
 
+
+/* Responsivo escritorio */
 @media (min-width: 1024px) {
     header {
         display: grid;
@@ -188,10 +188,3 @@ h1 {
 
 }
 
-#cuerpo {
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover;
-    /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-}

@@ -8,12 +8,6 @@ body{
     margin: 0px;
 }
 
-#contenedor{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 70px auto 50px;
-    width: 100%;
-}
 
 /*Aqui empieza el encabezado*/
 header{
@@ -73,6 +67,13 @@ header a {
 
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
+#contenedor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px auto 50px;
+    width: 100%;
+}
+
 
 #cuerpo{
     background-image: url('../imagenes/fondo/imagenFondo.jpg');
@@ -175,6 +176,8 @@ footer > .redes{
     width: 100%;
     
 }
+
+/* Responsivo tablet */
 @media (min-width: 768px){
     header{
         display: grid;
@@ -234,6 +237,7 @@ footer > .redes{
     
 }
 
+/* Responsivo escritorio */
 @media (min-width: 1024px){
     header{
         display: grid;

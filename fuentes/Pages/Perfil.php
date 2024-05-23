@@ -54,16 +54,18 @@
                 echo "</table>";
 
                 echo "<div class='botonesPerfil'>";
-                echo "<form action='Perfil.php' method='POST'>";
-                echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a perfil'/>";
-                echo "</form>";
+
                 echo "<form action='modificarPerfil.php' method='POST'>";
                 echo "<input type='submit' name='modificarPerfil' value='Modificar perfil'/>";
                 echo "</form>";
+                echo "<form action='Perfil.php' method='POST'>";
+                echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a'/>";
+                echo "</form>";
+                echo "<form action='Perfil.php' method='POST'>";
+                echo "<input type='submit' name='borrarCuenta' value='Borrar cuenta'/>";
+                echo "</form>";
                 echo "</div>";
                 echo "</div>";
-              
-
             }
 
             if (isset($_POST["bajaSub"])) {
@@ -72,10 +74,28 @@
                 $conexion = conectar();
                 $consultaUsuario = "UPDATE `usuarios` SET `suscripcion`='none' WHERE id = $id";
                 $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
-        
+
 
                 if ($resultadoUsuario) {
                     echo "Suscripcion dada de baja!";
+                } else {
+                    echo "Fallo en darse de baja";
+                }
+            }
+
+            if (isset($_POST["borrarCuenta"])) {
+                $id = $_SESSION["id"];
+
+                $conexion = conectar();
+                $consultaUsuario = "DELETE FROM `usuarios` WHERE id = $id";
+                $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
+
+
+                if ($resultadoUsuario) {
+                    
+                    echo "Cuenta dada de baja!";
+                    echo "<script>window.location.href='../../cerrar.php';</script>";
+                    exit();
                 } else {
                     echo "Fallo en darse de baja";
                 }

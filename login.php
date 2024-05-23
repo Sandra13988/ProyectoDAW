@@ -1,3 +1,4 @@
+<?php  $mensaje = ""?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,7 @@
 				header("location:./fuentes/Pages/Indice.php");
 				exit();
 			} else {
-				echo "Ese usuario no existe";
+				$mensaje = "Ese usuario no existe";
 			}
 		}
 
@@ -77,6 +78,8 @@
 			<input type="text" name="pass" placeholder="contraseña">
 			<input type="submit" name="login" value="Login">
 		</form>
+
+		<?php echo $mensaje?>
 
 		<div class="tituloRegistro">
 			<p>Aun no estás registrado? Unete a nosotros!</p>

@@ -42,7 +42,7 @@
             } else {
 
                 $id = asignarId();
-                $suscripcion = false;
+                $suscripcion = "none";
                 $rol = "normal";
                 echo("Entra en el php");
                 $conexion = conectar();

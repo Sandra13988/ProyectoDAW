@@ -47,25 +47,6 @@ img {
     object-fit: fill;
 }
 
-#cuerpoPerfil {
-    background-image: url('../imagenes/fondo/imagenFondo.jpg');
-    background-size: cover;
-    /* o contain */
-    background-attachment: fixed;
-    background-position: center;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-#cuerpoPerfil>h1 {
-    grid-column: span 2;
-}
-
-#cuerpoPerfil>form {
-    margin-left: 300px;
-    font-size: 30px;
-}
 
 .politica {
     display: flex;
@@ -94,8 +75,59 @@ header a {
 /*Aqui termina el encabezado*/
 /*Aqui empieza el cuerpo*/
 
+#cuerpoPerfil {
+    background-image: url('../imagenes/fondo/imagenFondo.jpg');
+    background-size: cover;
+    /* o contain */
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.botonesPerfil{
+    margin-top: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+#cuerpoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 
 
+.posicionDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-size: 25px;
+    padding: 10px;
+}
+.tablaListado{
+    border: 1px solid black;
+}
+th{
+    color: white;
+    text-align: center;
+    background-color: #2e2e2c;
+    margin: 0;
+}
+td{
+    width: 300px;
+    border: 1px solid black;
+}
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
 footer {
@@ -236,16 +268,10 @@ footer>.redes {
 
 
     #cuerpoPerfil {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 70px auto;
-    }
-
-
-    #cuerpoPerfil > h1 {
-        text-align: center;
-        grid-column: span 3;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
     }
 
     .datosPerfil {

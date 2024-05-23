@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/estiloMenus.css"/>
+    <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
     <title>Libros</title>
 </head>
 
@@ -25,46 +25,63 @@
             <?php
 
 
-		//De momento se queda asi, pero quizas sea mejor cambiar esto por 
-		//una funcion que tengo en funciones de comprobar usuarios registrados
-            $nombreUsuario = $_SESSION['nombre'];
-			$conexion = conectar();
-			$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
-			$resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
-			$filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
+            //De momento se queda asi, pero quizas sea mejor cambiar esto por 
+            //una funcion que tengo en funciones de comprobar usuarios registrados
+            $idUsuario = $_SESSION['id'];
+            $conexion = conectar();
+            $consultaUsuario = "SELECT * FROM usuarios WHERE id = '$idUsuario'";
+            $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
+            $filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
 
 
-			if ($filaUsuario) {
-                echo "<div class='datosPerfil'>";
-                    echo "<p><strong>Nombre de usuario:</strong> " . $filaUsuario['usuario'] . "</p>";
-                    echo "<p><strong>Contraseña:</strong> " . $filaUsuario['pass'] . "</p>";
-                    echo "<p><strong>Email:</strong> " . $filaUsuario['correo'] . "</p>";
-                    echo "<p><strong>Suscripcion:</strong> " . $filaUsuario['suscripcion'] . "</p>";
-                    
-                    echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a'/>";
+            if ($filaUsuario) {
+                echo "<div class='posicionDiv'>";
+                echo "<table class='tablaListado'>";
+                echo "<tr>";
+                echo "<th>USUARIO</th>";
+                echo "<th>CONTRASEÑA</th>";
+                echo "<th>CORREO</th>";
+                echo "<th>SUSCRIPCION</th>";
+                echo "</tr>";
+
+
+                echo "<tr>";
+                echo "<td>" . $filaUsuario['usuario'] . "</td>";
+                echo "<td>" . $filaUsuario['pass'] . "</td>";
+                echo "<td>" . $filaUsuario['correo'] . "</td>";
+                echo "<td>" . $filaUsuario['suscripcion'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+
+                echo "<div class='botonesPerfil'>";
+                echo "<form action='Perfil.php' method='POST'>";
+                echo "<input type='submit' name='bajaSub' value='Ya no quiero estar suscrito/a perfil'/>";
+                echo "</form>";
+                echo "<form action='modificarPerfil.php' method='POST'>";
+                echo "<input type='submit' name='modificarPerfil' value='Modificar perfil'/>";
+                echo "</form>";
                 echo "</div>";
-                // Agrega más campos según sea necesario
-			
-			}
-		
+                echo "</div>";
+              
+
+            }
+
             if (isset($_POST["bajaSub"])) {
                 $id = $_SESSION["id"];
-                $baja = false;
-                $tipoSub = "none";
 
                 $conexion = conectar();
-                $consultaUsuario = "UPDATE `usuarios` SET `tipoSuscripcion`='$tipoSub',`suscripcion`='$baja' WHERE id = $id";
+                $consultaUsuario = "UPDATE `usuarios` SET `suscripcion`='none' WHERE id = $id";
                 $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
-                $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
+        
 
-                if ($filaUsuario) {
-                    echo "Suscripcion al plan Deluxe realizada!";
+                if ($resultadoUsuario) {
+                    echo "Suscripcion dada de baja!";
                 } else {
                     echo "Fallo en darse de baja";
                 }
             }
 
-		?>
+            ?>
         </main>
         <?php include('../plantillas/fotter.php'); ?>
     </div>

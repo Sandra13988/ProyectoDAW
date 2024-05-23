@@ -32,7 +32,7 @@
                 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="libro" id="' . $row['nombre'] . '">';
-                    echo '<h2>' . $row['nombre'] . '</h2>';
+                    echo '<h2>' . strtoupper($row['nombre']) . '</h2>';
                     echo ' <div class="imagenLibro"><img src="../Admin/portada/' . $row['portada'] . '" width="200" height="300"></div>';
                     echo '<div class="contenidoLibro">';
                     echo '<strong>Genero: </strong>' . $row['genero'] . '<br>';

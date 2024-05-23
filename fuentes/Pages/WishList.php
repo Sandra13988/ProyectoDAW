@@ -16,9 +16,9 @@
 </head>
 
 <body>
-<div id="contenedor">
-		<?php include('../plantillas/cabecero.php'); ?>
-		<main id="cuerpo">
+    <div id="contenedor">
+        <?php include('../plantillas/cabecero.php'); ?>
+        <main id="cuerpo">
             <h1>LISTA DE DESEOS</h1>
             <?php
 
@@ -36,8 +36,16 @@
             $conexion = conectar();
             $query = "SELECT * FROM deseos WHERE id_usuario = '$id_usuario'";
             $result = mysqli_query($conexion, $query);
-            ?>
+          
 
+            // Verificar si se ha enviado una solicitud de eliminación
+            if (isset($_POST['borrarDeseo'])) {
+                $nombre_deseo = $_POST['nombre_deseo'];
+                $borrarDeseo = "DELETE FROM deseos WHERE nombre = '$nombre_deseo' AND id_usuario = '$id_usuario'";
+                mysqli_query($conexion, $borrarDeseo);
+            }
+
+            ?>
 
 
             <?php
@@ -46,9 +54,10 @@
             echo "<table class='tablaListado'>";
             if (mysqli_num_rows($result) > 0) {
                 echo "<tr>";
-                echo "<th>TITULO</th>";
+                echo '<th style="width: 400px;">TITULO</th>';
                 echo "<th>GENERO</th>";
                 echo "<th>AUTOR</th>";
+                echo "<th></th>";
                 echo "<th></th>";
                 echo "</tr>";
                 // Mostrar la lista de libros en la lista de deseos
@@ -58,7 +67,13 @@
                     echo "<td>" . $row['genero'] . "</td>";
                     echo "<td>" . $row['autor'] . "</td>";
                     // Agregar botón de descarga
-                    echo '<td><a href="../Admin/pdf/' . $row['nombre'] . '.pdf" download><button>Descargar</button></a></td>';
+                    echo '<td><a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro" class="boton-accion"></a></td>';
+                    echo '<td>
+                                <form method="post" action="#">
+                                    <input type="hidden" name="nombre_deseo" value="' . $row['nombre'] . '">
+                                    <input type="submit" name="borrarDeseo" value="Borrar Deseo" class="boton-accion">
+                                </form>
+                              </td>';
                     echo "</tr>";
                 }
             } else {

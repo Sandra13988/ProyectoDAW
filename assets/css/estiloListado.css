@@ -153,6 +153,15 @@ td{
 
 }
 
+.boton-accion {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
 
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/

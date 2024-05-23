@@ -14,9 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
     <title>Noticias</title>
 </head>
-<!--ESTO ESTÁ SIN TERMINAR-->
-<!--ESTÁ EL CODIGO PERO HAY QUE COMPROBAR QUE FUNCIONE-->
-
+  <!--Seccion de registro para nuevos usuarios-->
 <body>
 
     <div id="contenedorLogin">
@@ -29,27 +27,33 @@
     
         <?php
         include("./fuentes/funciones.php");
-        //include("encabezado.php");
-
+  
+        //Si se ha presionado el boton de Registro..
         if (isset($_POST["altaUsuario"])) {
 
+            //Recogemos los datos del formulario 
             $usuario = $_POST["usuario"];
             $pass = $_POST["pass"];
             $correo = $_POST["correo"];
      
+            //Comprobamos si el usuario está ya registrador
             if (comprobarUsuario($usuario)) {
                 $mensaje =  "Este usuario ya existe";
             } else {
 
+                //Le generamos una id nueva
                 $id = asignarId();
+                //Le ponemos datos por defecto
                 $suscripcion = "none";
                 $rol = "normal";
-                echo("Entra en el php");
+                
+                //Conectamos e insertamos en la tabla de usuarios los datos
                 $conexion = conectar();
                 $consultaAlta = "INSERT INTO `usuarios`(`id`, `usuario`, `pass`, `correo`, `suscripcion`, `rol`) VALUES ('$id','$usuario','$pass','$correo','$suscripcion','$rol')";
                 $resultadoAlta = mysqli_query($conexion, $consultaAlta);
                 if (mysqli_affected_rows($conexion)) {
                     $mensaje = "Tu registro se ha realizado alta correctamente";
+                    //Nos redirige al login
                     header("location:./login.php");
                 } else {
                     $mensaje = "Ha habido un error al registrarte";
@@ -66,7 +70,7 @@
             <h3>Encuentra todo lo que estas imaginando aqui!</h3>
             <h3>REGISTRATE CON NOSOTROS</h3>
         </div>
-        
+        <!--Formulario del registro-->
         <form action="registro.php" method="POST" id="loginForm" class="formularioLogin">
             <label for="usuario" >Usuario: </label>
             <input type="text" id="usuario" name="usuario" placeholder="usuario">
@@ -79,16 +83,16 @@
 
         </form>
         <script>
-            console.log("Entra en el js")
+            
+            //Script para validar el formulario
             document.getElementById("loginForm").addEventListener("submit", function(event) {
-
 
                 // Obtener valores del formulario
                 var username = document.getElementById("usuario").value;
                 var password = document.getElementById("pass").value;
                 var correo = document.getElementById("correo").value;
 
-                // Expresiones regulares para validar nombre de usuario y contraseña
+                // Expresiones regulares para validar nombre de usuario contraseña y correo
                 var usernameRegex = /^[a-zA-Z0-9]+$/; // Solo letras y números
                 var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; // Al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula y un número
                 var correoRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -104,7 +108,7 @@
                     alert("El correo no es valido");
                 } else {
                     alert("¡Registro exitoso!");
-                    // Aquí podrías redirigir al usuario a otra página
+                    
                 }
             });
         </script>

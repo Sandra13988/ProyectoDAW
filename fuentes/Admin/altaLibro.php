@@ -17,10 +17,12 @@
 </head>
 
 <body>
+    <!--Codigo para dar de alta un libro-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <?php
+            //Recoger los datos enviados por el formulario y almacenarlos en variables
             if (isset($_POST["altaLibro"])) {
                 $isbn = $_POST["isbn"];
                 $nombre = $_POST["nombre"];
@@ -28,16 +30,18 @@
                 $genero = $_POST["genero"];
                 $sinopsis = $_POST["sinopsis"];
 
-                // Limpieza del nombre para usarlo como nombre de archivo
+                // Limpieza del nombre para usarlo como nombre del pdf y de la portada
                 $nombreLimpio = preg_replace('/[^A-Za-z0-9_\-]/', '_', $nombre);
 
                 // Obtener los archivos
                 $pdf = $_FILES["pdf"];
                 $portada = $_FILES["portada"];
 
+                //Comprobar si ya existe ese libro
                 if (comprobarExistencias($isbn)) {
                     $mensaje =  "Este libro ya existe";
                 } else {
+                    //Si no existe, hacemos el alta
                     $conexion = conectar();
                     $consultaAlta = "INSERT INTO `libros`(`isbn`, `nombre`, `autor`, `genero`, `sinopsis`, `pdf`, `portada`) VALUES ('$isbn','$nombre','$autor','$genero','$sinopsis','$nombreLimpio.pdf', '$nombreLimpio.jpg')";
                     $resultadoAlta = mysqli_query($conexion, $consultaAlta);
@@ -50,6 +54,7 @@
                     $pdfNombre = $nombreLimpio . '.pdf';
                     $pdfSubido = false;
 
+                    //Se comprueba si el tipo de archivo es permitido y dependiendo si es o no, muestra el mensaje
                     if (in_array($pdfTipo, $pdfPermitidos)) {
                         if (move_uploaded_file($pdfTemp, $pdfRuta . $pdfNombre)) {
                             $pdfSubido = true;
@@ -68,6 +73,7 @@
                     $imgNombre = $nombreLimpio . '.jpg';
                     $imgSubida = false;
 
+                    //Se comprueba si el tipo de archivo es permitido y dependiendo si es o no, muestra el mensaje
                     if (in_array($imgTipo, $imgPermitidos)) {
                         if (move_uploaded_file($imgTemp, $imgRuta . $imgNombre)) {
                             $imgSubida = true;
@@ -82,12 +88,14 @@
                     if ($pdfSubido && $imgSubida && mysqli_affected_rows($conexion)) {
                         $mensaje = "El libro ha sido dado de alta correctamente.";
                     } else {
-                        $mensaje .= "Ha habido un error al dar de alta el libro.";
+                        $mensaje = "Ha habido un error al dar de alta el libro.";
                     }
+                    desconectar($conexion);
                 }
+                
             }
             ?>
-
+            <!--Formulario para dar de alta un libro -->
             <div class="recuadro">
                 <h3>ALTA LIBRO</h3>
                 <form action="altaLibro.php" method="POST" enctype="multipart/form-data">

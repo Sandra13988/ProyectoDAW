@@ -16,29 +16,35 @@
 </head>
 
 <body>
+    <!--Codigo para borrar un usuario-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <?php
+            //Si ha presionado el boton de dar de baja...
             if (isset($_POST["enviarBaja"])) {
+                //Recojo el id que he introducido en el formulario
                 $id = $_POST["id"];
+                //Compruebo si ese usuario existe...
+                if (comprobarUsuarioPorID($id)) {
+                    $conexion = conectar();
+                    // Si el usuario existe, se borrar
+                    $consultaBaja = "DELETE FROM usuarios WHERE id = '$id'";
+                    $resultadoBaja = mysqli_query($conexion, $consultaBaja);
+                    if (mysqli_affected_rows($conexion)) {
+                        $mensaje = "El usuario ha sido eliminado correctamente";
+                    } else {
 
-                $conexion = conectar();
-                // Eliminar primero el registro de la base de datos
-                $consultaBaja = "DELETE FROM usuarios WHERE id = '$id'";
-                $resultadoBaja = mysqli_query($conexion, $consultaBaja);
-                if (mysqli_affected_rows($conexion)) {
-                    // Eliminar los archivos PDF e imagen asociados
-
-                    $mensaje = "El artículo y los archivos asociados han sido eliminados correctamente";
+                        $mensaje = "Ha habido un error al dar de baja el usuario";
+                    }
+                   desconectar($conexion);
+                }else{
+                    $mensaje = "El usuario no existe";
                 }
-            } else {
-                $mensaje = "Ha habido un error al dar de baja el artículo";
             }
-
-
-
             ?>
+
+            <!--Formulario para recoger el id del usuario y darlo de baja-->
             <div class="recuadro">
                 <h3>BAJA USUARIO</h3>
                 <form action="borradoUsuario.php" method="POST">

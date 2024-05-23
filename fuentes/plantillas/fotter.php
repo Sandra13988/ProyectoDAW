@@ -1,4 +1,5 @@
 
+<!--Fotter para todas las paginas con las redes sociales de la empresa-->
 <footer>
     <a href="https://twitter.com/home" class="redes">
                 <ion-icon name="logo-twitter"></ion-icon>

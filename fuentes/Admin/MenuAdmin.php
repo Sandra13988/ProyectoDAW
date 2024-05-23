@@ -18,10 +18,12 @@
 </head>
 
 <body>
-
+    <!--Menu del administrador donde tendremos todas las opciones para
+        administrar los libros, usuarios y actualizar novedades-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <div id="cuerpo">
+            
             <div class="administrarLibros">
                 <h2>ADMINISTRAR LIBROS</h2>
                 <div class="recuadro">

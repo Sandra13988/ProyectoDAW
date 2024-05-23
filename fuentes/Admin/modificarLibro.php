@@ -18,24 +18,40 @@
 </head>
 
 <body>
+	<!--Codigo para modificar un libro -->
 	<div id="contenedor">
 		<?php include('../plantillas/cabecero.php') ?>
 		<main id="cuerpo">
 			<?php
+			//Generamos un array de libros vacio
 			$libro = array();
 
+			//Si se ha presionado el boton de buscar libros...
 			if (isset($_POST["buscarLibro"])) {
-				$id = $_POST["id"];
-				$conexion = conectar();
-				$consulta = "SELECT * FROM libros WHERE isbn = '$id'";
-				$resultado = mysqli_query($conexion, $consulta);
-				if ($resultado && mysqli_num_rows($resultado) > 0) {
-					$libro = mysqli_fetch_assoc($resultado);
-				} else {
-					$mensaje = "No se encontró ningún libro con ese ID.";
-				}
-			}
+				//Obtenemos el isbn del libro en una variable
+				$isbn = $_POST["id"];
 
+				//Comprobamos si el isbn existe en nuestra base de datos
+				if(comprobarExistencias($isbn)){
+					$conexion = conectar();
+					//Si existe, generamos la consulta
+					$consulta = "SELECT * FROM libros WHERE isbn = '$isbn'";
+					$resultado = mysqli_query($conexion, $consulta);
+					if ($resultado && mysqli_num_rows($resultado) > 0) {
+						$libro = mysqli_fetch_assoc($resultado);
+					} else {
+						$mensaje = "No se encontró ningún libro con ese ID.";
+					}
+					desconectar($conexion);
+				}
+				
+			}
+			//Si la consulta anterior devuelve resultados, recogemos todos los datos del libro
+			//para implementarlos en los inputs del formulario donde procederemos a 
+			//hacer la modificacion
+
+
+			//Si se ha presionado el boton de modificar, recogeremos los nuevos datos en variables...
 			if (isset($_POST["modificarLibro"])) {
 				$isbn = $_POST["isbn"];
 				$nombre = $_POST["nombre"];
@@ -43,6 +59,7 @@
 				$genero = $_POST["genero"];
 				$sinopsis = $_POST["sinopsis"];
 
+				//Generaremos la consulta de actualizacion
 				$conexion = conectar();
 				$consulta = "UPDATE libros SET isbn='$isbn', nombre='$nombre', autor='$autor', genero='$genero', sinopsis='$sinopsis' WHERE isbn='$isbn'";
 				$resultado = mysqli_query($conexion, $consulta);
@@ -51,15 +68,19 @@
 				} else {
 					$mensaje = "Ha ocurrido un error al modificar los datos del libro.";
 				}
+				desconectar($conexion);
 			}
 			?>
 
+			<!--Formulario para recoger el isbn del libro que queremos modificar -->
 			<h2>Modificar Libro</h2>
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 				<label for="id">ISBN del Libro:</label>
 				<input type="text" name="id" id="id">
 				<button type="submit" name="buscarLibro">Buscar Libro</button>
 			</form>
+
+			<!--Formulario para modificar el libro seleccionado -->
 			<div class="recuadro">
 				
 				<?php if (!empty($libro)) { ?>

@@ -16,19 +16,15 @@
 </head>
 
 <body>
+    <!--Seccion de lista de deseos-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <h1>LISTA DE DESEOS</h1>
             <?php
 
-
-            if (!isset($_SESSION['id'])) {
-                // Si el usuario no ha iniciado sesión, redirigirlo al inicio de sesión
-                header("Location: iniciar_sesion.php");
-                exit();
-            }
-
+           
+            
             // Obtener el ID del usuario de la sesión
             $id_usuario = $_SESSION['id'];
 
@@ -38,18 +34,20 @@
             $result = mysqli_query($conexion, $query);
           
 
-            // Verificar si se ha enviado una solicitud de eliminación
+            // Consulta que elimina el boton de la lista de deseos 
             if (isset($_POST['borrarDeseo'])) {
                 $nombre_deseo = $_POST['nombre_deseo'];
                 $borrarDeseo = "DELETE FROM deseos WHERE nombre = '$nombre_deseo' AND id_usuario = '$id_usuario'";
                 mysqli_query($conexion, $borrarDeseo);
             }
 
+            desconectar($conexion);
             ?>
 
 
             <?php
 
+            //Si el usuario conectado tiene libros en su lista de deseos, los mostrará
             echo "<div class='posicionDiv'>";
             echo "<table class='tablaListado'>";
             if (mysqli_num_rows($result) > 0) {
@@ -66,7 +64,7 @@
                     echo "<td>" . $row['nombre'] . "</td>";
                     echo "<td>" . $row['genero'] . "</td>";
                     echo "<td>" . $row['autor'] . "</td>";
-                    // Agregar botón de descarga
+                    //En la lista de deseo tendremos un boton de descargar libro y otro de borrar libro de la lista
                     echo '<td><a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro" class="boton-accion"></a></td>';
                     echo '<td>
                                 <form method="post" action="#">
@@ -77,6 +75,7 @@
                     echo "</tr>";
                 }
             } else {
+                //Y sino, aparecerá el mensaje indicando que no tiene ninguno 
                 echo "No tienes ningún libro en tu lista de deseos.";
             }
             echo "</table>";

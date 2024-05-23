@@ -18,8 +18,7 @@
 </head>
 
 <body>
-	<!--ESTO ESTÁ SIN TERMINAR-->
-	<!--ESTÁ EL CODIGO PERO HAY QUE COMPROBAR QUE FUNCIONE-->
+	<!--Seccion de Login-->
 	<div id="contenedorLogin">
 
 
@@ -33,30 +32,33 @@
 		<?php
 		include("./fuentes/funciones.php");
 
-		//De momento se queda asi, pero quizas sea mejor cambiar esto por 
-		//una funcion que tengo en funciones de comprobar usuarios registrados
+		//Si se ha pulsado el boton de login...
 		if (isset($_POST["login"])) {
+			//Recogemos los datos del formulario en variables
 			$usuario = $_POST["usuario"];
 			$pass = $_POST["pass"];
 			
 
-
+			//Conectamos y hacemos la consulta para averiguar si existe ese usuario y contraseña
 			$conexion = conectar();
 			$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario' and pass = '$pass'";
 			$resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
 			$filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
 
-
+			//Si existe ...
 			if ($filaUsuario) {
+				//Guardamos datos en la sesion para usarlos posteriormente
 				$_SESSION['id'] = $filaUsuario['id'];
 				$_SESSION['nombre'] = $filaUsuario['usuario'];
 				$_SESSION['suscripcion'] = $filaUsuario['suscripcion'];
 				$_SESSION['rol'] = $filaUsuario['rol'];
 
-				setcookie("nombre_usuario", $filaUsuario['usuario'], time() + (86400 * 30), "/"); // Cookie válida por 30 días
+				//Guardamos la cookie por 30 dias para usarlos en el nombre del menu
+				setcookie("nombre_usuario", $filaUsuario['usuario'], time() + (86400 * 30), "/"); 
 
 				
 				echo "Sesión iniciada correctamente";
+				//Redirigimos al usuario a la pagina del indice
 				header("location:./fuentes/Pages/Indice.php");
 				exit();
 			} else {
@@ -70,7 +72,7 @@
 		<h2>Bienvenido a LIBREX</h2>
 		<h3>Encuentra todo lo que estas imaginando aqui!</h3>
 		</div>
-		
+		<!--Formulario de login-->
 		<form action="login.php" method="POST" class="formularioLogin"  id="loginForm">
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario@usuario.com">
@@ -81,6 +83,7 @@
 
 		<?php echo $mensaje?>
 
+		<!--Boton para redirigirnos a registro-->
 		<div class="tituloRegistro">
 			<p>Aun no estás registrado? Unete a nosotros!</p>
 			<a href="./registro.php">Registrate</a>
@@ -88,33 +91,6 @@
 
 		</div>
 		
-		<script>
-			document.getElementById("loginForm").addEventListener("submit", function(event) {
-			
-
-				// Obtener valores del formulario
-				var username = document.getElementById("usuario").value;
-				var password = document.getElementById("pass").value;
-				console.log(username)
-				console.log(password)
-
-				//LAS EXPRESIONES SE PONENE EN EL REGISTRO
-				// Expresiones regulares para validar nombre de usuario y contraseña
-				var usernameRegex = /^[a-zA-Z0-9]+$/; // Solo letras y números
-				var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; // Al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula y un número
-				
-				// Validaciones
-				if (!username.match(usernameRegex)) {
-					alert("El nombre de usuario debe contener solo letras y números.");
-				} else if (!password.match(passwordRegex)) {
-					alert("La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
-				} else {
-					alert("¡Inicio de sesión exitoso!");
-					// Aquí podrías redirigir al usuario a otra página
-					console.log("Enviado")
-				}
-			});
-		</script>
 		<?php include_once "./fuentes/plantillas/fotter.php" ?>
 	</div>
 </body>

@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <!-- Seccion de perfil del usuario conectado -->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
 
@@ -24,16 +25,15 @@
             <h1>PERFIL</h1>
             <?php
 
-
-            //De momento se queda asi, pero quizas sea mejor cambiar esto por 
-            //una funcion que tengo en funciones de comprobar usuarios registrados
+            //Recogemos el id de la sesion
             $idUsuario = $_SESSION['id'];
+            //Conectamos y hacemos la consulta con los datos del usuario conectado
             $conexion = conectar();
             $consultaUsuario = "SELECT * FROM usuarios WHERE id = '$idUsuario'";
             $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
             $filaUsuario = mysqli_fetch_assoc($resultadoUsuario);
 
-
+            //Si la consulta da resultado, imprimimos sus datos
             if ($filaUsuario) {
                 echo "<div class='posicionDiv'>";
                 echo "<table class='tablaListado'>";
@@ -53,6 +53,7 @@
                 echo "</tr>";
                 echo "</table>";
 
+                //Ademas de los datos, se agregan 3 botones, modificar perfil, dar de baja a la suscripcion y borrar cuenta
                 echo "<div class='botonesPerfil'>";
 
                 echo "<form action='modificarPerfil.php' method='POST'>";
@@ -68,9 +69,12 @@
                 echo "</div>";
             }
 
+            //Si se ha pulsado el boton de dar de baja a su suscripcion
             if (isset($_POST["bajaSub"])) {
+                //Recogemos el id de la sesion
                 $id = $_SESSION["id"];
 
+                //Conectamos y actualizamos los datos del usuario poniendo en "none" su suscripcion
                 $conexion = conectar();
                 $consultaUsuario = "UPDATE `usuarios` SET `suscripcion`='none' WHERE id = $id";
                 $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
@@ -81,11 +85,14 @@
                 } else {
                     echo "Fallo en darse de baja";
                 }
+                desconectar($conexion);
             }
 
+            //Si hemos pulsado el boton de borrar cuenta... 
             if (isset($_POST["borrarCuenta"])) {
+                //Recogemos el id de la sesion
                 $id = $_SESSION["id"];
-
+                //Conectamos y borramos el usuario
                 $conexion = conectar();
                 $consultaUsuario = "DELETE FROM `usuarios` WHERE id = $id";
                 $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
@@ -94,11 +101,13 @@
                 if ($resultadoUsuario) {
                     
                     echo "Cuenta dada de baja!";
+                    //Si los resultados son positivos nos mandará al login y cerrara la sesion
                     echo "<script>window.location.href='../../cerrar.php';</script>";
                     exit();
                 } else {
                     echo "Fallo en darse de baja";
                 }
+                desconectar($conexion);
             }
 
             ?>

@@ -18,6 +18,7 @@
 </head>
 
 <body>
+	<!--Apartado para que el usuario conectado modifique su perfil-->
 	<div id="contenedor">
 		<?php include('../plantillas/cabecero.php') ?>
 		<main id="cuerpo">
@@ -26,6 +27,8 @@
 
 			// Obtener los datos del usuario de la sesión
 			$id = $_SESSION["id"];
+			//Conectar y hacer la consulta para encontrar sus datos y mostrarlos en el formulario
+			
 			$conexion = conectar();
 			$consulta = "SELECT * FROM usuarios WHERE id = '$id'";
 			$resultado = mysqli_query($conexion, $consulta);
@@ -36,23 +39,29 @@
 				$mensaje = "No se encontró ningún usuario con ese ID.";
 			}
 
-			// Procesar el formulario si se envió
+			// Si se ha pulsado el boton de modificarUsuario....
 			if (isset($_POST["modificarUsuario"])) {
+				//Recogemos en variables los datos nuevos
 				$nombre = $_POST["usuario"];
 				$pass = $_POST["pass"];
 				$correo = $_POST["correo"];
+				//Si quiere modificar la suscripcion, tendrá al final de su perfil un boton
+				//para darse de baja o bien tendrá que meterse en la seccion de suscripciones
+				//si lo que desea es cambiarla por otra.
 
-				// Actualizar los datos del usuario
+				// Actualizamos los datos del usuario
 				$consulta = "UPDATE usuarios SET usuario='$nombre', pass='$pass', correo='$correo' WHERE id='$id'";
 				$resultado = mysqli_query($conexion, $consulta);
 				if ($resultado) {
+					//Este script es para redirigir al usuario a su perfil una vez que ha modificado su perfil
 					echo "<script>window.location.href='./Perfil.php';</script>";
 					exit();
 				}
 			}
+			desconectar($conexion);
 			?>
 
-
+			<!--Formulario para modificar el perfil -->
 			<?php if (!empty($usuario)) { ?>
 				<h3>Modificar usuario</h3>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">

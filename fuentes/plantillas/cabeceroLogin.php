@@ -1,3 +1,5 @@
+<!--Header para el login-->
+
 <header>
     <img src="assets/imagenes/logotipo/logo.png" alt="">
     <!--Menu tablet-->

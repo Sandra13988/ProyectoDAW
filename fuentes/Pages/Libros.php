@@ -17,16 +17,19 @@
 </head>
 
 <body>
+    <!-- Catalogo de los libros disponibles-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main class="todoLibros">
         <h1>LIBROS</h1>
             <?php
+            //Hacemos conexion y generamos una consulta para que nos de todos los libros
             $conexion = conectar();
 
             $query = "SELECT * FROM libros";
             $result = mysqli_query($conexion, $query);
 
+            //Si la consulta encuentra resultados...
             if ($result) {
                 // Comienza el bucle para mostrar cada libro
                 
@@ -43,8 +46,10 @@
                     echo '</div>';
                     echo '<div class="botonesLibros">';
                     // Aquí se agrega el enlace al botón de Descargar Libro
+                    //Generamos una variable para comprobar si el usuario está suscrito
                     $suscrito = comprobarSuscripcion();
 
+                    //Si lo está aparecerá el boton habilitado
                     if ($suscrito) {
                         echo '<a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro"></a>';
                     } else {
@@ -54,6 +59,7 @@
                     
                     
                     // Formulario para agregar el libro a la lista de deseos
+                    
                     echo '<form action="agregar_deseo.php" method="POST">';
                     echo '<input type="hidden" name="id_libro" value="' . $row['isbn'] . '">';
                     echo '<input type="hidden" name="nombre_libro" value="' . $row['nombre'] . '">';
@@ -68,6 +74,7 @@
 
                 }
             }
+            desconectar($conexion);
             ?>
         </main>
         <?php include('../plantillas/fotter.php'); ?>

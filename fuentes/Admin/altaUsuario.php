@@ -17,10 +17,12 @@
 </head>
 
 <body>
+    <!--Codigo para dar de alta un usuario -->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <?php
+            //Recoger en variables los datos enviados desde el formulario
             if (isset($_POST["altaLibro"])) {
                 $id = asignarId();
                 $usuario = $_POST["usuario"];
@@ -29,17 +31,19 @@
                 $suscripcion = false;
                 $rol = "normal"; 
 
-
+                //Comprobar si el usuario existe
                 if (comprobarUsuario($usuario)) {
                     $mensaje =  "Este usuario ya existe";
                 } else {
+                    //Si existe, lo damos de alta
                     $conexion = conectar();
                     $consultaAlta = "INSERT INTO `usuarios`(`id`, `usuario`, `pass`, `correo`, `suscripcion`, `rol`) VALUES ('$id','$usuario','$pass','$correo','$suscripcion','$rol')";
                     $resultadoAlta = mysqli_query($conexion, $consultaAlta);
+                    desconectar($conexion);
                 }
             }
             ?>
-
+            <!--Formulario para dar de alta un usuario (desde el admin)-->
             <div class="recuadro">
                 <h3>ALTA USUARIO</h3>
                 <form action="altaUsuario.php" method="POST" enctype="multipart/form-data">

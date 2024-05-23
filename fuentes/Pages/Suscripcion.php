@@ -18,11 +18,13 @@
 </head>
 
 <body>
+    <!-- Seccion de suscripciones -->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <h1>SUSCRIPCIONES</h1>
             <? echo $mensaje ?>
+            <!--Nos muestra las 3 posibles suscripciones disponibles -->
             <form method="POST" action="Suscripcion.php">
                 <div class="otroCuerpo">
                     <div class="suscripcion">
@@ -64,10 +66,13 @@
         </main>
         <?php
 
+      
+        //Si se ha enviado el formulario, conectaremos y recogeremos el id de la sesion
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conexion = conectar();
             $id = $_SESSION['id'];
 
+            //Segun la suscripcion que se haya pulsado, se elegira una consulta diferente
             if (isset($_POST["suscribeteBasico"])) {
                 $consultaUsuario = "UPDATE `usuarios` SET `suscripcion`='basico' WHERE id = $id";
             } elseif (isset($_POST["suscribeteEstandar"])) {
@@ -76,6 +81,7 @@
                 $consultaUsuario = "UPDATE `usuarios` SET `suscripcion`='delux' WHERE id = $id";
             }
 
+            //Se genera la consulta y se actualiza el tipo de suscripcion
             if (isset($consultaUsuario)) {
                 $resultadoUsuario = mysqli_query($conexion, $consultaUsuario);
                 if (mysqli_affected_rows($conexion) > 0) {
@@ -85,7 +91,7 @@
                 }
             }
 
-            mysqli_close($conexion);
+            desconectar($conexion);
         } else {
             $mensaje = "No se ha iniciado sesión.";
         }

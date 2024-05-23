@@ -16,16 +16,20 @@
 </head>
 
 <body>
+    <!--Codigo para borrar un libro-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <?php
+            //Si se ha pulsado el boton de dar de baja ...
             if (isset($_POST["enviarBaja"])) {
                 $id = $_POST["id"];
 
+                //Comprobamos si el usuario existe
                 if (!comprobarExistencias($id)) {
-                    $mensaje =  "Este artículo NO existe";
+                    $mensaje =  "Este usuario NO existe";
                 } else {
+                    //Si existe...
                     $conexion = conectar();
                     // Obtener la ruta del PDF y la imagen asociada al libro que se va a eliminar
                     $consulta = "SELECT pdf, portada FROM libros WHERE isbn = '$id'";
@@ -49,9 +53,11 @@
                             $mensaje = "Ha habido un error al dar de baja el artículo";
                         }
                     }
+                    desconectar($conexion);
                 }
             }
             ?>
+            <!--Formulario para dar de baja un libro por su ISBN-->
             <div class="recuadro">
                 <h3>BAJA LIBRO</h3>
                 <form action="borradoLibro.php" method="POST">

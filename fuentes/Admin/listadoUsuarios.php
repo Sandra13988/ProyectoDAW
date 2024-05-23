@@ -20,30 +20,35 @@
 </head>
 
 <body>
+	<!--Codigo para listar los usuarios y paginarlos-->
 	<div id="contenedor">
 		<?php include('../plantillas/cabecero.php'); ?>
 		<main id="cuerpo">
 			<?php
-
+			//Obtenemos la pagina que nos encontramos
 			if (isset($_SERVER["REQUEST_METHOD"]) == "GET" && isset($_GET["pagina"])) {
 				$indice = (int)$_GET["pagina"];
 			} else {
 				$indice = 1;
 			}
 
-
+			//Conectamos a la base de datos y generamos la consulta para saber el numero de 
+			//registros que tenemos y averiguar el total de paginas que vamos a necesitar
 			$conexion = conectar();
 			$consultaRegistros = "SELECT * FROM usuarios";
 			$resultadoRegistros = mysqli_query($conexion, $consultaRegistros);
 
 			$numeroDeRegistros = mysqli_num_rows($resultadoRegistros);
+			//Declaramos los registros que queremos mostrar por pagina
 			$numeroDeRegistrosPorPagina = 2;
 			$totalPaginas = ceil($numeroDeRegistros / $numeroDeRegistrosPorPagina);
 			$limite = " limit " . (($indice - 1) * $numeroDeRegistrosPorPagina) . " , " . $numeroDeRegistrosPorPagina;
-
+			//Montamos la consulta
 			$consultaLibros = "SELECT * FROM usuarios $limite";
 			$resultadoLibros = mysqli_query($conexion, $consultaLibros);
 			$filaLibros = mysqli_fetch_assoc($resultadoLibros);
+
+			//Si hay resultados, los imprimimos
 			if ($filaLibros) {
 				echo "<div class='posicionDiv'>";
 				echo "<table class='tablaListado'>";
@@ -73,11 +78,13 @@
 				echo "</table>";
 				echo "</div>";
 				echo "<div class='botonesPaginacion'>";
-				echo "<a href='listadoIsiarios.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
 
+				//Paginacion hacia delante y hacia atras
+				echo "<a href='listadoIsiarios.php?pagina=" . (($indice - 1 < 1) ? 1 : $indice - 1) . "'>ATRAS</a>";
 				echo "<a href='listadoUsuarios.php?pagina=" . (($indice + 1 > $totalPaginas) ? $totalPaginas : $indice + 1) . "'>SIGUIENTE</a>";
 				echo "</div>";
 			}
+			desconectar($conexion);
 			?>
 		</main>
 		<?php include("../plantillas/fotter.php"); ?>

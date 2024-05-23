@@ -15,54 +15,43 @@
     <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
     <title>Noticias</title>
     <style>
-        /* Estilos para el modal */
+        /*  Estilos para el modal 
+            No entiendo muy bien porque no se aplican en el archivo de css
+            es por eso que los he puesto aqui
+        */
         #mostrarModal {
             width: 300px;
             height: 50px;
         }
 
-
         #mostrarModal {
-            /* Estilos del botón */
             margin: 0 auto;
-            /* Margen automático a los lados para centrar horizontalmente */
             display: block;
-            /* Convertir en bloque para aplicar margen automático */
         }
 
 
         .modal {
             display: none;
-            /* Por defecto, el modal está oculto */
             position: fixed;
-            /* Posicionamiento fijo para mantener el modal en pantalla */
             z-index: 1;
-            /* Hace que el modal esté por encima del resto del contenido */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            /* Habilita el desplazamiento cuando el contenido del modal es demasiado grande */
             background-color: rgb(0, 0, 0);
-            /* Fondo oscuro semi-transparente */
             background-color: rgba(0, 0, 0, 0.4);
-            /* Fondo oscuro semi-transparente */
             padding-top: 60px;
-            /* Distancia desde la parte superior */
         }
 
         .modal-content {
             display: flex;
             flex-direction: column;
             background-color: #fefefe;
-            /* Fondo del modal */
             margin: 5% auto;
-            /* Margen vertical y horizontal */
             border: 3px solid black;
             border-radius: 10px;
             width: 400px;
-            /* Ancho del modal */
             font-size: 30px;
         }
 
@@ -78,7 +67,6 @@
             padding-top: 0px;
         }
 
-        /* Cerrar el modal */
         .close {
             color: #aaa;
             float: right;
@@ -96,15 +84,17 @@
 </head>
 
 <body>
+    <!-- Seccion de noticias -->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main id="cuerpo">
             <h1>NOTICIAS</h1>
-            <!-- Botón para mostrar el modal -->
-            <?php if(comprobarRol()): ?>
-    <button id="mostrarModal">Añadir Noticia</button>
-<?php endif; ?>
-            <!-- Estructura del modal -->
+            <!--Boton para mostrar el modal-->
+            <!--Solo será visible si el usuario conectado es Admin-->
+            <?php if (comprobarRol()) : ?>
+                <button id="mostrarModal">Añadir Noticia</button>
+            <?php endif; ?>
+            <!--Modal -->
             <div id="modal" class="modal">
                 <div class="modal-content">
                     <!-- Formulario para agregar noticias -->
@@ -119,6 +109,7 @@
                     </form>
                 </div>
             </div>
+            <!-- Lista de noticias -->
             <div class="noticias">
 
                 <div class="noticia">
@@ -224,6 +215,7 @@
         </main>
         <?php include('../plantillas/fotter.php'); ?>
     </div>
+    <!--Script para manejar el modal-->
     <script>
         var modal = document.getElementById("modal");
         var mostrarModalBtn = document.getElementById("mostrarModal");
@@ -234,17 +226,15 @@
             modal.style.display = "block";
         }
 
-        // Ocultar el modal al hacer clic en el botón de cerrar
-        cerrarBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
         // Ocultar el modal al hacer clic fuera del modal
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+
+        //Generar la noticia en funcion de los datos insertados 
+        //Ademas de los datos, se agregara con la funcion date la fecha de la noticia
 
         document.getElementById("formulario").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -289,9 +279,10 @@
             noticiasDiv.insertBefore(noticia, noticiasDiv.firstChild); // Insertar la nueva noticia al principio
 
             var noticias = document.querySelectorAll(".noticia");
-            if (noticias.length > 7) { // Cambiar el número máximo de noticias según tus necesidades
+            if (noticias.length > 5) {  // El 5 ese representa la cantidad de noticias que se pueden ver
+                                        //Si hay mas de 5 noticias, se eliminara la ultima para dar paso a la nueva
                 var ultimaNoticia = noticias[noticias.length - 1];
-                ultimaNoticia.parentNode.removeChild(ultimaNoticia); // Eliminar la última noticia si hay más de 5
+                ultimaNoticia.parentNode.removeChild(ultimaNoticia); 
             }
 
             document.getElementById("formulario").reset();

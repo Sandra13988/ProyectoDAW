@@ -1,6 +1,7 @@
 <?php
 session_start();
  
+
 $host    = "localhost";
 $usuario = "root";
 $pass    = "";
@@ -37,7 +38,7 @@ function comprobarRol(){
 //Funcion que comprueba si el usuario ha iniciado sesion
 //en el caso de que no, lo redirige al login
 
-//HAY QUE CORREGIR RUTA
+
  function mantener_sesion(){
      if(!isset($_SESSION["nombre"])){
         header("location:/Proyecto_DAW/login.php");
@@ -46,14 +47,6 @@ function comprobarRol(){
      }
  }
 
- //mantener_sesion();
-
-//HAY QUE CORREGIR RUTA
-//function cerrar_sesion(){
-  //  session_destroy();
-    //header("location:/Proyecto_DAW/login.php");
-    //exit();
-//}
 
 //Funcion que comprueba si un libro ya está registrado
 function comprobarExistencias($isbn){
@@ -69,10 +62,23 @@ function comprobarExistencias($isbn){
 }
 
 
-//Funcion que comprueba si un usuario ya está registrado
+//Funcion que comprueba si un usuario ya está registrado comprobado por el nombre
 function comprobarUsuario($nombre){
     $conexion = conectar();
     $consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombre'";
+    $resultadoExistencias = mysqli_query($conexion, $consultaUsuario);
+    $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
+    if($filaUsuario){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+
+//Funcion que comprueba si un usuario ya está registrado comprobado por el ID
+function comprobarUsuarioPorID($id){
+    $conexion = conectar();
+    $consultaUsuario = "SELECT * FROM usuarios WHERE id = '$id'";
     $resultadoExistencias = mysqli_query($conexion, $consultaUsuario);
     $filaUsuario = mysqli_fetch_assoc($resultadoExistencias);
     if($filaUsuario){
@@ -93,6 +99,7 @@ function comprobarSuscripcion(){
 
 }
 
+//Funcion que le asigna una ID cuando das de alta un usuario nuevo
 function asignarId(){
     $conexion = conectar();
     $consultaUsuario = "SELECT MAX(id) as ultimo_id FROM usuarios";

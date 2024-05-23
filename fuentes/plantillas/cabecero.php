@@ -1,6 +1,8 @@
 <?php include('../funciones.php'); ?>
 
+<!--Header para todas las paginas menos el login-->
 <header>
+    <!--Logotipo de la empresa-->
     <img id="logotipo" src="../../assets/imagenes/logotipo/librex2.png" alt="logotipo">
     <!--Menu tablet-->
     <div class="iconos">
@@ -24,6 +26,8 @@
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
                     <a href="../Pages/WishList.php">WishList</a>
                     <?php
+                    //Si el usuario conectado es el administrador le aparecerá una opcion mas en el menu que
+                    //es la del panel del administrador
                     if (comprobarRol()) {
                         echo '<a href="../Admin/MenuAdmin.php">Panel Administrador</a>';
                     }

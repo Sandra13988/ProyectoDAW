@@ -1,10 +1,11 @@
+//Codigo para generar el carrousel que se muestra en novedades
 'use strict';
 
-// Requiere una clave de API y un ID de Bin de JSONbin.io
-const API_KEY = '$2a$10$AIjaA8Tho0hI8s8uxoMEBOfgSlgXj0TVHwaK0uHEPIIUe8zuDBISe';  // Reemplaza con tu clave de API
-const BIN_ID = '664bba2cad19ca34f86c91ba';    // Reemplaza con el ID de tu bin
+// Peticion API en JSON.bin donde tengo el contenedor con los 5 ultimos libros registrados
+const API_KEY = '$2a$10$AIjaA8Tho0hI8s8uxoMEBOfgSlgXj0TVHwaK0uHEPIIUe8zuDBISe';  
+const BIN_ID = '664bba2cad19ca34f86c91ba';   
 
-// Función para obtener los datos actuales del bin
+
 async function getJsonData() {
     const response = await fetch(`https://api.jsonbin.io/v3/b/664bba2cad19ca34f86c91ba`, {
         method: 'GET',
@@ -16,11 +17,13 @@ async function getJsonData() {
     return data.record;
 }
 
+//Objeto carrousel para montarlo
 class Carousel {
+  //Le pasamos data que es el resultado de la consulta a la API de arriba
   constructor(el, data) {
     this.el = el;
     this.carouselOptions = ['previous', 'play', 'next'];
-    this.carouselData = data.record; // Usa los datos obtenidos de JSONbin
+    this.carouselData = data.record; 
     this.carouselInView = [1, 2, 3, 4, 5];
     this.carouselContainer;
     this.carouselPlayState;
@@ -31,6 +34,7 @@ class Carousel {
     this.play(); 
   }
 
+  //Montador del carrousel
   setupCarousel() {
     const container = document.createElement('div');
     const controls = document.createElement('div');
@@ -81,6 +85,7 @@ class Carousel {
     });
   }
 
+  //Funcion que declara el boton que se ha presionado
   controlManager(control) {
     if (control === 'previous') return this.previous();
     if (control === 'next') return this.next();
@@ -88,6 +93,7 @@ class Carousel {
     return;
   }
 
+  //Funcion para retroceder a la portada anterior
   previous() {
     this.carouselData.unshift(this.carouselData.pop());
     this.carouselInView.push(this.carouselInView.shift());
@@ -101,6 +107,7 @@ class Carousel {
     });
   }
 
+  //Funcion para que corra a la siguiente portada
   next() {
     this.carouselData.push(this.carouselData.shift());
     this.carouselInView.unshift(this.carouselInView.pop());
@@ -114,6 +121,7 @@ class Carousel {
     });
   }
 
+  //Funcion para darle al palay o pause en el carrousel
   play() {
     const playBtn = document.querySelector('.carousel-control-play');
     const startPlaying = () => this.next();
@@ -132,7 +140,7 @@ class Carousel {
 
 (async () => {
   const el = document.querySelector('.carousel');
-  const data = await getJsonData(); // Obtener los datos de JSONbin
-  const exampleCarousel = new Carousel(el, data); // Pasar los datos al constructor
+  const data = await getJsonData(); 
+  const exampleCarousel = new Carousel(el, data); 
   exampleCarousel.mounted();
 })();

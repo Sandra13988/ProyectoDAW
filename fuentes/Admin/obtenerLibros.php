@@ -5,7 +5,9 @@ include("../funciones.php");
 header('Content-Type: application/json');
 
 
-
+//Este codigo forma parte de la actualizacion de la seccion de novedades
+//Selecciona los 5 ultimos libros que se han registrado
+//Para posteriormente recogerlos con el bin y recogerlos con peticiones API en novedades
 $conexion = conectar();
 $consultaRegistros = "SELECT * FROM libros ORDER BY tiempo DESC LIMIT 5";
 
@@ -16,10 +18,10 @@ $libros = array();
 while ($row = mysqli_fetch_assoc($resultadoRegistros)) {
     $libros[] = array(
         'id' => $row['isbn'],
-        'src' => '../Admin/portada/'.$row['portada']  // Asegúrate de que 'src' es el nombre de la columna en tu base de datos
+        'src' => '../Admin/portada/'.$row['portada']  
     );
 }
+desconectar($conexion);
 
-mysqli_close($conexion);
 
 echo json_encode($libros);

@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!--Este es el apartado de inicial de la pagina donde aparecera el carrusel con las novedades-->
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <div id="cuerpo">

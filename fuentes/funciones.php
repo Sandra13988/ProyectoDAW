@@ -41,7 +41,7 @@ function comprobarRol(){
 
  function mantener_sesion(){
      if(!isset($_SESSION["nombre"])){
-        header("location:/");
+        header("location:/Proyecto_DAW/");
         echo("no tienes la sesion iniciada");
         exit();
      }

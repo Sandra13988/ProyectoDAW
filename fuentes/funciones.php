@@ -110,4 +110,13 @@ function asignarId(){
     }
 }
 
+//Funcion que te deniega el permiso de acceso si no eres admin
+function permisoAdmin(){
+    if($_SESSION["rol"] !== "admin"){
+        header("location:/Proyecto_DAW/login.php");
+        echo("no tienes permiso");
+        exit();
+     }
+}
+
 ?>

@@ -1,3 +1,5 @@
+<?php include('../funciones.php'); ?>
+<?php mantener_sesion()?>
 <?php $mensaje = ""?>
 <!DOCTYPE html>
 <html lang="en">

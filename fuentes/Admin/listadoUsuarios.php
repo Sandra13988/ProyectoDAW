@@ -1,3 +1,6 @@
+<?php include('../funciones.php'); ?>
+<?php mantener_sesion()?>
+<?php permisoAdmin(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +26,7 @@
 	<!--Codigo para listar los usuarios y paginarlos-->
 	<div id="contenedor">
 		<?php include('../plantillas/cabecero.php'); ?>
+
 		<main id="cuerpo">
 			<?php
 			//Obtenemos la pagina que nos encontramos

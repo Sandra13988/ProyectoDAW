@@ -2,7 +2,7 @@
 session_start();
  
 
-$host    = "localhost";
+$host    = "id22213973_portadas";
 $usuario = "root";
 $pass    = "";
 $db      = "librex";
@@ -41,7 +41,7 @@ function comprobarRol(){
 
  function mantener_sesion(){
      if(!isset($_SESSION["nombre"])){
-        header("location:/Proyecto_DAW/login.php");
+        header("location:/");
         echo("no tienes la sesion iniciada");
         exit();
      }
@@ -113,7 +113,7 @@ function asignarId(){
 //Funcion que te deniega el permiso de acceso si no eres admin
 function permisoAdmin(){
     if($_SESSION["rol"] !== "admin"){
-        header("location:/Proyecto_DAW/login.php");
+        header("location:/Proyecto_DAW/index.php");
         echo("no tienes permiso");
         exit();
      }

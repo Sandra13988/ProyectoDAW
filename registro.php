@@ -52,7 +52,7 @@
                 if (mysqli_affected_rows($conexion)) {
                     $mensaje = "Tu registro se ha realizado alta correctamente";
                     // Nos redirige al login
-                    header("location:./login.php");
+                    header("location:./");
                 } else {
                     $mensaje = "Ha habido un error al registrarte";
                     header("location:./registro.php");
@@ -75,7 +75,7 @@
             <label for="correo">Correo: </label>
             <input type="text" id="correo" name="correo" placeholder="usuario@usuario.com">
             <input type="submit" name="altaUsuario" value="REGISTRAR">
-            <a href="./login.php"><h5>Volver al login</h5></a>
+            <a href="./index.php"><h5>Volver al login</h5></a>
         </form>
 
         <script>

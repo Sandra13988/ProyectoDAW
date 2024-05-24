@@ -73,7 +73,7 @@
 		<h3>Encuentra todo lo que estas imaginando aqui!</h3>
 		</div>
 		<!--Formulario de login-->
-		<form action="login.php" method="POST" class="formularioLogin"  id="loginForm">
+		<form action="./fuentes/Pages/Indice.php" method="POST" class="formularioLogin"  id="loginForm">
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario">
 			<label for="pass">Contraseña </label>

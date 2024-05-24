@@ -2,7 +2,6 @@
 
 include("../funciones.php");
 mantener_sesion();
-permisoAdmin();
 header('Content-Type: application/json');
 
 

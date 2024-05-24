@@ -2,7 +2,6 @@
 
 	include("../funciones.php");
 	mantener_sesion();
-	permisoAdmin(); 
 	include("fpdf186/fpdf.php");
 
 	$pdf = new FPDF();

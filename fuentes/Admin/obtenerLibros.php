@@ -1,7 +1,7 @@
 <?php
 
 include("../funciones.php");
-
+mantener_sesion();
 header('Content-Type: application/json');
 
 

@@ -1,6 +1,6 @@
 <?php
 include('../funciones.php');
-
+mantener_sesion();
 //Codigo para agregar libros a la lista de deseos
 $mensaje = ""; // Variable para almacenar mensajes de éxito o error
 

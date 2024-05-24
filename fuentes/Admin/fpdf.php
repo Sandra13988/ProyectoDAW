@@ -1,6 +1,7 @@
 <?php 
 
 	include("../funciones.php");
+	mantener_sesion();
 	include("fpdf186/fpdf.php");
 
 	$pdf = new FPDF();

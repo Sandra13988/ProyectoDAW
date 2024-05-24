@@ -2,7 +2,7 @@
 session_start();
  
 
-$host    = "id22213973_portadas";
+$host    = "localhost";
 $usuario = "root";
 $pass    = "";
 $db      = "librex";

@@ -1,5 +1,4 @@
-<?php include('../funciones.php'); ?>
-<?php mantener_sesion()?>
+
 
 <!--Header para todas las paginas menos el login-->
 <header>

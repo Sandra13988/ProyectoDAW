@@ -1,3 +1,7 @@
+
+<?php include('../funciones.php'); ?>
+<?php mantener_sesion()?>
+
 <!DOCTYPE html>
 <html lang="en">
 

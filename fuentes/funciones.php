@@ -1,30 +1,4 @@
 <?php
-session_start();
- 
-
-$host    = "localhost";
-$usuario = "root";
-$pass    = "";
-$db      = "librex";
-
-//Funcion que conecta a la base de datos
-function conectar() {
-    global $host, $usuario, $pass, $db;
-    $conexion = mysqli_connect($host, $usuario, $pass, $db);
-    if (mysqli_connect_errno()) {
-        echo "Error \n";
-        echo "Errno: " . mysqli_connect_errno() . "\n";
-        echo "Error: " . mysqli_connect_error() . "\n";
-        exit;
-    }
-
-    return $conexion;
-}
-
-//Funcion para desconectar la base de datos
-function desconectar($conexion) {
-    mysqli_close($conexion);
-}
 
 //Funcion que comprueba el rol del usuario
 function comprobarRol(){
@@ -41,7 +15,7 @@ function comprobarRol(){
 
  function mantener_sesion(){
      if(!isset($_SESSION["nombre"])){
-        header("location:/Proyecto_DAW/");
+        header("location:/Proyecto_Sandra/ProyectoDAW/index.php");
         echo("no tienes la sesion iniciada");
         exit();
      }
@@ -113,7 +87,7 @@ function asignarId(){
 //Funcion que te deniega el permiso de acceso si no eres admin
 function permisoAdmin(){
     if($_SESSION["rol"] !== "admin"){
-        header("location:/Proyecto_DAW/login.php");
+        header("location:/");
         echo("no tienes permiso");
         exit();
      }

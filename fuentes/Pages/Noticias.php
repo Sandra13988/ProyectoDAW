@@ -1,4 +1,5 @@
-
+<?php session_start();?>
+<?php require '../../conexion.php';?>
 <?php include('../funciones.php'); ?>
 <?php mantener_sesion()?>
 

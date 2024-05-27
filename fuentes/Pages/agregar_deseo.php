@@ -1,4 +1,6 @@
 <?php
+session_start();
+require '../../conexion.php';
 include('../funciones.php');
 mantener_sesion();
 //Codigo para agregar libros a la lista de deseos

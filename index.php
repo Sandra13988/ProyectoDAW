@@ -1,4 +1,6 @@
-<?php  $mensaje = ""?>
+<?php $mensaje = "" ;
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,14 +32,14 @@
 
 
 		<?php
-		include("./fuentes/funciones.php");
 
+        
+		require 'conexion.php';
 		//Si se ha pulsado el boton de login...
 		if (isset($_POST["login"])) {
 			//Recogemos los datos del formulario en variables
 			$usuario = $_POST["usuario"];
 			$pass = $_POST["pass"];
-			
 
 			//Conectamos y hacemos la consulta para averiguar si existe ese usuario y contraseña
 			$conexion = conectar();
@@ -54,26 +56,23 @@
 				$_SESSION['rol'] = $filaUsuario['rol'];
 
 				//Guardamos la cookie por 30 dias para usarlos en el nombre del menu
-				setcookie("nombre_usuario", $filaUsuario['usuario'], time() + (86400 * 30), "/"); 
+				setcookie("nombre_usuario", $filaUsuario['usuario'], time() + (86400 * 30), "/");
 
-				
-				echo "Sesión iniciada correctamente";
-				//Redirigimos al usuario a la pagina del indice
-				header("location:./fuentes/Pages/Indice.php");
-				exit();
+			           echo '<script>window.location.href = "./fuentes/Pages/Indice.php";</script>';
+
+
 			} else {
 				$mensaje = "Ese usuario no existe";
 			}
 		}
 
-
 		?>
 		<div class="titulo">
-		<h2>Bienvenido a LIBREX</h2>
-		<h3>Encuentra todo lo que estas imaginando aqui!</h3>
+			<h2>Bienvenido a LIBREX</h2>
+			<h3>Encuentra todo lo que estas imaginando aqui!</h3>
 		</div>
 		<!--Formulario de login-->
-		<form action="./fuentes/Pages/Indice.php" method="POST" class="formularioLogin"  id="loginForm">
+		<form  action="index.php" method="POST" class="formularioLogin" id="loginForm">
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario">
 			<label for="pass">Contraseña </label>
@@ -81,16 +80,16 @@
 			<input type="submit" name="login" value="Login">
 		</form>
 
-		<?php echo $mensaje?>
+		<div class="estiloMensaje"><?php echo $mensaje ?></div>
 
 		<!--Boton para redirigirnos a registro-->
 		<div class="tituloRegistro">
 			<p>Aun no estás registrado? Unete a nosotros!</p>
 			<a href="./registro.php">Registrate</a>
-			
+
 
 		</div>
-		
+
 		<?php include_once "./fuentes/plantillas/fotter.php" ?>
 	</div>
 </body>

@@ -27,7 +27,7 @@
 
         <?php
         include("./fuentes/funciones.php");
-
+        require 'conexion.php';
         // Si se ha presionado el boton de Registro..
         if (isset($_POST["altaUsuario"])) {
             // Recogemos los datos del formulario 

@@ -1,5 +1,7 @@
-<?php include('../funciones.php'); ?>
-<?php mantener_sesion()?>
+<?php require '../../conexion.php';?>
+<?php session_start();?>
+<?php require('../funciones.php'); ?>
+<?php mantener_sesion(); ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -98,6 +98,16 @@ h1{
     background-position: center;
 }
 .posicionDiv{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-size: 25px;
+    padding: 10px;
+}
+
+
+.posicionDivMovil{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,6 +264,25 @@ footer > .redes{
         margin-right: 100px ;
        
     }
+
+    .posicionDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        font-size: 25px;
+        padding: 10px;
+    }
+    
+    
+    .posicionDivMovil{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        font-size: 25px;
+        padding: 10px;
+    }
     
 }
 
@@ -307,6 +336,26 @@ footer > .redes{
         height: 100vh;
         grid-template-rows: 70px auto 50px;
         width: 100%;
+    }
+
+    
+    .posicionDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        font-size: 25px;
+        padding: 10px;
+    }
+    
+    
+    .posicionDivMovil{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        font-size: 25px;
+        padding: 10px;
     }
     
 }

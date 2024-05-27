@@ -1,6 +1,7 @@
 
 <?php
-
+session_start();
+require '../../conexion.php';
 include("../funciones.php");
 mantener_sesion();
 permisoAdmin();

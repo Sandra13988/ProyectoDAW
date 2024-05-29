@@ -19,7 +19,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-	<title>MODIFICAR LIBRO</title>
+	<title>Modificar Libro</title>
 </head>
 
 <body>
@@ -93,6 +93,7 @@
 					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 						<table>
 							<input type="hidden" name="isbn" value="<?php echo $libro['isbn']; ?>" required>
+							<?php echo $mensaje; ?>
 							<tr>
 								<td><label for="nombre">Nombre:</label></td>
 								<td><input type="text" name="nombre" value="<?php echo $libro['nombre']; ?>" required></td>
@@ -107,7 +108,7 @@
 							</tr>
 							<tr>
 								<td><label for="sinopsis">Sinopsis:</label></td>
-								<td><textarea name="sinopsis" style="width: 350px; height: 200px;" required><?php echo $libro['sinopsis']; ?></textarea></td>
+								<td><textarea name="sinopsis" style="width: 170px; height: 100px;" required><?php echo $libro['sinopsis']; ?></textarea></td>
 							</tr>
 							<tr>
 								<td colspan="2"><button type="submit" name="modificarLibro">Modificar Libro</button></td>

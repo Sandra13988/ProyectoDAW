@@ -28,10 +28,11 @@ header{
 }
 
 #logotipo{
-    justify-self: center;
+    justify-self: left;
     height: 100%;
     width: 50%;
     object-fit: fill;
+    margin-left: 10px;
 }
 
 /*Aqio empieza el menú responsivo como movil*/
@@ -55,6 +56,8 @@ header a {
 .menu-container-movil{
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
+    padding-right: 5px;
     
 }
 
@@ -120,9 +123,7 @@ h1{
 input{
     margin-bottom: 20px;
     min-width: 200px;
-    height: 50px;
-    padding: 10px;
-    font-size: 16px; 
+    height: 30px;
 }
 
 

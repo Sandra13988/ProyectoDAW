@@ -87,7 +87,7 @@ function asignarId(){
 //Funcion que te deniega el permiso de acceso si no eres admin
 function permisoAdmin(){
     if($_SESSION["rol"] !== "admin"){
-        header("location:/");
+        header("location:/Proyecto_Sandra/ProyectoDAW/index.php");
         echo("no tienes permiso");
         exit();
      }

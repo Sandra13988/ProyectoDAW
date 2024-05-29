@@ -26,7 +26,7 @@
     <div id="contenedor">
         <?php include('../plantillas/cabecero.php'); ?>
         <main class="todoLibros">
-        <h1>LIBROS</h1>
+            <h1>LIBROS</h1>
             <?php
             //Hacemos conexion y generamos una consulta para que nos de todos los libros
             $conexion = conectar();
@@ -36,12 +36,11 @@
 
             //Si la consulta encuentra resultados...
             if ($result) {
-                // Comienza el bucle para mostrar cada libro
-                
+                // Generamos un contenedor para cada libro
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<div class="libro" id="' . $row['nombre'] . '">';
+                    echo '<div class="libro" id="libro-' . $row['isbn'] . '">';
                     echo '<h2>' . strtoupper($row['nombre']) . '</h2>';
-                    echo ' <div class="imagenLibro"><img src="../Admin/portada/' . $row['portada'] . '" width="200" height="300"></div>';
+                    echo '<div class="imagenLibro" id="imagenLibro-' . $row['isbn'] . '"></div>';
                     echo '<div class="contenidoLibro">';
                     echo '<strong>Genero: </strong>' . $row['genero'] . '<br>';
                     echo '<strong>Autor: </strong>' . $row['autor'] . '<br>';
@@ -50,7 +49,7 @@
                     echo '</p>';
                     echo '</div>';
                     echo '<div class="botonesLibros">';
-                    // Aquí se agrega el enlace al botón de Descargar Libro
+                    
                     //Generamos una variable para comprobar si el usuario está suscrito
                     $suscrito = comprobarSuscripcion();
 
@@ -62,9 +61,7 @@
                         echo '<input type="button" value="Descargar Libro" title="Debes suscribirte para poder descargar este libro" disabled>';
                     }
                     
-                    
                     // Formulario para agregar el libro a la lista de deseos
-                    
                     echo '<form action="agregar_deseo.php" method="POST">';
                     echo '<input type="hidden" name="id_libro" value="' . $row['isbn'] . '">';
                     echo '<input type="hidden" name="nombre_libro" value="' . $row['nombre'] . '">';
@@ -76,7 +73,6 @@
                     
                     echo '</div>';
                     echo '</div>';
-
                 }
             }
             desconectar($conexion);
@@ -84,6 +80,26 @@
         </main>
         <?php include('../plantillas/fotter.php'); ?>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            <?php
+            // Generamos el código JavaScript para cada imagen
+            if ($result) {
+                mysqli_data_seek($result, 0); // Resetear el puntero de resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $isbn = $row['isbn'];
+                    $portada = '../Admin/portada/' . $row['portada'];
+                    echo "var img = new Image();\n";
+                    echo "img.src = '$portada';\n";
+                    echo "img.width = 200;\n";
+                    echo "img.height = 300;\n";
+                    echo "document.getElementById('imagenLibro-$isbn').appendChild(img);\n";
+                }
+            }
+            ?>
+        });
+    </script>
 </body>
 
 </html>

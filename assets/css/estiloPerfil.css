@@ -25,7 +25,8 @@ header {
 .menu-container-movil{
     display: flex;
     align-items: center;
-    
+    flex-direction: row-reverse;
+    padding-right: 5px;
 }
 
 
@@ -35,10 +36,11 @@ header {
 }
 
 img {
-    justify-self: center;
+    justify-self: left;
     height: 100%;
     width: 50%;
     object-fit: fill;
+    margin-left: 10px;
 }
 
 

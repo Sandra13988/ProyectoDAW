@@ -27,16 +27,18 @@ header{
 }
 
 img{
-    justify-self: center;
+    justify-self: left;
     height: 100%;
     width: 50%;
     object-fit: fill;
+    margin-left: 10px;
 }
 
 .menu-container-movil{
     display: flex;
     align-items: center;
-    
+    flex-direction: row-reverse;
+    padding-right: 5px;
 }
 
 
@@ -71,6 +73,7 @@ header a {
     align-items: center;
     font-size: 30px;
     text-align: center;
+    flex: 1;
 }
 
 
@@ -93,11 +96,11 @@ header a {
 
 .recuadro{
     display: grid;
-    grid-template-rows: 40% auto;
+    grid-template-rows: auto auto;
     border: 2px solid black;
     border-radius: 10px;
-    width: 550px;
-    margin-top: 100px;
+    max-width: 450px;
+    margin-top: 20px;
 }
 
 
@@ -110,6 +113,8 @@ header a {
     background-color: #2e2e2c;
     color: white;
     height: 50px;
+    max-width: 450px;
+
 }
 
 .recuadro > form{
@@ -240,6 +245,8 @@ footer > .redes{
      }
     
   
-
+.recuadro > h3{
+    max-width: 450px;
+}
 
 }

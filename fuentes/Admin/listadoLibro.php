@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-    <title>Lista de libros</title>
+    <title>Lista Libros</title>
 </head>
 <title>Listado de los artículos</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -78,18 +78,20 @@
 
             //Si la consulta tiene resultados, los imprimimos
             if ($resultadoLibros && mysqli_num_rows($resultadoLibros) > 0) {
+               
                 //TABLA MOVIL
                 echo "<div class='posicionDivMovil'>";
-                echo "<table class='tablaListado'>";
+                 echo "<h3>LISTADO LIBROS</h3>";
+                echo "<table >";
                 echo "<tr>";
-                echo "<th class='cuadroPDF'>NOMBRE</th>";
-				echo "<th>GENERO</th>";
+                echo "<th class='cuadroPDF' >NOMBRE</th>";
+
                 echo "</tr>";
 
                 while ($filaLibros = mysqli_fetch_assoc($resultadoLibros)) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($filaLibros['nombre']) . "</td>";
-					echo "<td>" . htmlspecialchars($filaLibros['genero']) . "</td>";
+
                     echo "</tr>";
                 }
                 echo "</table>";
@@ -100,6 +102,7 @@
 
                 //TABLA ESCRITORIO Y TABLET
                 echo "<div class='posicionDiv'>";
+                 echo "<h3>LISTADO LIBROS</h3>";
                 echo "<table class='tablaListado'>";
                 echo "<tr>";
                 echo "<th>ISBN</th>";

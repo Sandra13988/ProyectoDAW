@@ -75,8 +75,14 @@
             <label for="correo">Correo: </label>
             <input type="text" id="correo" name="correo" placeholder="usuario@usuario.com">
             <input type="submit" name="altaUsuario" value="REGISTRAR">
-            <a href="./index.php"><h5>Volver al login</h5></a>
+            
         </form>
+        
+        <div class="tituloRegistro">
+			<p>Volver al login</p>
+			<a href="./index.php">Volver</a>
+
+		</div>
 
         <script>
             // Script para validar el formulario

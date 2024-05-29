@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-    <title>Libros</title>
+    <title>Contacto</title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
                     <label for="politicaYCookies">Politica de privacidad y cookies</label><br>
                 </div>
                 <input type="submit" id="enviar" name="enviar" required><br><br>
-                <?php echo $mensaje?>;
+              
             </form>
             <!--Mapas para saber donde nos encontramos-->
             <div class="mapa">
@@ -75,7 +75,7 @@
             </div>
             <div class="mapa2">
                 <h2>Y tambien estamos aquí!</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12548.599042593361!2d-0.8032001939331055!3d38.159958883464256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1707048334320!5m2!1ses!2ses" width="385" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12548.599042593361!2d-0.8032001939331055!3d38.159958883464256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1707048334320!5m2!1ses!2ses" width="300" height="300" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </main>
         <?php include('../plantillas/fotter.php'); ?>

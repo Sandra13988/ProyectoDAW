@@ -20,7 +20,7 @@
         </a>
         <div class="menu-container-escritorio">
             <div class="menu-item">
-                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
+                <button class="menu-btn">MENÚ</button>
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
@@ -57,7 +57,7 @@
         </a>
         <div class="menu-container-escritorio">
             <div class="menu-item">
-                <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
+                <button class="menu-btn">MENÚ</button>
                 <div class="submenu" id="submenu">
                     <a href="../Pages/Perfil.php">Perfil</a>
                     <a href="../Pages/Suscripcion.php">Suscripcion</a>
@@ -80,7 +80,7 @@
     <!--Menu en movil-->
     <div class="menu-container-movil" >
         <div class="menu-item">
-            <button class="menu-btn"><?php echo $_COOKIE['nombre_usuario'] ?></button>
+            <button class="menu-btn">MENÚ</button>
             <div class="submenu" id="submenu">
                 <a href="../Pages/Indice.php">Novedades</a>
                 <a href="../Pages/Libros.php">Libros</a>

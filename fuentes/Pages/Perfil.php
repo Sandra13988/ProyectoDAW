@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php require '../../conexion.php';?>
 <?php include('../funciones.php'); ?>
-<?php mantener_sesion()?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-    <title>Libros</title>
+    <title>Perfil</title>
 </head>
 
 <body>

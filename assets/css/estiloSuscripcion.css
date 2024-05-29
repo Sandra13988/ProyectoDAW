@@ -29,10 +29,11 @@ header{
 }
 
 img{
-    justify-self: center;
+    justify-self: left;
     height: 100%;
     width: 50%;
     object-fit: fill;
+    margin-left: 10px;
 }
 
 /*Aqio empieza el menú responsivo como movil*/
@@ -62,7 +63,8 @@ header a {
 .menu-container-movil{
     display: flex;
     align-items: center;
-    
+    flex-direction: row-reverse;
+    padding-right: 5px;
 }
 
 /*Aqui termina el encabezado*/
@@ -82,9 +84,7 @@ header a {
     background-position: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 50px;
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 #cuerpo > h1{
@@ -96,13 +96,15 @@ header a {
 }
 
 .suscripcion{
+    display: flex;
+    flex-direction: column;
     font-size: 25px;
     border: 2px solid black;
     gap: 10px;
     border-radius: 5px;
-    height: 600px;
+    height: 650px;
     justify-items: center;
- 
+    margin: 10px;
 }
 
 .desc{

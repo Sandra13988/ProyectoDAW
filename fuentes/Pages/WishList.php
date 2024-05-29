@@ -85,6 +85,33 @@
             }
             echo "</table>";
             echo "</div>";
+
+            // Segunda tabla solo con el título y los botones de descargar y borrar
+            if (mysqli_num_rows($result) > 0) {
+                mysqli_data_seek($result, 0); // Volver al principio de los resultados
+                echo "<div class='posicionDivMovil'>";
+                echo "<table class='tablaListado'>";
+                echo "<tr>";
+                echo '<th style="width: 400px;">TITULO</th>';
+                echo "<th></th>";
+                echo "<th></th>";
+                echo "</tr>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['nombre'] . "</td>";
+                    //En la lista de deseo tendremos un boton de descargar libro y otro de borrar libro de la lista
+                    echo '<td><a href="../Admin/pdf/' . $row['pdf'] . '" download><input type="button" value="Descargar Libro" class="boton-accion"></a></td>';
+                    echo '<td>
+                                <form method="post" action="#">
+                                    <input type="hidden" name="nombre_deseo" value="' . $row['nombre'] . '">
+                                    <input type="submit" name="borrarDeseo" value="Borrar Deseo" class="boton-accion">
+                                </form>
+                              </td>';
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
+            }
             ?>
         </main>
         <?php include('../plantillas/fotter.php'); ?>

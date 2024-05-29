@@ -18,7 +18,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Protest+Riot&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../../assets/css/estiloMenus.css" />
-	<title>MODIFICAR USUARIO</title>
+	<title>Modificar Usuario</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 
 				//Generamos la actualizacion
 				$conexion = conectar();
-				$consulta = "UPDATE `usuarios` SET `usuario`='$usuario',`pass`='$pass',`correo`='$correo',`suscripcion`='$suscripcion',`rol`='$rol' WHERE `id` = $id";
+				$consulta = "UPDATE `usuarios` SET `pass`='$pass',`correo`='$correo',`suscripcion`='$suscripcion',`rol`='$rol' WHERE `id` = $id";
 				$resultado = mysqli_query($conexion, $consulta);
 				if ($resultado) {
 					$mensaje = "Los datos del usuario han sido modificados correctamente.";

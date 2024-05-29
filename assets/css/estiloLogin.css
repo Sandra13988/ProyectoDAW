@@ -90,6 +90,12 @@ header a {
     text-align: center;
     margin-bottom: 20px;
 }
+.estiloMensaje{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: red;
+}
 
 /*Aqui termina el cuerpo*/
 /*Aqui empieza el pie de pagina*/
@@ -121,11 +127,7 @@ h1 {
     color: #a5a6a5;
 }
 
-.estiloMensaje{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
+
 
 @media (min-width: 768px) {
     header {

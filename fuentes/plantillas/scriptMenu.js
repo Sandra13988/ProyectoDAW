@@ -1,8 +1,8 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 function mostrarMenu() {
-    document.getElementById("submenu").style.display = "block";
-  }
-  
-  function ocultarMenu() {
-    document.getElementById("submenu").style.display = "none";
-  }
-  
+  $("#submenu").css("display", "block");
+}
+
+function ocultarMenu() {
+  $("#submenu").css("display", "none");
+}

@@ -76,7 +76,7 @@ session_start();
 			<label for="usuario">Usuario </label>
 			<input type="text" name="usuario" placeholder="usuario">
 			<label for="pass">Contraseña </label>
-			<input type="text" name="pass" placeholder="contraseña">
+			<input type="password" name="pass" placeholder="contraseña">
 			<input type="submit" name="login" value="Login">
 		</form>
 

@@ -32,16 +32,15 @@ session_start();
 
 
 		<?php
-
-        
-		require 'conexion.php';
 		//Si se ha pulsado el boton de login...
 		if (isset($_POST["login"])) {
+			
 			//Recogemos los datos del formulario en variables
 			$usuario = $_POST["usuario"];
 			$pass = $_POST["pass"];
 
 			//Conectamos y hacemos la consulta para averiguar si existe ese usuario y contraseña
+			require_once 'conexion.php';
 			$conexion = conectar();
 			$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario' and pass = '$pass'";
 			$resultadoUsuario = mysqli_query($conexion, $consultaUsuario);

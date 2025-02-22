@@ -13,6 +13,7 @@ function conectar() {
         exit;
     }
 
+    mysqli_set_charset($conexion, "utf8mb4");
     return $conexion;
 }
 
